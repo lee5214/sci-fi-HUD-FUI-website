@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap 101 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="stylesheets/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="sass/main.css" rel="stylesheet" media="screen">
+
+    <link href="sass/mofazhen.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script><!--可以去掉吧-->
+    <script src="js/jquery.lettering.js"></script>
+    <script src="js/jquery.magicring.plugin.js"></script>
+
+
+</head>
+<body>
+<div id="MagicRing" style="z-index: 0"></div>
+    <div class="container"  >
+        <div class="row" >
+            <div class="left-panel col-md-4">
+                <div class="rotate-left bg-info">
+                    <div class="play-area">
+                        <img src="resource/images/uisample.jpg">
+                        <img src="resource/images/xiong.gif">
+                        <img src="resource/images/mao.gif">
+                        <img src="resource/images/tiytfvu.gif">
+                    </div>
+                </div>
+            </div>
+            <div class="right-panel" >
+                <div class="rotate-right col-md-4">
+                    <button type="button" class="btn btn-primary col-lg-12">Primary</button>
+                    <button type="button" class="btn btn-success">Primary</button>
+                    <button type="button" class="btn btn-info">Primary</button>
+                    <button type="button" class="btn btn-warning">Primary</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#MagicRing').magicring({font : "resource/font/MagicRing.ttf" , spacing : 100, _3dX : 1, _3dY: 0, _3dZ:0, _3dDeg: 0 });
+            //$('#MagicRing2').magicring({font : "resource/font/MagicRing.ttf" , spacing : 300, _3dX : -1, _3dY: 1, _3dZ: 0, _3dDeg: 60 });
+        });
+    </script>
+</body>
+</html>

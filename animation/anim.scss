@@ -1,0 +1,23 @@
+.center{
+  height:30vh;
+  width:30vw;
+  margin:auto;
+  div{
+    background-image: url("img/huahuan.png");
+    //background-repeat: no-repeat;
+    margin: auto;
+    width:100%;
+    height:100%;
+    position:relative;
+    animation: myfirst 5s linear infinite;
+
+  }
+}
+
+@keyframes myfirst {
+  0% {transform: rotate(0deg);}
+  25% {transform:rotate(90deg);}
+  50% {transform:rotate(180deg);}
+  75% {transform:rotate(270deg);}
+  100% {transform:rotate(360deg);}
+}

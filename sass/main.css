@@ -1,0 +1,92 @@
+body {
+  overflow: hidden; }
+  body #MagicRing {
+    position: fixed;
+    margin-top: 20%;
+    margin-left: 50%; }
+  body .container {
+    background: #f0f5d8;
+    /* .center-panel{
+       align: center;
+       width: 20vw;
+       height: 100vh;
+       background-color: pink;
+     }*/ }
+    body .container .left-panel {
+      position: absolute;
+      float: left;
+      top: 10vh;
+      height: 90vh;
+      left: 5vw;
+      width: 40vw; }
+      body .container .left-panel .rotate-left {
+        transform-style: preserve-3d;
+        background-color: rgba(100, 205, 205, 0.5);
+        margin-right: 0px;
+        position: relative;
+        top: 0vh;
+        left: 5vw;
+        height: 80vh;
+        width: 40vw;
+        transform: perspective(1vw) rotateY(0.8deg); }
+        body .container .left-panel .rotate-left .play-area {
+          perspective-origin: bottom;
+          height: 50%;
+          width: 100%;
+          left: -100vw;
+          position: relative;
+          background-color: mediumpurple;
+          -webkit-animation: left_bar_move_from_left 2s linear 1s;
+          animation-fill-mode: forwards; }
+          body .container .left-panel .rotate-left .play-area img {
+            position: relative;
+            left: 0vw;
+            opacity: 1;
+            float: left;
+            height: 40vh;
+            width: 20vw;
+            float: left;
+            padding: 1vw;
+            -webkit-transition-duration: 0.8s;
+            -webkit-transition-property: -webkit-transform;
+            -moz-transition-property: -moz-transform;
+            -o-transition-property: -o-transform;
+            transition-property: transform; }
+        body .container .left-panel .rotate-left .play-area:hover img {
+          -webkit-transform: rotate3D(0, 3, 0, -0.7deg);
+          -moz-transform: rotate3D(0, 1, 0, -0.7deg);
+          -o-transform: rotate3D(0, 1, 0, -0.7deg); }
+    body .container .right-panel {
+      position: absolute;
+      float: right;
+      top: 10vh;
+      height: 90vh;
+      right: 5vw;
+      width: 40vw; }
+      body .container .right-panel .rotate-right {
+        opacity: 0.5;
+        top: 20vh;
+        height: 80vh;
+        width: 40vw;
+        background-color: black;
+        transform: perspective(1vw) rotateY(-1deg); }
+        body .container .right-panel .rotate-right button {
+          float: left;
+          height: 50%;
+          width: 50%; }
+        body .container .right-panel .rotate-right img {
+          float: left;
+          height: 10vh;
+          width: 20vw;
+          float: left;
+          padding: 1vw; }
+
+@-webkit-keyframes left_bar_move_from_left {
+  0% {
+    left: -100vw;
+    top: 0px; }
+  100% {
+    left: 0vw;
+    top: 0px; } }
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,154 @@
+
+
+body{
+  #MagicRing{
+    position:fixed;
+    //top:10vh;
+    margin-top:20%;
+    margin-left:50%;
+  }
+  overflow: hidden;
+  //background-color:black;
+  .container{
+    //display: inline-block;
+    //background: red;
+
+    //margin-left: 0px;
+
+    //perspective: 110px;
+    //border: 4px solid #a2b058;
+    background: #f0f5d8;
+    .left-panel{
+      position:absolute;
+      float: left;
+      top:10vh;
+      height: 90vh;
+      left:5vw;
+      width: 40vw;
+        .rotate-left{
+          transform-style: preserve-3d;//
+          background-color: rgba(100,205,205,0.5);//parent elem's opacity = 0.5 while child elem's opacity = 1
+          margin-right: 0px;
+          position:relative;
+          top: 0vh;
+          left:5vw;
+          height:80vh;
+          width:40vw;
+          transform: perspective(1vw) rotateY(0.8deg);
+          .play-area{
+            perspective-origin: bottom;
+            height: 50%;
+            width: 100%;
+            left: -100vw;
+            position:relative;
+            background-color: mediumpurple;
+            -webkit-animation: left_bar_move_from_left 2s linear 1s;
+            animation-fill-mode:forwards;
+            //transform: translate(100vw, 0);
+            //transition-duration: 2s;
+            //transition-timing-function: linear;
+            img {
+              position: relative;
+              left: 0vw;
+              opacity: 1;
+              float: left;
+              height: 40vh;
+              width: 20vw;
+              float: left;
+              padding: 1vw;
+              //transform: perspective(1vw) rotate3d(0, 0, 1, 10deg);
+              //transition-duration: 1s;
+              //transition-timing-function: linear;
+
+              //transform: translate3d(0px, 0px, 0px)      add animation later
+              -webkit-transition-duration: 0.8s;
+              -webkit-transition-property: -webkit-transform;
+              -moz-transition-property: -moz-transform;
+              -o-transition-property: -o-transform;
+              transition-property: transform;
+            }
+          }
+          .play-area:hover img{
+            -webkit-transform:rotate3D(0,3,0,-0.7deg);
+            -moz-transform:rotate3D(0,1,0,-0.7deg);
+            -o-transform:rotate3D(0,1,0,-0.7deg);
+          }
+        }
+      //position: relative;
+      //display: inline-block;
+      //margin: auto;
+
+      // /* Safari */
+      //-webkit-transform: translate3d(0, 0, 60px) rotate3d(0, 1, 0, -60deg) scale3d(1, 1, 2); /* Chrome, Safari, Opera */
+      //-webkit-transform: translate3d(0, 0, 60px) rotate3d(0, 1, 0, -60deg) scale3d(1, 1, 2); /* Chrome, Safari, Opera */
+      //transform: perspective(px) rotateY(20deg);
+
+      //transform: rotateZ(-20deg);
+    }
+    .right-panel{
+      position:absolute;
+      float: right;
+      top:10vh;
+      height: 90vh;
+      right:5vw;
+      width: 40vw;
+
+      //position: fixed;
+      //background-color: red;
+      .rotate-right{
+
+        opacity: 0.5;
+        //margin-right: 0px;
+        top: 20vh;
+        height:80vh;
+        width:40vw;
+        background-color: black;
+        transform: perspective(1vw) rotateY(-1deg);
+        button{
+
+          float: left;
+          height: 50%;
+          width: 50%;
+
+        }
+        img{
+          float: left;
+          height: 10vh;
+          width: 20vw;
+          float:left;
+          padding: 1vw;
+
+        }
+      }
+      //position: relative;
+      //display: inline-block;
+      //margin: auto;
+
+      // /* Safari */
+      //-webkit-transform: translate3d(0, 0, 60px) rotate3d(0, 1, 0, -60deg) scale3d(1, 1, 2); /* Chrome, Safari, Opera */
+      //-webkit-transform: translate3d(0, 0, 60px) rotate3d(0, 1, 0, -60deg) scale3d(1, 1, 2); /* Chrome, Safari, Opera */
+      //transform: perspective(px) rotateY(20deg);
+
+      //transform: rotateZ(-20deg);
+    }
+   /* .center-panel{
+      align: center;
+      width: 20vw;
+      height: 100vh;
+      background-color: pink;
+    }*/
+  }
+
+}
+
+
+@-webkit-keyframes left_bar_move_from_left {
+  0% {
+    left: -100vw;
+    top: 0px;
+  }
+  100% {
+    left: 0vw;
+    top: 0px;
+  }
+}

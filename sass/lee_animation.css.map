@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,iBAAiB;EACf,MAAM,EAAC,KAAK;EACZ,KAAK,EAAC,KAAK;EACX,KAAK,EAAC,KAAK",
+"sources": ["lee_animation.scss"],
+"names": [],
+"file": "lee_animation.css"
+}
