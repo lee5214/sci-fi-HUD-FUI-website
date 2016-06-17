@@ -1,8 +1,15 @@
 body{
-  background-color: black;
-  #MagicRing2{
+  .ringCirc{
+    overflow:hidden;
     position:relative;
-    //top:10vh;
-    margin: 0% auto;
+    width:100%;
+    height:50vh;
+    background-color: black;
+    #MagicRing2{
+      position:absolute;
+      //top:10vh;
+      margin: 5% auto;
+    }
   }
+
 }

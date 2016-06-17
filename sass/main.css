@@ -1,11 +1,18 @@
 body {
-  overflow: hidden; }
-  body #MagicRing {
-    position: fixed;
-    margin-top: 20%;
-    margin-left: 50%; }
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  background-color: #444444; }
+  body .RingCirc {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 40%;
+    top: 0px; }
+    body .RingCirc #MagicRing {
+      position: relative;
+      margin: 0 auto; }
   body .container {
-    background: #f0f5d8;
     /* .center-panel{
        align: center;
        width: 20vw;
@@ -15,28 +22,29 @@ body {
     body .container .left-panel {
       position: absolute;
       float: left;
-      top: 10vh;
+      top: 0vh;
       height: 90vh;
       left: 5vw;
       width: 40vw; }
       body .container .left-panel .rotate-left {
         transform-style: preserve-3d;
         background-color: rgba(100, 205, 205, 0.5);
-        margin-right: 0px;
+        margin-right: 0vw;
         position: relative;
-        top: 0vh;
-        left: 5vw;
+        top: 10vh;
+        left: -100vw;
         height: 80vh;
         width: 40vw;
-        transform: perspective(1vw) rotateY(0.8deg); }
+        transform: perspective(2vw) rotateY(1deg);
+        -webkit-animation: left_bar_move_from_left 1s linear 1s;
+        animation-fill-mode: forwards; }
         body .container .left-panel .rotate-left .play-area {
-          perspective-origin: bottom;
+          perspective-origin: center;
           height: 50%;
           width: 100%;
           left: -100vw;
           position: relative;
-          background-color: mediumpurple;
-          -webkit-animation: left_bar_move_from_left 2s linear 1s;
+          -webkit-animation: left_bar_move_from_left 3s linear 1s;
           animation-fill-mode: forwards; }
           body .container .left-panel .rotate-left .play-area img {
             position: relative;
@@ -53,24 +61,27 @@ body {
             -o-transition-property: -o-transform;
             transition-property: transform; }
         body .container .left-panel .rotate-left .play-area:hover img {
-          -webkit-transform: rotate3D(0, 3, 0, -0.7deg);
-          -moz-transform: rotate3D(0, 1, 0, -0.7deg);
-          -o-transform: rotate3D(0, 1, 0, -0.7deg); }
+          -webkit-transform: rotate3D(0, 3, 0, -0.9deg);
+          -moz-transform: rotate3D(0, 1, 0, -0.9deg);
+          -o-transform: rotate3D(0, 1, 0, -0.9deg); }
     body .container .right-panel {
       position: absolute;
       float: right;
-      top: 10vh;
+      top: 15vh;
       height: 90vh;
       right: 5vw;
       width: 40vw; }
       body .container .right-panel .rotate-right {
-        opacity: 0.5;
+        opacity: 1;
         top: 20vh;
         height: 80vh;
         width: 40vw;
-        background-color: black;
-        transform: perspective(1vw) rotateY(-1deg); }
+        perspective-origin: center;
+        transform: perspective(1vw) rotateY(0deg); }
         body .container .right-panel .rotate-right button {
+          background-color: transparent;
+          color: cornflowerblue;
+          font-size: 4vw;
           float: left;
           height: 50%;
           width: 50%; }

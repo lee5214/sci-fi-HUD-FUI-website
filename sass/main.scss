@@ -1,14 +1,22 @@
 
-
 body{
-  #MagicRing{
-    position:fixed;
-    //top:10vh;
-    margin-top:20%;
-    margin-left:50%;
+  //background-image: url("../resource/images/matrix.png"), url("../resource/images/city.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  .RingCirc{
+    position: relative;
+    overflow: hidden;
+    width:100%;
+    height:40%;
+    top:0px;
+    #MagicRing{
+      position:relative;
+      //top:10vh;
+      margin: 0 auto;
+    }
   }
   overflow: hidden;
-  //background-color:black;
+  background-color: #444444;
   .container{
     //display: inline-block;
     //background: red;
@@ -17,32 +25,38 @@ body{
 
     //perspective: 110px;
     //border: 4px solid #a2b058;
-    background: #f0f5d8;
+    //background: #f0f5d8;
     .left-panel{
+
       position:absolute;
       float: left;
-      top:10vh;
+      top:0vh;
       height: 90vh;
       left:5vw;
       width: 40vw;
         .rotate-left{
+
+          $rotate_left: 1deg;
+          //overflow: hidden; //img animation need
           transform-style: preserve-3d;//
           background-color: rgba(100,205,205,0.5);//parent elem's opacity = 0.5 while child elem's opacity = 1
-          margin-right: 0px;
+          margin-right: 0vw;
           position:relative;
-          top: 0vh;
-          left:5vw;
+          top: 10vh;
+          left:-100vw;
           height:80vh;
           width:40vw;
-          transform: perspective(1vw) rotateY(0.8deg);
+          transform: perspective(2vw) rotateY($rotate_left);
+          -webkit-animation: left_bar_move_from_left 1s linear 1s;
+          animation-fill-mode:forwards;
           .play-area{
-            perspective-origin: bottom;
+            perspective-origin: center;
             height: 50%;
             width: 100%;
             left: -100vw;
             position:relative;
-            background-color: mediumpurple;
-            -webkit-animation: left_bar_move_from_left 2s linear 1s;
+            //background-color: mediumpurple;
+            -webkit-animation: left_bar_move_from_left 3s linear 1s;
             animation-fill-mode:forwards;
             //transform: translate(100vw, 0);
             //transition-duration: 2s;
@@ -69,9 +83,9 @@ body{
             }
           }
           .play-area:hover img{
-            -webkit-transform:rotate3D(0,3,0,-0.7deg);
-            -moz-transform:rotate3D(0,1,0,-0.7deg);
-            -o-transform:rotate3D(0,1,0,-0.7deg);
+            -webkit-transform:rotate3D(0,3,0,-0.9deg);
+            -moz-transform:rotate3D(0,1,0,-0.9deg);
+            -o-transform:rotate3D(0,1,0,-0.9deg);
           }
         }
       //position: relative;
@@ -86,30 +100,34 @@ body{
       //transform: rotateZ(-20deg);
     }
     .right-panel{
+
       position:absolute;
       float: right;
-      top:10vh;
+      top:15vh;
       height: 90vh;
       right:5vw;
       width: 40vw;
-
       //position: fixed;
       //background-color: red;
       .rotate-right{
-
-        opacity: 0.5;
+        //background-image: url("../resource/images/matrix.png");
+        $rotate_right: -0deg;
+        //overflow: hidden;
+        opacity: 1;
         //margin-right: 0px;
         top: 20vh;
         height:80vh;
         width:40vw;
-        background-color: black;
-        transform: perspective(1vw) rotateY(-1deg);
+        //background-color: red;
+        perspective-origin: center;
+        transform: perspective(1vw) rotateY($rotate_right);
         button{
-
+          background-color: transparent;
+          color: cornflowerblue;
+          font-size: 4vw;
           float: left;
           height: 50%;
           width: 50%;
-
         }
         img{
           float: left;

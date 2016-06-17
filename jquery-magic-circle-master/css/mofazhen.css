@@ -1,7 +1,11 @@
-body {
+body .ringCirc {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 50vh;
   background-color: black; }
-  body #MagicRing2 {
-    position: relative;
-    margin: 0% auto; }
+  body .ringCirc #MagicRing2 {
+    position: absolute;
+    margin: 5% auto; }
 
 /*# sourceMappingURL=mofazhen.css.map */
