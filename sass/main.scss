@@ -3,7 +3,7 @@ body{
   //background-image: url("../resource/images/matrix.png"), url("../resource/images/city.png");
   background-color: black;
   overflow: hidden;
-  .RingCirc{
+ /* .RingCirc{
     position: relative;
     overflow: hidden;
     width:100%;
@@ -15,8 +15,13 @@ body{
       margin: 0 auto;
     }
   }
-
+  */
   .container{
+    position:relative;
+    width:90vw;
+    height:90vh;
+    margin: 0 auto;
+
     //display: inline-block;
     //background: red;
 
@@ -26,29 +31,33 @@ body{
     //border: 4px solid #a2b058;
     //background: #f0f5d8;
     .left-panel{
-
+      overflow: hidden;
       position:absolute;
       float: left;
-      top:0vh;
-      height: 90vh;
-      left:5vw;
-      width: 40vw;
+      top:60vh;
+      left:10vw;
+      height: 35vh;
+      width: 30vw;
         .rotate-left{
-
           $rotate_left: 1deg;
           //overflow: hidden; //img animation need
           transform-style: preserve-3d;//
-          background-color: rgba(100,205,205,0.5);//parent elem's opacity = 0.5 while child elem's opacity = 1
+          //background-color: rgba(100,205,205,0.5);//parent elem's opacity = 0.5 while child elem's opacity = 1
           margin-right: 0vw;
           position:relative;
           top: 10vh;
           left:-100vw;
-          height:80vh;
-          width:40vw;
+          height:100%;
+          width:100%;
           transform: perspective(2vw) rotateY($rotate_left);
           -webkit-animation: left_bar_move_from_left 1s linear 1s;
           animation-fill-mode:forwards;
           .play-area{
+            &:hover img{
+              -webkit-transform:rotate3D(0,3,0,-0.9deg);
+              -moz-transform:rotate3D(0,1,0,-0.9deg);
+              -o-transform:rotate3D(0,1,0,-0.9deg);
+            }
             perspective-origin: center;
             height: 100%;
             width: 100%;
@@ -65,7 +74,7 @@ body{
                 left: 0vw;
                 opacity: 1;
                 float: left;
-                height: 40%;
+                height: 30%;
                 width: 40%;
                 margin: 4%;
                 //transform: perspective(1vw) rotate3d(0, 0, 1, 10deg);
@@ -80,11 +89,7 @@ body{
                 transition-property: transform;
               }
           }
-          .play-area:hover img{
-            -webkit-transform:rotate3D(0,3,0,-0.9deg);
-            -moz-transform:rotate3D(0,1,0,-0.9deg);
-            -o-transform:rotate3D(0,1,0,-0.9deg);
-          }
+
         }
       //position: relative;
       //display: inline-block;
@@ -98,24 +103,35 @@ body{
       //transform: rotateZ(-20deg);
     }
     .right-panel{
-
       position:absolute;
       float: right;
-      top:15vh;
-      height: 90vh;
-      right:5vw;
-      width: 40vw;
+      top:20vh;
+      right:15vw;
+      height: 35vh;
+      width: 30vw;
       //position: fixed;
-      //background-color: red;
+      background-color: red;
+      opacity:0.9;
       .rotate-right{
+        &:hover{
+          -webkit-transform:rotate3D(0,1,0,4deg);
+          -moz-transform:rotate3D(0,1,0,4deg);
+          -o-transform:rotate3D(0,1,0,0.4deg);
+        }
+        -webkit-transition-duration: 2s;
+        -webkit-transition-property: -webkit-transform;
+        -moz-transition-property: -moz-transform;
+        -o-transition-property: -o-transform;
+        transition-property: transform;
         //background-image: url("../resource/images/matrix.png");
-        $rotate_right: -0deg;
+        $rotate_right: -2deg;
         //overflow: hidden;
         opacity: 1;
         //margin-right: 0px;
-        top: 20vh;
-        height:80vh;
-        width:40vw;
+        top: 10vh;
+        width:20vw;
+        height:20vh;
+        background: green;
         //background-color: red;
         perspective-origin: center;
         transform: perspective(1vw) rotateY($rotate_right);

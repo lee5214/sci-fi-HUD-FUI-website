@@ -1,16 +1,24 @@
 body {
   background-color: black;
-  overflow: hidden; }
-  body .RingCirc {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 40%;
-    top: 0px; }
-    body .RingCirc #MagicRing {
-      position: relative;
-      margin: 0 auto; }
+  overflow: hidden;
+  /* .RingCirc{
+     position: relative;
+     overflow: hidden;
+     width:100%;
+     height:40%;
+     top:0px;
+     #MagicRing{
+       position:relative;
+       //top:10vh;
+       margin: 0 auto;
+     }
+   }
+   */ }
   body .container {
+    position: relative;
+    width: 90vw;
+    height: 90vh;
+    margin: 0 auto;
     /* .center-panel{
        align: center;
        width: 20vw;
@@ -18,21 +26,21 @@ body {
        background-color: pink;
      }*/ }
     body .container .left-panel {
+      overflow: hidden;
       position: absolute;
       float: left;
-      top: 0vh;
-      height: 90vh;
-      left: 5vw;
-      width: 40vw; }
+      top: 60vh;
+      left: 10vw;
+      height: 35vh;
+      width: 30vw; }
       body .container .left-panel .rotate-left {
         transform-style: preserve-3d;
-        background-color: rgba(100, 205, 205, 0.5);
         margin-right: 0vw;
         position: relative;
         top: 10vh;
         left: -100vw;
-        height: 80vh;
-        width: 40vw;
+        height: 100%;
+        width: 100%;
         transform: perspective(2vw) rotateY(1deg);
         -webkit-animation: left_bar_move_from_left 1s linear 1s;
         animation-fill-mode: forwards; }
@@ -44,12 +52,16 @@ body {
           position: relative;
           -webkit-animation: left_bar_move_from_left 3s linear 1s;
           animation-fill-mode: forwards; }
+          body .container .left-panel .rotate-left .play-area:hover img {
+            -webkit-transform: rotate3D(0, 3, 0, -0.9deg);
+            -moz-transform: rotate3D(0, 1, 0, -0.9deg);
+            -o-transform: rotate3D(0, 1, 0, -0.9deg); }
           body .container .left-panel .rotate-left .play-area img {
             position: relative;
             left: 0vw;
             opacity: 1;
             float: left;
-            height: 40%;
+            height: 30%;
             width: 40%;
             margin: 4%;
             -webkit-transition-duration: 0.8s;
@@ -57,24 +69,32 @@ body {
             -moz-transition-property: -moz-transform;
             -o-transition-property: -o-transform;
             transition-property: transform; }
-        body .container .left-panel .rotate-left .play-area:hover img {
-          -webkit-transform: rotate3D(0, 3, 0, -0.9deg);
-          -moz-transform: rotate3D(0, 1, 0, -0.9deg);
-          -o-transform: rotate3D(0, 1, 0, -0.9deg); }
     body .container .right-panel {
       position: absolute;
       float: right;
-      top: 15vh;
-      height: 90vh;
-      right: 5vw;
-      width: 40vw; }
+      top: 20vh;
+      right: 15vw;
+      height: 35vh;
+      width: 30vw;
+      background-color: red;
+      opacity: 0.9; }
       body .container .right-panel .rotate-right {
+        -webkit-transition-duration: 2s;
+        -webkit-transition-property: -webkit-transform;
+        -moz-transition-property: -moz-transform;
+        -o-transition-property: -o-transform;
+        transition-property: transform;
         opacity: 1;
-        top: 20vh;
-        height: 80vh;
-        width: 40vw;
+        top: 10vh;
+        width: 20vw;
+        height: 20vh;
+        background: green;
         perspective-origin: center;
-        transform: perspective(1vw) rotateY(0deg); }
+        transform: perspective(1vw) rotateY(-2deg); }
+        body .container .right-panel .rotate-right:hover {
+          -webkit-transform: rotate3D(0, 1, 0, 4deg);
+          -moz-transform: rotate3D(0, 1, 0, 4deg);
+          -o-transform: rotate3D(0, 1, 0, 0.4deg); }
         body .container .right-panel .rotate-right button {
           text-shadow: 5px 5px 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
           background-color: transparent;
