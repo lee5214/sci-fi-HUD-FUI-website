@@ -1,8 +1,6 @@
 body {
-  background-size: cover;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  background-color: #444444; }
+  background-color: #334553;
+  overflow: hidden; }
   body .RingCirc {
     position: relative;
     overflow: hidden;
@@ -40,7 +38,7 @@ body {
         animation-fill-mode: forwards; }
         body .container .left-panel .rotate-left .play-area {
           perspective-origin: center;
-          height: 50%;
+          height: 100%;
           width: 100%;
           left: -100vw;
           position: relative;
@@ -51,10 +49,9 @@ body {
             left: 0vw;
             opacity: 1;
             float: left;
-            height: 40vh;
-            width: 20vw;
-            float: left;
-            padding: 1vw;
+            height: 40%;
+            width: 40%;
+            margin: 4%;
             -webkit-transition-duration: 0.8s;
             -webkit-transition-property: -webkit-transform;
             -moz-transition-property: -moz-transform;
@@ -79,6 +76,7 @@ body {
         perspective-origin: center;
         transform: perspective(1vw) rotateY(0deg); }
         body .container .right-panel .rotate-right button {
+          text-shadow: 5px 5px 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
           background-color: transparent;
           color: cornflowerblue;
           font-size: 4vw;
