@@ -1,7 +1,8 @@
 
 body{
   //background-image: url("../resource/images/matrix.png"), url("../resource/images/city.png");
-  background-color: #334553;
+  background-color: black;
+  overflow: hidden;
   .RingCirc{
     position: relative;
     overflow: hidden;
@@ -14,7 +15,7 @@ body{
       margin: 0 auto;
     }
   }
-  overflow: hidden;
+
   .container{
     //display: inline-block;
     //background: red;
