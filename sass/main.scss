@@ -1,7 +1,17 @@
-
+$liangqing : rgba(54, 207, 194, 0.5);
+$dot5: url(../resource/images/dot/dot_5.png);
+$dot10: url(../resource/images/dot/dot_10.png);
+$dot25: url(../resource/images/dot/dot_25.png);
+$dot50: url(../resource/images/dot/dot_50.png);
+#ship{
+  position: absolute;
+  top:50vh;
+  left:50vw;
+}
 body{
+  //z-index: -99;
   //background-image: url("../resource/images/matrix.png"), url("../resource/images/city.png");
-  background-color: black;
+  //background-color: gray;
   overflow: hidden;
  /* .RingCirc{
     position: relative;
@@ -16,14 +26,26 @@ body{
     }
   }
   */
+  .dot{
+    z-index: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    //margin: 10px 10px 0 0;
+    background: $dot25;
+  }
   .container{
-    position:relative;
-    width:90vw;
-    height:90vh;
+    //z-index: 100;
+    //display: block;
+    //position:relative;
+    width:100vw;
+    height:100vh;
     margin: 0 auto;
-
+    //overflow: hidden;
     //display: inline-block;
-    //background: red;
+    background: black;
 
     //margin-left: 0px;
 
@@ -34,25 +56,43 @@ body{
       overflow: hidden;
       position:absolute;
       float: left;
-      top:60vh;
-      left:10vw;
-      height: 35vh;
-      width: 30vw;
-        .rotate-left{
-          $rotate_left: 1deg;
+      left:5%;
+      height: 100%;
+      width: 50%;
+      //background:pink;
+        .rotate-left-top{
+          border: 1px solid $liangqing;
+          margin-top:10%;
+          width:70%;
+          height:30%;
+          //background-color: $liangqing;
+          opacity:1;
+          background-image: $dot5;
+        }
+        .rotate-left-bottom{
+          position: relative;
+          margin-top:10%;
+          //overflow: visible;
+          $rotate_left: 0.7deg;
           //overflow: hidden; //img animation need
           transform-style: preserve-3d;//
-          //background-color: rgba(100,205,205,0.5);//parent elem's opacity = 0.5 while child elem's opacity = 1
-          margin-right: 0vw;
-          position:relative;
-          top: 10vh;
-          left:-100vw;
-          height:100%;
-          width:100%;
-          transform: perspective(2vw) rotateY($rotate_left);
-          -webkit-animation: left_bar_move_from_left 1s linear 1s;
+          background-color: rgba(100,205,205,0.2);//parent elem's opacity = 0.5 while child elem's opacity = 1
+          //margin-right: 20%;
+          //position:absolute;
+          //top: 50%;
+          //left:-100vw;
+          height:40%;
+          width:60%;
+          transform: translateZ(-1vw) perspective(1vw) rotateY($rotate_left);
+          -webkit-animation: left_bar_move_from_left 0.6s linear 0s;
           animation-fill-mode:forwards;
           .play-area{
+            background-img:$dot50;
+            overflow: visible;
+            border: 1px solid $liangqing;
+            transform-style: preserve-3d;
+            //background-color: rgba(100,205,205,0.4);
+            transform: translateX(10%)translateY(-10%)translateZ(0.1vw);
             &:hover img{
               -webkit-transform:rotate3D(0,3,0,-0.9deg);
               -moz-transform:rotate3D(0,1,0,-0.9deg);
@@ -61,22 +101,21 @@ body{
             perspective-origin: center;
             height: 100%;
             width: 100%;
-            left: -100vw;
+            margin: 0% 20%;
             position:relative;
             //background-color: mediumpurple;
-            -webkit-animation: left_bar_move_from_left 3s linear 1s;
-            animation-fill-mode:forwards;
+            //-webkit-animation: left_bar_move_from_left 3s linear 1s;
+            //animation-fill-mode:forwards;
             //transform: translate(100vw, 0);
             //transition-duration: 2s;
             //transition-timing-function: linear;
               img {
                 position: relative;
-                left: 0vw;
                 opacity: 1;
                 float: left;
-                height: 30%;
+                height: 40%;
                 width: 40%;
-                margin: 4%;
+                margin: 5%;
                 //transform: perspective(1vw) rotate3d(0, 0, 1, 10deg);
                 //transition-duration: 1s;
                 //transition-timing-function: linear;
@@ -105,14 +144,13 @@ body{
     .right-panel{
       position:absolute;
       float: right;
-      top:20vh;
-      right:15vw;
-      height: 35vh;
-      width: 30vw;
+      right:5%;
+      height: 100%;
+      width: 50%;
       //position: fixed;
-      background-color: red;
-      opacity:0.9;
-      .rotate-right{
+      background-color: $liangqing;
+      //opacity: 0.2;
+      .rotate-right-top{
         &:hover{
           -webkit-transform:rotate3D(0,1,0,4deg);
           -moz-transform:rotate3D(0,1,0,4deg);
@@ -131,7 +169,7 @@ body{
         top: 10vh;
         width:20vw;
         height:20vh;
-        background: green;
+        background: $liangqing;
         //background-color: red;
         perspective-origin: center;
         transform: perspective(1vw) rotateY($rotate_right);
@@ -153,6 +191,7 @@ body{
 
         }
       }
+      .rotate-right-bottom{}
       //position: relative;
       //display: inline-block;
       //margin: auto;
@@ -174,14 +213,17 @@ body{
 
 }
 
+/*****************************************************************************/
+
+/*****************************************************************************/
 
 @-webkit-keyframes left_bar_move_from_left {
   0% {
-    left: -100vw;
-    top: 0px;
+    left: -100%;
+    top: 0%;
   }
   100% {
-    left: 0vw;
-    top: 0px;
+    left: 0%;
+    top: 0%;
   }
 }
