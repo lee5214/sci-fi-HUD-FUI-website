@@ -1,8 +1,3 @@
-#ship {
-  position: absolute;
-  top: 50vh;
-  left: 50vw; }
-
 body {
   overflow: hidden;
   /* .RingCirc{
@@ -89,29 +84,36 @@ body {
             -o-transition-property: -o-transform;
             transition-property: transform; }
     body .container .right-panel {
-      position: absolute;
+      position: relative;
       float: right;
       right: 5%;
-      height: 100%;
-      width: 50%;
-      background-color: rgba(54, 207, 194, 0.5); }
+      width: 50%; }
       body .container .right-panel .rotate-right-top {
+        position: relative;
+        float: right;
+        top: 10%;
+        right: 0%;
+        width: 21vw;
+        height: 17vw;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        border: 2px solid #36cfc2;
+        background: transparent;
+        perspective-origin: bottom right;
+        transform: perspective(100px) rotate3d(1, 1, 0 -80deg);
         -webkit-transition-duration: 2s;
         -webkit-transition-property: -webkit-transform;
         -moz-transition-property: -moz-transform;
         -o-transition-property: -o-transform;
-        transition-property: transform;
-        opacity: 1;
-        top: 10vh;
-        width: 20vw;
-        height: 20vh;
-        background: rgba(54, 207, 194, 0.5);
-        perspective-origin: center;
-        transform: perspective(1vw) rotateY(-2deg); }
+        transition-property: transform; }
         body .container .right-panel .rotate-right-top:hover {
-          -webkit-transform: rotate3D(0, 1, 0, 4deg);
-          -moz-transform: rotate3D(0, 1, 0, 4deg);
-          -o-transform: rotate3D(0, 1, 0, 0.4deg); }
+          -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+          -webkit-transform: rotate3D(1, 1, 0, 60deg);
+          -moz-transform: rotate3D(1, 1, 0, 60deg);
+          -o-transform: rotate3D(1, 1, 0, 0.6deg);
+          transform-fill-mode: forwards; }
         body .container .right-panel .rotate-right-top button {
           text-shadow: 5px 5px 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
           background-color: transparent;

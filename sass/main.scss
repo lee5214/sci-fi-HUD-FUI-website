@@ -1,12 +1,12 @@
 $liangqing : rgba(54, 207, 194, 0.5);
+$liangqing_quan : rgba(54, 207, 194, 1);
 $dot5: url(../resource/images/dot/dot_5.png);
 $dot10: url(../resource/images/dot/dot_10.png);
 $dot25: url(../resource/images/dot/dot_25.png);
 $dot50: url(../resource/images/dot/dot_50.png);
-#ship{
-  position: absolute;
-  top:50vh;
-  left:50vw;
+
+*{
+
 }
 body{
   //z-index: -99;
@@ -142,37 +142,46 @@ body{
       //transform: rotateZ(-20deg);
     }
     .right-panel{
-      position:absolute;
+      position:relative;
       float: right;
       right:5%;
-      height: 100%;
       width: 50%;
+      //border: 1px $liangqing solid ;
       //position: fixed;
-      background-color: $liangqing;
+      //background-color: $liangqing;
       //opacity: 0.2;
       .rotate-right-top{
-        &:hover{
-          -webkit-transform:rotate3D(0,1,0,4deg);
-          -moz-transform:rotate3D(0,1,0,4deg);
-          -o-transform:rotate3D(0,1,0,0.4deg);
-        }
+        //background-image: url("../resource/images/matrix.png");
+        position: relative;
+        $rotate_right: -15deg;
+        //overflow: hidden;
+        //margin-right: 0px;
+        float: right;
+        top: 10%;
+        right:0%;
+        width:21vw;
+        height:17vw;
+        -webkit-border-radius:50%;
+        -moz-border-radius:50%;
+        border-radius:50%;
+        border:2px solid $liangqing_quan;
+        background: transparent;
+        perspective-origin: bottom right;
+        transform: perspective(100px) rotate3d(1,1,0 -80deg) ;
         -webkit-transition-duration: 2s;
         -webkit-transition-property: -webkit-transform;
         -moz-transition-property: -moz-transform;
         -o-transition-property: -o-transform;
         transition-property: transform;
-        //background-image: url("../resource/images/matrix.png");
-        $rotate_right: -2deg;
-        //overflow: hidden;
-        opacity: 1;
-        //margin-right: 0px;
-        top: 10vh;
-        width:20vw;
-        height:20vh;
-        background: $liangqing;
-        //background-color: red;
-        perspective-origin: center;
-        transform: perspective(1vw) rotateY($rotate_right);
+        &:hover{
+          -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+          -webkit-transform: translateX(100px) rotate3D(1,1,0,60deg);
+          -moz-transform:rotate3D(1,1,0,60deg);
+          -o-transform:rotate3D(1,1,0,0.60deg);
+          transform-fill-mode:forwards;
+        }
+
         button{
           text-shadow: 5px 5px 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
           background-color: transparent;
