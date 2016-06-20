@@ -1,10 +1,6 @@
 $liangqing : rgba(54, 207, 194, 0.5);
 $liangqing_quan : rgba(54, 207, 194, 1);
-body {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  /* .RingCirc{
+/* .RingCirc{
      position: relative;
      overflow: hidden;
      width:100%;
@@ -17,43 +13,94 @@ body {
      }
    }
    */
-  .container {
-    .row {
-      width: 95%;
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: black;
+  position:relative;
+
+  .panel_bottom_1 {
+    position: relative;
+    bottom: 25%;
+    left: 10%;
+    //overflow: visible;
+    $rotate_left: 0.7deg;
+    //overflow: hidden; //img animation need
+    //transform-style: preserve-3d; //
+    background-color: rgba(100, 205, 205, 0.2); //parent elem's opacity = 0.5 while child elem's opacity = 1
+    height: 20%;
+    width: 20%;
+    transform:perspective(1vw) rotateX(0.5deg)rotateY(1deg)rotateZ(-2deg);
+    //-webkit-animation: left_bar_move_from_left 0.6s linear 0s;
+    animation-fill-mode: forwards;
+    .play-area {
+      overflow: visible;
+      border: 1px solid $liangqing;
+      border-radius: 11%;
+      transform-style: preserve-3d;
+      transform: translateX(20%) translateY(-10%) translateZ(0.1vw);
+      perspective-origin: center;
       height: 100%;
-      margin: 0 auto;
+      width: 100%;
+      margin: 0% 4%;
+      position: relative;
+
+      &:hover img {
+        transform: rotateX(-0.7deg) rotateY(-0.3deg) rotateZ(1.5deg);
+        /*-webkit-transform: rotate3D(0, 3, 0, -0.9deg);
+        -moz-transform: rotate3D(0, 1, 0, -0.9deg);
+        -o-transform: rotate3D(0, 1, 0, -0.9deg);*/
+      }
+
+      //background-color: mediumpurple;
+      //-webkit-animation: left_bar_move_from_left 3s linear 1s;
+      //animation-fill-mode:forwards;
+      //transform: translate(100vw, 0);
+      //transition-duration: 2s;
+      //transition-timing-function: linear;
+      img {
+        position: relative;
+        opacity: 1;
+        height: 40%;
+        width: 40%;
+        left: 4%;
+        margin: 3%;
+        //transform: perspective(1vw) rotate3d(0, 0, 1, 10deg);
+        //transition-duration: 1s;
+        //transition-timing-function: linear;
+
+        //transform: translate3d(0px, 0px, 0px)      add animation later
+        -webkit-transition-duration: 0.8s;
+        -webkit-transition-property: -webkit-transform;
+        -moz-transition-property: -moz-transform;
+        -o-transition-property: -o-transform;
+        transition-property: transform;
+      }
     }
-    //z-index: 100;
-    //display: block;
-    //position:relative;
-    width: 100vw;
+
+  }
+  .container {
+    background-color: $liangqing;
+    width: 80vw;
     height: 100vh;
     margin: 0 auto;
-    //overflow: hidden;
-    //display: inline-block;
-    background-color: black;
-
-    //margin-left: 0px;
-
-    //perspective: 110px;
-    //border: 4px solid #a2b058;
-    //background: #f0f5d8;
-
-    .left-panel {
-
-      position: relative;
-      float: left;
-      top: 10%;
-      left: 5%;
-      height: 100%;
-      width: 40%;
-
-      //background:pink;
+    transform-style: preserve-3d;
+    perspective: 1200px;//12in;
+    .left-panel{
+      transform-style: preserve-3d;
+      position: absolute;
+      top:30%;
+      left:30%;
+      width:40%;
+      height:40%;
+    }
+    .left-panel{
       .rotate-left-top {
-        transform-style: preserve-3d;
+        //transform-style: preserve-3d;
         border: 1px solid $liangqing;
         margin: 0% 0 0 10%;
-        width: 60%;
+        width: 160%;
         height: 30%;
         //background-color: $liangqing;
         opacity: 1;
@@ -69,66 +116,22 @@ body {
         animation-fill-mode: forwards;
 
       }
-      .rotate-left-bottom {
-        position: relative;
-        margin: 10% 0 0 10%;
-        //overflow: visible;
-        $rotate_left: 0.7deg;
-        //overflow: hidden; //img animation need
-        transform-style: preserve-3d; //
-        background-color: rgba(100, 205, 205, 0.2); //parent elem's opacity = 0.5 while child elem's opacity = 1
-        height: 40%;
-        width: 60%;
-        transform:perspective(1vw) rotateX(0.5deg)rotateY(1deg)rotateZ(-2deg);
-        -webkit-animation: left_bar_move_from_left 0.6s linear 0s;
-        animation-fill-mode: forwards;
-        .play-area {
-          overflow: visible;
-          border: 1px solid $liangqing;
-          border-radius: 11%;
-          transform-style: preserve-3d;
-          //background-color: rgba(100,205,205,0.4);
-          transform: translateX(20%) translateY(-10%) translateZ(0.1vw);
-          perspective-origin: center;
-          height: 100%;
-          width: 100%;
-          margin: 0% 4%;
-          position: relative;
 
-          &:hover img {
-            transform: rotateX(-0.7deg) rotateY(-0.3deg) rotateZ(1.5deg);
-            /*-webkit-transform: rotate3D(0, 3, 0, -0.9deg);
-            -moz-transform: rotate3D(0, 1, 0, -0.9deg);
-            -o-transform: rotate3D(0, 1, 0, -0.9deg);*/
-          }
+    }
+    .panel2{}
+    .panel3{}
+    .left-panel {
 
-          //background-color: mediumpurple;
-          //-webkit-animation: left_bar_move_from_left 3s linear 1s;
-          //animation-fill-mode:forwards;
-          //transform: translate(100vw, 0);
-          //transition-duration: 2s;
-          //transition-timing-function: linear;
-          img {
-            position: relative;
-            opacity: 1;
-            height: 40%;
-            width: 40%;
-            left: 4%;
-            margin: 3%;
-            //transform: perspective(1vw) rotate3d(0, 0, 1, 10deg);
-            //transition-duration: 1s;
-            //transition-timing-function: linear;
+      position: relative;
+      float: left;
+      top: 10%;
+      left: 5%;
+      height: 100%;
+      width: 40%;
 
-            //transform: translate3d(0px, 0px, 0px)      add animation later
-            -webkit-transition-duration: 0.8s;
-            -webkit-transition-property: -webkit-transform;
-            -moz-transition-property: -moz-transform;
-            -o-transition-property: -o-transform;
-            transition-property: transform;
-          }
-        }
+      //background:pink;
 
-      }
+
       //position: relative;
       //display: inline-block;
       //margin: auto;
