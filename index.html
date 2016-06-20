@@ -2,13 +2,15 @@
 <html>
 <head>
     <title>LoLoLoLo</title>
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="viewport" content="width=device-width, initial-scale=0, maximum-scale=0.0, minimum-scale=0.0, user-scalable=no, target-densityDpi=device-dpi">
     <!-- Bootstrap -->
+    <link href="sass/normalize.css" rel="stylesheet" media="screen">
     <link href="sass/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="sass/main.css" rel="stylesheet" media="screen">
-    <link href="sass/yibiao.css" rel="stylesheet">
     <link href="sass/side_bar.css" rel="stylesheet">
-    <link href="sass/panel.css" rel="stylesheet">
+    <link href="sass/border_box.css" rel="stylesheet">
+    <link href="sass/small_ui.css" rel="stylesheet">
+    <link href="sass/eye_panel.css" rel="stylesheet">
     <!--<link href="good_parts/side_bar/side_bar.css" rel="stylesheet" media="screen">-->
     <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script><!--可以去掉吧-->
     <script src="js/jquery.lettering.js"></script>
@@ -16,34 +18,14 @@
 </head>
 <body>
 <!--<div class="RingCirc"><div id="MagicRing"></div></div>-->
-<div class="container">
+<div class="container bg-dot-50">
+
     <div class="row">
-        <div class="dot"></div><!--mask-->
         <div class="left-panel">
             <div class="rotate-left-top">
-                <div id="b1">
-                    <span class="b11"></span>
-                    <span class="b12"></span>
-                    <span class="b13"></span>
-                    <span class="b14"></span>
-                    <span class="b15"></span>
-                    <span class="b16"></span>
-                    <span class="b17"></span>
-                    <span class="b18"></span>
-                    <span class="b19"></span>
-                    <span class="b110"></span>
-                    <span class="b12"></span>
-                    <span class="b13"></span>
-                    <span class="b14"></span>
-                    <span class="b15"></span>
-                    <span class="b16"></span>
-                    <span class="b17"></span>
-                    <span class="b18"></span>
-                    <span class="b19"></span>
-                    <span class="b110"></span>
-                </div>
+                <div class="border_box"></div>
             </div>
-            <div class="rotate-left-bottom">
+            <div class="rotate-left-bottom bg-dot-5">
                 <div class="play-area">
                     <img src="resource/images/uisample.jpg">
                     <img src="resource/images/xiong.gif">
@@ -54,7 +36,7 @@
         </div>
         <div class="right-panel">
 
-            <div class="rotate-right-top">
+            <div class="eye">
                 <div id="eye">
                     <div id="figure">
                         <div id="a7">
@@ -131,10 +113,7 @@
                         <div id="f4">
                             <div id="f41"></div>
                             <div id="f42"></div>
-                            <div id="f43" class="f431"></div>
-                            <div id="f43" class="f432"></div>
-                            <div id="f43" class="f433"></div>
-                            <div id="f43" class="f434"></div>
+
                         </div>
 
                         <div id="f5"><span class="f51"
@@ -179,7 +158,7 @@
         <div class="expand leftside">
             <svg viewBox="0 0 62.5 866">
                 <path class="st0" d="M17.5,0.5H36v141l-10,10v560l10,10v144H17.5"
-                      style="fill-opacity:0;transition-delay: 0s; -webkit-transition-delay: 0s; stroke-dashoffset: 910.284301757813px; stroke-dasharray: 910.284301757813px;"></path>
+                      style="fill-opacity:0;transition-delay: 0s; -webkit-transition-delay: 0s; stroke-dashoffset: 910.284301757813px; stroke-dasharray: 910.284301757813px; vector-effect: non-scaling-stroke"></path>
                 <path class="st3" d="M43,723v142.5h19.5"
                       style="fill-opacity:0;transition-delay: 0.05s; -webkit-transition-delay: 0.05s; stroke-dashoffset: 162px; stroke-dasharray: 162px;"></path>
                 <path class="st3" d="M43,143V0.5h19.5"
@@ -214,15 +193,13 @@
                       style="fill-opacity:0;transition-delay: 0.55s; -webkit-transition-delay: 0.55s; stroke-dashoffset: 88px; stroke-dasharray: 88px;"></path>
             </svg>
         </div>
-
     </div>
-
 </div>
 
 
 <script src="js/jquery-3.0.0.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script type="text/javascript">
+<!--<script type="text/javascript">
     $(document).ready(function() {
         $('#MagicRing').magicring({font : "resource/font/MagicRing.ttf" , spacing : 300, _3dX : 1, _3dY: 0, _3dZ:0, _3dDeg:0 });
         //$('#MagicRing2').magicring({font : "resource/font/MagicRing.ttf" , spacing : 300, _3dX : -1, _3dY: 1, _3dZ: 0, _3dDeg: 60 });
@@ -231,6 +208,5 @@
 <!--side bar dependency-->
 <script src="good_parts/side_bar/greensock_plugin.js"></script>
 <script src="good_parts/side_bar/side_bar.js"></script>
-
 </body>
 </html>

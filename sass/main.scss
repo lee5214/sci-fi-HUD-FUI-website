@@ -1,17 +1,12 @@
 $liangqing : rgba(54, 207, 194, 0.5);
 $liangqing_quan : rgba(54, 207, 194, 1);
-$dot5: url(../resource/images/dot/dot_5.png);
-$dot10: url(../resource/images/dot/dot_10.png);
-$dot25: url(../resource/images/dot/dot_25.png);
-$dot50: url(../resource/images/dot/dot_50.png);
 
-*{
-
-}
 body{
   //z-index: -99;
   //background-image: url("../resource/images/matrix.png"), url("../resource/images/city.png");
   //background-color: gray;
+  width:100vw;
+  height:100vh;
   overflow: hidden;
  /* .RingCirc{
     position: relative;
@@ -26,26 +21,20 @@ body{
     }
   }
   */
-  .dot{
-    z-index: 0;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    //margin: 10px 10px 0 0;
-    background: $dot25;
-  }
   .container{
+    .row{
+      width:100%;
+      height:100%;
+    }
     //z-index: 100;
     //display: block;
     //position:relative;
-    width:100vw;
-    height:100vh;
+    width:100%;
+    height:100%;
     margin: 0 auto;
     //overflow: hidden;
     //display: inline-block;
-    background: black;
+    background-color: black;
 
     //margin-left: 0px;
 
@@ -54,20 +43,21 @@ body{
     //background: #f0f5d8;
     .left-panel{
       overflow: hidden;
-      position:absolute;
+      position:relative;
       float: left;
+      top:10%;
       left:5%;
       height: 100%;
-      width: 50%;
+      width: 40%;
       //background:pink;
         .rotate-left-top{
           border: 1px solid $liangqing;
           margin-top:10%;
-          width:70%;
+          width:100%;
           height:30%;
           //background-color: $liangqing;
           opacity:1;
-          background-image: $dot5;
+
         }
         .rotate-left-bottom{
           position: relative;
@@ -77,19 +67,15 @@ body{
           //overflow: hidden; //img animation need
           transform-style: preserve-3d;//
           background-color: rgba(100,205,205,0.2);//parent elem's opacity = 0.5 while child elem's opacity = 1
-          //margin-right: 20%;
-          //position:absolute;
-          //top: 50%;
-          //left:-100vw;
           height:40%;
           width:60%;
           transform: translateZ(-1vw) perspective(1vw) rotateY($rotate_left);
           -webkit-animation: left_bar_move_from_left 0.6s linear 0s;
           animation-fill-mode:forwards;
           .play-area{
-            background-img:$dot50;
             overflow: visible;
             border: 1px solid $liangqing;
+            border-radius:14%;
             transform-style: preserve-3d;
             //background-color: rgba(100,205,205,0.4);
             transform: translateX(10%)translateY(-10%)translateZ(0.1vw);
@@ -101,7 +87,7 @@ body{
             perspective-origin: center;
             height: 100%;
             width: 100%;
-            margin: 0% 20%;
+            margin: 0% 14%;
             position:relative;
             //background-color: mediumpurple;
             //-webkit-animation: left_bar_move_from_left 3s linear 1s;
@@ -115,7 +101,7 @@ body{
                 float: left;
                 height: 40%;
                 width: 40%;
-                margin: 5%;
+                margin: 4% 0 0 6%;
                 //transform: perspective(1vw) rotate3d(0, 0, 1, 10deg);
                 //transition-duration: 1s;
                 //transition-timing-function: linear;
@@ -142,17 +128,19 @@ body{
       //transform: rotateZ(-20deg);
     }
     .right-panel{
+      overflow: hidden;
       position:relative;
       float: right;
+      top:10%;
       right:5%;
-      width: 50%;
+      height: 80%;
+      width: 40%;
       //border: 1px $liangqing solid ;
       //position: fixed;
       //background-color: $liangqing;
       //opacity: 0.2;
-      .rotate-right-top{
+      .eye{
         //background-image: url("../resource/images/matrix.png");
-        position: relative;
         $rotate_right: -15deg;
         //overflow: hidden;
         //margin-right: 0px;
@@ -223,7 +211,36 @@ body{
 }
 
 /*****************************************************************************/
+.dot{
+  z-index: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  //margin: 10px 10px 0 0;
+}
 
+$dot5: url(../resource/images/dot/dot_5.png);
+$dot10: url(../resource/images/dot/dot_10.png);
+$dot25: url(../resource/images/dot/dot_25.png);
+$dot50: url(../resource/images/dot/dot_50.png);
+.bg-dot-5{
+  background-image: $dot5;
+}
+.bg-dot-25{
+  z-index: 1;
+  background-image: $dot25 !important;
+}
+.bg-dot-50{
+  z-index: 1;
+  //position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: $dot10;
+}
 /*****************************************************************************/
 
 @-webkit-keyframes left_bar_move_from_left {
@@ -236,3 +253,6 @@ body{
     top: 0%;
   }
 }
+
+
+
