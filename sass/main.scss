@@ -23,14 +23,15 @@ body{
   */
   .container{
     .row{
-      width:100%;
+      width:95%;
       height:100%;
+      margin:0 auto;
     }
     //z-index: 100;
     //display: block;
     //position:relative;
-    width:100%;
-    height:100%;
+    width:100vw;
+    height:100vh;
     margin: 0 auto;
     //overflow: hidden;
     //display: inline-block;
@@ -50,7 +51,8 @@ body{
       height: 100%;
       width: 40%;
       //background:pink;
-        .rotate-left-top{
+       .rotate-left-top{
+          transform-style: preserve-3d;
           border: 1px solid $liangqing;
           margin-top:10%;
           width:100%;
@@ -98,10 +100,10 @@ body{
               img {
                 position: relative;
                 opacity: 1;
-                float: left;
                 height: 40%;
                 width: 40%;
-                margin: 4% 0 0 6%;
+                left:4%;
+                margin:3%;
                 //transform: perspective(1vw) rotate3d(0, 0, 1, 10deg);
                 //transition-duration: 1s;
                 //transition-timing-function: linear;

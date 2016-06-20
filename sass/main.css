@@ -16,8 +16,8 @@ body {
    }
    */ }
   body .container {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     margin: 0 auto;
     background-color: black;
     /* .center-panel{
@@ -27,8 +27,9 @@ body {
        background-color: pink;
      }*/ }
     body .container .row {
-      width: 100%;
-      height: 100%; }
+      width: 95%;
+      height: 100%;
+      margin: 0 auto; }
     body .container .left-panel {
       overflow: hidden;
       position: relative;
@@ -38,6 +39,7 @@ body {
       height: 100%;
       width: 40%; }
       body .container .left-panel .rotate-left-top {
+        transform-style: preserve-3d;
         border: 1px solid rgba(54, 207, 194, 0.5);
         margin-top: 10%;
         width: 100%;
@@ -71,10 +73,10 @@ body {
           body .container .left-panel .rotate-left-bottom .play-area img {
             position: relative;
             opacity: 1;
-            float: left;
             height: 40%;
             width: 40%;
-            margin: 4% 0 0 6%;
+            left: 4%;
+            margin: 3%;
             -webkit-transition-duration: 0.8s;
             -webkit-transition-property: -webkit-transform;
             -moz-transition-property: -moz-transform;
