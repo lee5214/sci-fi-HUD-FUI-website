@@ -1,37 +1,33 @@
 $liangqing : rgba(54, 207, 194, 0.5);
 $liangqing_quan : rgba(54, 207, 194, 1);
-
-body{
-  //z-index: -99;
-  //background-image: url("../resource/images/matrix.png"), url("../resource/images/city.png");
-  //background-color: gray;
-  width:100vw;
-  height:100vh;
+body {
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
- /* .RingCirc{
-    position: relative;
-    overflow: hidden;
-    width:100%;
-    height:40%;
-    top:0px;
-    #MagicRing{
-      position:relative;
-      //top:10vh;
+  /* .RingCirc{
+     position: relative;
+     overflow: hidden;
+     width:100%;
+     height:40%;
+     top:0px;
+     #MagicRing{
+       position:relative;
+       //top:10vh;
+       margin: 0 auto;
+     }
+   }
+   */
+  .container {
+    .row {
+      width: 95%;
+      height: 100%;
       margin: 0 auto;
-    }
-  }
-  */
-  .container{
-    .row{
-      width:95%;
-      height:100%;
-      margin:0 auto;
     }
     //z-index: 100;
     //display: block;
     //position:relative;
-    width:100vw;
-    height:100vh;
+    width: 100vw;
+    height: 100vh;
     margin: 0 auto;
     //overflow: hidden;
     //display: inline-block;
@@ -42,82 +38,97 @@ body{
     //perspective: 110px;
     //border: 4px solid #a2b058;
     //background: #f0f5d8;
-    .left-panel{
-      overflow: hidden;
-      position:relative;
+
+    .left-panel {
+
+      position: relative;
       float: left;
-      top:10%;
-      left:5%;
+      top: 10%;
+      left: 5%;
       height: 100%;
       width: 40%;
+
       //background:pink;
-       .rotate-left-top{
-          transform-style: preserve-3d;
+      .rotate-left-top {
+        transform-style: preserve-3d;
+        border: 1px solid $liangqing;
+        margin: 0% 0 0 10%;
+        width: 60%;
+        height: 30%;
+        //background-color: $liangqing;
+        opacity: 1;
+        position: relative;
+        //overflow: visible;
+        $rotate_left: 0.7deg;
+        //overflow: hidden; //img animation need
+        transform-style: preserve-3d; //
+        background-color: rgba(100, 205, 205, 0.2); //parent elem's opacity = 0.5 while child elem's opacity = 1
+        perspective-origin: bottom right;
+        transform:  perspective(1vw) rotateX(-0.8deg)rotateY(0.9deg)rotateZ(5deg)  ;
+        -webkit-animation: left_bar_move_from_left 0.6s linear 0s;
+        animation-fill-mode: forwards;
+
+      }
+      .rotate-left-bottom {
+        position: relative;
+        margin: 10% 0 0 10%;
+        //overflow: visible;
+        $rotate_left: 0.7deg;
+        //overflow: hidden; //img animation need
+        transform-style: preserve-3d; //
+        background-color: rgba(100, 205, 205, 0.2); //parent elem's opacity = 0.5 while child elem's opacity = 1
+        height: 40%;
+        width: 60%;
+        transform:perspective(1vw) rotateX(0.5deg)rotateY(1deg)rotateZ(-2deg);
+        -webkit-animation: left_bar_move_from_left 0.6s linear 0s;
+        animation-fill-mode: forwards;
+        .play-area {
+          overflow: visible;
           border: 1px solid $liangqing;
-          margin-top:10%;
-          width:100%;
-          height:30%;
-          //background-color: $liangqing;
-          opacity:1;
-
-        }
-        .rotate-left-bottom{
+          border-radius: 11%;
+          transform-style: preserve-3d;
+          //background-color: rgba(100,205,205,0.4);
+          transform: translateX(20%) translateY(-10%) translateZ(0.1vw);
+          perspective-origin: center;
+          height: 100%;
+          width: 100%;
+          margin: 0% 4%;
           position: relative;
-          margin-top:10%;
-          //overflow: visible;
-          $rotate_left: 0.7deg;
-          //overflow: hidden; //img animation need
-          transform-style: preserve-3d;//
-          background-color: rgba(100,205,205,0.2);//parent elem's opacity = 0.5 while child elem's opacity = 1
-          height:40%;
-          width:60%;
-          transform: translateZ(-1vw) perspective(1vw) rotateY($rotate_left);
-          -webkit-animation: left_bar_move_from_left 0.6s linear 0s;
-          animation-fill-mode:forwards;
-          .play-area{
-            overflow: visible;
-            border: 1px solid $liangqing;
-            border-radius:14%;
-            transform-style: preserve-3d;
-            //background-color: rgba(100,205,205,0.4);
-            transform: translateX(10%)translateY(-10%)translateZ(0.1vw);
-            &:hover img{
-              -webkit-transform:rotate3D(0,3,0,-0.9deg);
-              -moz-transform:rotate3D(0,1,0,-0.9deg);
-              -o-transform:rotate3D(0,1,0,-0.9deg);
-            }
-            perspective-origin: center;
-            height: 100%;
-            width: 100%;
-            margin: 0% 14%;
-            position:relative;
-            //background-color: mediumpurple;
-            //-webkit-animation: left_bar_move_from_left 3s linear 1s;
-            //animation-fill-mode:forwards;
-            //transform: translate(100vw, 0);
-            //transition-duration: 2s;
-            //transition-timing-function: linear;
-              img {
-                position: relative;
-                opacity: 1;
-                height: 40%;
-                width: 40%;
-                left:4%;
-                margin:3%;
-                //transform: perspective(1vw) rotate3d(0, 0, 1, 10deg);
-                //transition-duration: 1s;
-                //transition-timing-function: linear;
 
-                //transform: translate3d(0px, 0px, 0px)      add animation later
-                -webkit-transition-duration: 0.8s;
-                -webkit-transition-property: -webkit-transform;
-                -moz-transition-property: -moz-transform;
-                -o-transition-property: -o-transform;
-                transition-property: transform;
-              }
+          &:hover img {
+            transform: rotateX(-0.7deg) rotateY(-0.3deg) rotateZ(1.5deg);
+            /*-webkit-transform: rotate3D(0, 3, 0, -0.9deg);
+            -moz-transform: rotate3D(0, 1, 0, -0.9deg);
+            -o-transform: rotate3D(0, 1, 0, -0.9deg);*/
           }
 
+          //background-color: mediumpurple;
+          //-webkit-animation: left_bar_move_from_left 3s linear 1s;
+          //animation-fill-mode:forwards;
+          //transform: translate(100vw, 0);
+          //transition-duration: 2s;
+          //transition-timing-function: linear;
+          img {
+            position: relative;
+            opacity: 1;
+            height: 40%;
+            width: 40%;
+            left: 4%;
+            margin: 3%;
+            //transform: perspective(1vw) rotate3d(0, 0, 1, 10deg);
+            //transition-duration: 1s;
+            //transition-timing-function: linear;
+
+            //transform: translate3d(0px, 0px, 0px)      add animation later
+            -webkit-transition-duration: 0.8s;
+            -webkit-transition-property: -webkit-transform;
+            -moz-transition-property: -moz-transform;
+            -o-transition-property: -o-transform;
+            transition-property: transform;
+          }
         }
+
+      }
       //position: relative;
       //display: inline-block;
       //margin: auto;
@@ -129,68 +140,43 @@ body{
 
       //transform: rotateZ(-20deg);
     }
-    .right-panel{
+    .right-panel {
       overflow: hidden;
-      position:relative;
-      float: right;
-      top:10%;
-      right:5%;
-      height: 80%;
+      position: relative;
+      top: 10%;
+      right: 5%;
+      height: 100%;
       width: 40%;
       //border: 1px $liangqing solid ;
       //position: fixed;
-      //background-color: $liangqing;
+      background-color: $liangqing;
       //opacity: 0.2;
-      .eye{
-        //background-image: url("../resource/images/matrix.png");
-        $rotate_right: -15deg;
-        //overflow: hidden;
-        //margin-right: 0px;
-        float: right;
-        top: 10%;
-        right:0%;
-        width:21vw;
-        height:17vw;
-        -webkit-border-radius:50%;
-        -moz-border-radius:50%;
-        border-radius:50%;
-        border:2px solid $liangqing_quan;
-        background: transparent;
-        perspective-origin: bottom right;
-        transform: perspective(100px) rotate3d(1,1,0 -80deg) ;
-        -webkit-transition-duration: 2s;
-        -webkit-transition-property: -webkit-transform;
-        -moz-transition-property: -moz-transform;
-        -o-transition-property: -o-transform;
-        transition-property: transform;
-        &:hover{
-          -webkit-transition-timing-function: ease-in;
-          transition-timing-function: ease-in;
-          -webkit-transform: translateX(100px) rotate3D(1,1,0,60deg);
-          -moz-transform:rotate3D(1,1,0,60deg);
-          -o-transform:rotate3D(1,1,0,0.60deg);
-          transform-fill-mode:forwards;
-        }
-
-        button{
-          text-shadow: 5px 5px 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
-          background-color: transparent;
-          color: cornflowerblue;
-          font-size: 4vw;
-          float: left;
-          height: 50%;
-          width: 50%;
-        }
-        img{
-          float: left;
-          height: 10vh;
-          width: 20vw;
-          float:left;
-          padding: 1vw;
-
-        }
+      .rotate-right-bottom {
+        margin: 50% 0 0 50%;
+        width: 350px;
+        height: 300px;
+        background-color: transparent;
+        background-image: url(../resource/images/earth.png);
+        background-size:cover;
       }
-      .rotate-right-bottom{}
+      button {
+        text-shadow: 5px 5px 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+        background-color: transparent;
+        color: cornflowerblue;
+        font-size: 4vw;
+        float: left;
+        height: 50%;
+        width: 50%;
+      }
+      img {
+        float: left;
+        height: 10vh;
+        width: 20vw;
+        padding: 1vw;
+
+      }
+
+
       //position: relative;
       //display: inline-block;
       //margin: auto;
@@ -202,57 +188,57 @@ body{
 
       //transform: rotateZ(-20deg);
     }
-   /* .center-panel{
-      align: center;
-      width: 20vw;
-      height: 100vh;
-      background-color: pink;
-    }*/
+    /* .center-panel{
+       align: center;
+       width: 20vw;
+       height: 100vh;
+       background-color: pink;
+     }*/
+
   }
 
-}
-
-/*****************************************************************************/
-.dot{
-  z-index: 0;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  //margin: 10px 10px 0 0;
-}
-
-$dot5: url(../resource/images/dot/dot_5.png);
-$dot10: url(../resource/images/dot/dot_10.png);
-$dot25: url(../resource/images/dot/dot_25.png);
-$dot50: url(../resource/images/dot/dot_50.png);
-.bg-dot-5{
-  background-image: $dot5;
-}
-.bg-dot-25{
-  z-index: 1;
-  background-image: $dot25 !important;
-}
-.bg-dot-50{
-  z-index: 1;
-  //position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-image: $dot10;
-}
-/*****************************************************************************/
-
-@-webkit-keyframes left_bar_move_from_left {
-  0% {
-    left: -100%;
-    top: 0%;
+  /*****************************************************************************/
+  .dot {
+    z-index: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    //margin: 10px 10px 0 0;
   }
-  100% {
-    left: 0%;
-    top: 0%;
+
+  $dot5: url(../resource/images/dot/dot_5.png);
+  $dot10: url(../resource/images/dot/dot_10.png);
+  $dot25: url(../resource/images/dot/dot_25.png);
+  $dot50: url(../resource/images/dot/dot_50.png);
+  .bg-dot-5 {
+    background-image: $dot5;
+  }
+  .bg-dot-25 {
+    z-index: 1;
+    background-image: $dot25 !important;
+  }
+  .bg-dot-50 {
+    z-index: 1;
+    //position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: $dot10;
+  }
+  /*****************************************************************************/
+
+  @-webkit-keyframes left_bar_move_from_left {
+    0% {
+      left: -100%;
+      top: 0%;
+    }
+    100% {
+      left: 0%;
+      top: 0%;
+    }
   }
 }
 

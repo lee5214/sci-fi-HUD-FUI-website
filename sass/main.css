@@ -14,7 +14,9 @@ body {
        margin: 0 auto;
      }
    }
-   */ }
+   */
+  /*****************************************************************************/
+  /*****************************************************************************/ }
   body .container {
     width: 100vw;
     height: 100vh;
@@ -31,7 +33,6 @@ body {
       height: 100%;
       margin: 0 auto; }
     body .container .left-panel {
-      overflow: hidden;
       position: relative;
       float: left;
       top: 10%;
@@ -41,35 +42,43 @@ body {
       body .container .left-panel .rotate-left-top {
         transform-style: preserve-3d;
         border: 1px solid rgba(54, 207, 194, 0.5);
-        margin-top: 10%;
-        width: 100%;
+        margin: 0% 0 0 10%;
+        width: 60%;
         height: 30%;
-        opacity: 1; }
+        opacity: 1;
+        position: relative;
+        transform-style: preserve-3d;
+        background-color: rgba(100, 205, 205, 0.2);
+        perspective-origin: bottom right;
+        transform: perspective(1vw) rotateX(-0.8deg) rotateY(0.9deg) rotateZ(5deg);
+        -webkit-animation: left_bar_move_from_left 0.6s linear 0s;
+        animation-fill-mode: forwards; }
       body .container .left-panel .rotate-left-bottom {
         position: relative;
-        margin-top: 10%;
+        margin: 10% 0 0 10%;
         transform-style: preserve-3d;
         background-color: rgba(100, 205, 205, 0.2);
         height: 40%;
         width: 60%;
-        transform: translateZ(-1vw) perspective(1vw) rotateY(0.7deg);
+        transform: perspective(1vw) rotateX(0.5deg) rotateY(1deg) rotateZ(-2deg);
         -webkit-animation: left_bar_move_from_left 0.6s linear 0s;
         animation-fill-mode: forwards; }
         body .container .left-panel .rotate-left-bottom .play-area {
           overflow: visible;
           border: 1px solid rgba(54, 207, 194, 0.5);
-          border-radius: 14%;
+          border-radius: 11%;
           transform-style: preserve-3d;
-          transform: translateX(10%) translateY(-10%) translateZ(0.1vw);
+          transform: translateX(20%) translateY(-10%) translateZ(0.1vw);
           perspective-origin: center;
           height: 100%;
           width: 100%;
-          margin: 0% 14%;
+          margin: 0% 4%;
           position: relative; }
           body .container .left-panel .rotate-left-bottom .play-area:hover img {
-            -webkit-transform: rotate3D(0, 3, 0, -0.9deg);
+            transform: rotateX(-0.7deg) rotateY(-0.3deg) rotateZ(1.5deg);
+            /*-webkit-transform: rotate3D(0, 3, 0, -0.9deg);
             -moz-transform: rotate3D(0, 1, 0, -0.9deg);
-            -o-transform: rotate3D(0, 1, 0, -0.9deg); }
+            -o-transform: rotate3D(0, 1, 0, -0.9deg);*/ }
           body .container .left-panel .rotate-left-bottom .play-area img {
             position: relative;
             opacity: 1;
@@ -85,76 +94,50 @@ body {
     body .container .right-panel {
       overflow: hidden;
       position: relative;
-      float: right;
       top: 10%;
       right: 5%;
-      height: 80%;
-      width: 40%; }
-      body .container .right-panel .eye {
-        float: right;
-        top: 10%;
-        right: 0%;
-        width: 21vw;
-        height: 17vw;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        border-radius: 50%;
-        border: 2px solid #36cfc2;
-        background: transparent;
-        perspective-origin: bottom right;
-        transform: perspective(100px) rotate3d(1, 1, 0 -80deg);
-        -webkit-transition-duration: 2s;
-        -webkit-transition-property: -webkit-transform;
-        -moz-transition-property: -moz-transform;
-        -o-transition-property: -o-transform;
-        transition-property: transform; }
-        body .container .right-panel .eye:hover {
-          -webkit-transition-timing-function: ease-in;
-          transition-timing-function: ease-in;
-          -webkit-transform: translateX(100px) rotate3D(1, 1, 0, 60deg);
-          -moz-transform: rotate3D(1, 1, 0, 60deg);
-          -o-transform: rotate3D(1, 1, 0, 0.6deg);
-          transform-fill-mode: forwards; }
-        body .container .right-panel .eye button {
-          text-shadow: 5px 5px 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
-          background-color: transparent;
-          color: cornflowerblue;
-          font-size: 4vw;
-          float: left;
-          height: 50%;
-          width: 50%; }
-        body .container .right-panel .eye img {
-          float: left;
-          height: 10vh;
-          width: 20vw;
-          float: left;
-          padding: 1vw; }
-
-/*****************************************************************************/
-.dot {
-  z-index: 0;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%; }
-
-.bg-dot-5 {
-  background-image: url(../resource/images/dot/dot_5.png); }
-
-.bg-dot-25 {
-  z-index: 1;
-  background-image: url(../resource/images/dot/dot_25.png) !important; }
-
-.bg-dot-50 {
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url(../resource/images/dot/dot_10.png); }
-
-/*****************************************************************************/
+      height: 100%;
+      width: 40%;
+      background-color: rgba(54, 207, 194, 0.5); }
+      body .container .right-panel .rotate-right-bottom {
+        margin: 50% 0 0 50%;
+        width: 350px;
+        height: 300px;
+        background-color: transparent;
+        background-image: url(../resource/images/earth.png);
+        background-size: cover; }
+      body .container .right-panel button {
+        text-shadow: 5px 5px 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+        background-color: transparent;
+        color: cornflowerblue;
+        font-size: 4vw;
+        float: left;
+        height: 50%;
+        width: 50%; }
+      body .container .right-panel img {
+        float: left;
+        height: 10vh;
+        width: 20vw;
+        padding: 1vw; }
+  body .dot {
+    z-index: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; }
+  body .bg-dot-5 {
+    background-image: url(../resource/images/dot/dot_5.png); }
+  body .bg-dot-25 {
+    z-index: 1;
+    background-image: url(../resource/images/dot/dot_25.png) !important; }
+  body .bg-dot-50 {
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../resource/images/dot/dot_10.png); }
 @-webkit-keyframes left_bar_move_from_left {
   0% {
     left: -100%;
