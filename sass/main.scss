@@ -1,4 +1,3 @@
-$color1 : rgba(54, 207, 194, 0.5);
 $hong : rgba(255, 0, 0, 1);
 $lv : rgba(54, 207, 0, 0.14);
 $qing : rgba(54, 207, 194, 0.5);
@@ -89,13 +88,8 @@ body {
 
   /*****************************************************************************/
   .dot {
-    z-index: 0;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    //margin: 10px 10px 0 0;
+    z-index: 1;
+    //position: fixed;
   }
 
   $dot5: url(../resource/images/dot/dot_5.png);
