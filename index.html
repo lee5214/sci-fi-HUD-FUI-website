@@ -20,17 +20,32 @@
 <body>
 <!--<div class="RingCirc"><div id="MagicRing"></div></div>-->
 <div class="hud_container dot bg-dot-25">
+    <span class="mb11"></span>
+    <span class="mb12"></span>
+    <div class="double_border_box b1">
+        <span class="mb10"></span>
+        <span class="mb11"></span>
+        <span class="mb12"></span>
+        <canvas class='hack_img2'></canvas></div>
+    <div class="double_border_box b2">
+        <span class="mb10"></span>
+        <span class="mb11"></span>
+        <span class="mb12"></span>
+        <canvas class='hack_img1'></canvas></div>
+    <div class="double_border_box b3">C</div>
     <div class="hud_panel hud_panel_1 dot bg-dot-5">
             <h2 class="glow shanshuo">1.</h2>
             <ul class="glow">
                 <li data-who="Access Request">Pending</li>
                 <li data-who="Identification Verify">Pending</li>
                 <div class="output-console"></div>
+                <span class="mb10"></span>
+                <span class="mb11"></span>
+                <span class="mb12"></span>
             </ul>
             <div class="hud_panel_info">
-                <div class="double_border_box b1"><canvas class='hacker-3d-shiz'></canvas></div>
-                <div class="double_border_box b2"><canvas class='bars-and-stuff'></canvas></div>
-                <div class="double_border_box b3">C</div>
+
+
             </div>
 
         </div>
@@ -41,9 +56,15 @@
             <li class="system">Training System</li>
             <li class="">Corportate</li>
             <li class="economy">High Tech</li>
+            <span class="mb10"></span>
+            <span class="mb11"></span>
+            <span class="mb12"></span>
         </ul>
     </div>
     <div class="hud_panel hud_panel_3 dot bg-dot-5">
+        <span class="mb10"></span>
+        <span class="mb11"></span>
+        <span class="mb12"></span>
         <h2 class="glow shanshuo">3.</h2>
         <ul class="glow">
             <li>Landing gear retracted.</li>
@@ -88,7 +109,7 @@
                   style="fill-opacity:0;transition-delay: 0.55s; -webkit-transition-delay: 0.55s; stroke-dashoffset: 88px; stroke-dasharray: 88px;"></path>
         </svg>
     </div>
-    <div id="shippanel">
+    <div id="ai">
             <div id="figure">
                 <div id="eye">
                     <span id="eye1">Cong Li</span>
@@ -234,5 +255,10 @@
 <script src="js/three.min.js"></script>
 <script src="bgshan.js"></script>
 <script src="js/generator_hack.js"></script>
+<!--<script>
+    (function(){
+        $('.hud_container div').append( "<div class='mask'></div>");
+    })();
+</script>-->
 </body>
 </html>
