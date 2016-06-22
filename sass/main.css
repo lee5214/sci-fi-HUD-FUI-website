@@ -16,10 +16,12 @@ body {
   height: 100vh;
   background: black;
   /*****************************************************************************/
+  /*******************************************************************/
   /*****************************************************************************/ }
   body .panel_bottom_1 {
-    position: relative;
-    bottom: 25%;
+    overflow: visible;
+    position: absolute;
+    bottom: 5%;
     left: 10%;
     height: 20%;
     width: 20%;
@@ -41,8 +43,8 @@ body {
       animation-fill-mode: forwards;
       transition-duration: 2s;
       transition-timing-function: linear; }
-      body .panel_bottom_1 .play-area:hover img {
-        transform: rotateX(-1deg) rotateY(-1deg) rotateZ(3.5deg);
+      body .panel_bottom_1 .play-area:hover * {
+        transform: rotateX(-1deg) rotateY(-1deg) rotateZ(2.5deg);
         /*-webkit-transform: rotate3D(0, 3, 0, -0.9deg);
         -moz-transform: rotate3D(0, 1, 0, -0.9deg);
         -o-transform: rotate3D(0, 1, 0, -0.9deg);*/ }
@@ -79,5 +81,22 @@ body {
   100% {
     left: 200%;
     top: 0%; } }
+canvas {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden; }
+
+.bars-and-stuff {
+  left: 0%; }
+
+.output-console {
+  color: rgba(54, 207, 194, 0.5);
+  overflow: hidden;
+  height: 100%; }
+
+p {
+  margin: 0; }
 
 /*# sourceMappingURL=main.css.map */

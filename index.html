@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>LoLoLoLo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=0, maximum-scale=0.0, minimum-scale=0.0, user-scalable=no, target-densityDpi=device-dpi">
+    <meta name="viewport" content="width=device-width, initial-scale=0, maximum-scale=0.0, minimum-scale=0.0, user-scalable=no">
     <!-- Bootstrap -->
     <link href="sass/normalize.css" rel="stylesheet" media="screen">
     <link href="sass/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -13,9 +13,9 @@
     <link href="sass/ai.css" rel="stylesheet">
     <link href="sass/3d-hud.css" rel="stylesheet">
     <!--<link href="good_parts/side_bar/side_bar.css" rel="stylesheet" media="screen">-->
-    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script><!--可以去掉吧-->
-    <script src="js/jquery.lettering.js"></script>
-    <script src="js/jquery.magicring.plugin.js"></script>
+    <!--<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>--><!--可以去掉吧-->
+    <!--<script src="js/jquery.lettering.js"></script>-->
+    <!--<script src="js/jquery.magicring.plugin.js"></script>-->
 </head>
 <body>
 <!--<div class="RingCirc"><div id="MagicRing"></div></div>-->
@@ -23,16 +23,14 @@
     <div class="hud_panel hud_panel_1 dot bg-dot-5">
             <h2 class="glow shanshuo">1.</h2>
             <ul class="glow">
-                <li data-who="Access Request">Accepted</li>
-                <li data-who="Identification Verified">Enjoy</li>
+                <li data-who="Access Request">Pending</li>
+                <li data-who="Identification Verify">Pending</li>
+                <div class="output-console"></div>
             </ul>
             <div class="hud_panel_info">
-                <div class="double_border_box b1">A</div>
-                <div class="double_border_box b2">B</div>
+                <div class="double_border_box b1"><canvas class='hacker-3d-shiz'></canvas></div>
+                <div class="double_border_box b2"><canvas class='bars-and-stuff'></canvas></div>
                 <div class="double_border_box b3">C</div>
-
-
-
             </div>
 
         </div>
@@ -230,8 +228,11 @@
     });
 </script>
 <!--side bar dependency-->
-<script src="good_parts/side_bar/greensock_plugin.js"></script>
-<script src="good_parts/side_bar/side_bar.js"></script>
+<script src="js/greensock_plugin.js"></script>
+<script src="js/sidebar.js"></script>
 <script src="js/3d-hud.js"></script>
+<script src="js/three.min.js"></script>
+<script src="bgshan.js"></script>
+<script src="js/generator_hack.js"></script>
 </body>
 </html>
