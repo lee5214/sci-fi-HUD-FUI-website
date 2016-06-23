@@ -29,7 +29,7 @@ body {
     animation-fill-mode: forwards; }
     body .panel_bottom_1 .play-area {
       overflow: visible;
-      border: 2px solid rgba(54, 207, 0, 0.14);
+      border: 2px solid rgba(54, 207, 0, 0.5);
       border-radius: 11%;
       transform-style: preserve-3d;
       transform: perspective(1vw) translateX(14%) translateY(-20%) translateZ(0.1vw) rotateX(0.4deg);
@@ -97,7 +97,7 @@ canvas {
   left: 0%; }
 
 .output-console {
-  color: red;
+  color: rgba(54, 207, 0, 0.5);
   overflow: hidden;
   height: 100%; }
 
@@ -120,24 +120,25 @@ canvas {
   top: 0px;
   background-color: black;
   opacity: 1;
-  -webkit-animation: mb1_move_quan 3s;
+  -webkit-animation: mb1_move_quan 6s;
   animation-fill-mode: forwards; }
 
 .mb11 {
   width: 2px;
   height: 100%;
-  left: 0px;
+  left: 0;
   bottom: -100%;
-  background-color: red;
-  -webkit-animation: mb1_move_shu 3s;
+  background-color: white;
+  -webkit-animation: mb1_move_shu 6s;
   animation-fill-mode: forwards; }
 
 .mb12 {
   height: 2px;
-  left: -100%;
-  bottom: 0px;
   width: 100%;
-  -webkit-animation: mb1_move_heng 3s;
+  left: 0;
+  bottom: 0px;
+  background-color: white;
+  -webkit-animation: mb1_move_heng 6s;
   animation-fill-mode: forwards; }
 
 @-webkit-keyframes mb1_move_quan {
