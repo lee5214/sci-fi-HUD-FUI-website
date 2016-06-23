@@ -20,8 +20,16 @@ $border_mask: white;
 body {
   width: 100vw;
   height: 100vh;
+
+  /*background: url(../resource/images/bgtemp.jpg);*/
+  background-repeat:no-repeat;
+  background-position:50% 300%;
+  background-color: black;
+
+
+
   //overflow: hidden;
-  background: black;
+  //background: black;
   //position:relative;
   .panel_bottom_1 {
     overflow: visible;

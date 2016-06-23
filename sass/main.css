@@ -14,7 +14,10 @@
 body {
   width: 100vw;
   height: 100vh;
-  background: black;
+  /*background: url(../resource/images/bgtemp.jpg);*/
+  background-repeat: no-repeat;
+  background-position: 50% 300%;
+  background-color: black;
   /*****************************************************************************/
   /*******************************************************************/
   /*****************************************************************************/ }
