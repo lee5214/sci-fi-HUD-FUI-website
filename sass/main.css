@@ -11,10 +11,23 @@
      }
    }
    */
+/*.svg_01{
+  width: 10%;
+  height: 0;
+  position: relative;
+}
+@keyframes svg_01 {
+  
+}
+svg{
+  //position: absolute;
+  top: 0 !important;
+  left: 0 !important;
+}*/
 body {
   width: 100vw;
   height: 100vh;
-  /*background: url(../resource/images/bgtemp.jpg);*/
+  background: url(../resource/images/bgtemp.jpg);
   background-repeat: no-repeat;
   background-position: 50% 300%;
   background-color: black;
