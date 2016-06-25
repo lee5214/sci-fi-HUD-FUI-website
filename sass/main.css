@@ -27,7 +27,6 @@ svg{
 body {
   width: 100vw;
   height: 100vh;
-  background: url(../resource/images/bgtemp.jpg);
   background-repeat: no-repeat;
   background-position: 50% 300%;
   background-color: black;
@@ -136,7 +135,8 @@ canvas {
   top: 0px;
   background-color: black;
   opacity: 1;
-  -webkit-animation: mb1_move_quan 6s;
+  animation: mb1_move_quan 4s;
+  -webkit-animation: mb1_move_quan 4s;
   animation-fill-mode: forwards; }
 
 .mb11 {
@@ -144,8 +144,8 @@ canvas {
   height: 100%;
   left: 0;
   bottom: -100%;
-  background-color: white;
-  -webkit-animation: mb1_move_shu 6s;
+  background-color: rgba(54, 207, 194, 0.5);
+  -webkit-animation: mb1_move_shu 4s;
   animation-fill-mode: forwards; }
 
 .mb12 {
@@ -153,15 +153,20 @@ canvas {
   width: 100%;
   left: 0;
   bottom: 0px;
-  background-color: white;
-  -webkit-animation: mb1_move_heng 6s;
+  background-color: rgba(54, 207, 194, 0.5);
+  -webkit-animation: mb1_move_heng 4s;
   animation-fill-mode: forwards; }
 
 @-webkit-keyframes mb1_move_quan {
   0% {
-    left: 0%; }
+    bottom: -100%;
+    opacity: 1; }
+  20% {
+    bottom: 0%;
+    opacity: 1; }
   100% {
-    left: 200%; } }
+    bottom: 100%;
+    opacity: 0; } }
 @-webkit-keyframes mb1_move_shu {
   0% {
     bottom: -100%; }

@@ -2,7 +2,7 @@ $hong : rgba(255, 0, 0, 1);
 $lv : rgba(54, 207, 0, 0.5);
 $qing : rgba(54, 207, 194, 0.5);
 $qing_quan : rgba(54, 207, 194, 1);
-$border_mask: white;
+$border_mask: $qing;
 /* .RingCirc{
      position: relative;
      overflow: hidden;
@@ -33,7 +33,7 @@ body {
   width: 100vw;
   height: 100vh;
 
-  background: url(../resource/images/bgtemp.jpg);
+  //background: url(../resource/images/bgtemp.jpg);
   background-repeat:no-repeat;
   background-position:50% 300%;
   background-color: black;
@@ -196,7 +196,8 @@ canvas {
   top:0px;
   background-color: black ;
   opacity:1 ;
-  -webkit-animation: mb1_move_quan 6s;
+  animation: mb1_move_quan 4s;
+  -webkit-animation: mb1_move_quan 4s;
   animation-fill-mode: forwards;
   //animation-delay: 3s;
   //transition: all 1.5s .6s ease-in-out;
@@ -209,7 +210,7 @@ canvas {
   left:0;
   bottom: -100%;
   background-color: $border_mask;
-  -webkit-animation: mb1_move_shu 6s;
+  -webkit-animation: mb1_move_shu 4s;
   animation-fill-mode: forwards;
   //animation-delay: 3s;
   //transition: all 1.5s .6s ease-in-out;
@@ -222,13 +223,15 @@ canvas {
   bottom: 0px;
 
   background-color: $border_mask;
-  -webkit-animation: mb1_move_heng 6s;
+  -webkit-animation: mb1_move_heng 4s;
   animation-fill-mode: forwards;
   //transition: all 1.5s .6s ease-in-out;
 }
 @-webkit-keyframes mb1_move_quan {
-  0%{left:0%}
-  100%{left:200%}
+  0%{bottom:-100%;opacity:1;}
+  20%{bottom:0%;opacity:1; }
+  100%{bottom:100%; opacity:0;}
+  //100%{bottom:200%;opacity:0;}
 }
 @-webkit-keyframes mb1_move_shu {
   0%{bottom:-100%}
