@@ -32,17 +32,22 @@ svg{
 body {
   width: 100vw;
   height: 100vh;
-
   //background: url(../resource/images/bgtemp.jpg);
-  background-repeat:no-repeat;
-  background-position:50% 300%;
+  //background-repeat:no-repeat;
+  //background-position:50% 300%;
   background-color: black;
-
-
 
   //overflow: hidden;
   //background: black;
   //position:relative;
+  .svg_bg_container{
+    opacity:0.1;
+    position: fixed;
+    width:140vw;
+    height:140vh;
+    right:-50%;
+    bottom:-20%;
+  }
   .panel_bottom_1 {
     overflow: visible;
     position: absolute;
@@ -108,8 +113,8 @@ body {
 
   /*****************************************************************************/
   .dot {
-    z-index: 1;
-    //background-size: 100%;
+    z-index: 9999;
+    background-size: 100%;
     //background-position: 1100px 0 !important;
     //position: fixed;
   }
@@ -122,17 +127,10 @@ body {
     background-image: $dot5;
   }
   .bg-dot-25 {
-    z-index: 1;
-    background-image: $dot25 !important;
+    background-image: $dot25;
   }
   .bg-dot-50 {
-    z-index: 1;
-    //position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-image: $dot10;
+    background-image: $dot50;
   }
     /*******************************************************************/
 
@@ -197,14 +195,26 @@ canvas {
   background-color: black ;
   opacity:1 ;
   animation: mb1_move_quan 4s;
-  -webkit-animation: mb1_move_quan 4s;
+  -webkit-animation: mb1_move_quan 4s, mb1_move_fade 4s 4s;
   animation-fill-mode: forwards;
   //animation-delay: 3s;
   //transition: all 1.5s .6s ease-in-out;
 }
+.mb1fade{
+  z-index: 99;
+  position: absolute;
+  width:100%;
+  height:100%;
+  background-color: black ;
+  opacity:1 ;
+  animation: mb1_move_fade 4s;
+  -webkit-animation: mb1_move_fadeout 4s;
+  animation-fill-mode: forwards;
+}
 .mb11 {
   @extend .mb1;
   //height: 2px;
+  z-index: 99;
   width: 2px;
   height:100%;
   left:0;
@@ -223,24 +233,30 @@ canvas {
   bottom: 0px;
 
   background-color: $border_mask;
-  -webkit-animation: mb1_move_heng 4s;
+  animation: mb1_move_heng 4s;
   animation-fill-mode: forwards;
   //transition: all 1.5s .6s ease-in-out;
 }
-@-webkit-keyframes mb1_move_quan {
-  0%{bottom:-100%;opacity:1;}
-  20%{bottom:0%;opacity:1; }
-  100%{bottom:100%; opacity:0;}
+@keyframes mb1_move_quan {
+  0%{left:0%;}
+  90%{left:100%;}
+  100%{left:1000%;}
   //100%{bottom:200%;opacity:0;}
 }
-@-webkit-keyframes mb1_move_shu {
+@keyframes mb1_move_shu {
   0%{bottom:-100%}
   50%{bottom:0%}
   100%{bottom:200%}
 }
 
-@-webkit-keyframes mb1_move_heng {
+@keyframes mb1_move_heng {
   0%{left:-100%}
   50%{left:0%}
-  100%{left:200%}
+  100%{left:100%}
+}
+@keyframes mb1_move_fadeout {
+  0%{opacity:1;}
+  80%{opacity:1;}
+  100%{opacity:0;}
+  //100%{bottom:200%;opacity:0;}
 }
