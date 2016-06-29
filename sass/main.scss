@@ -2,7 +2,7 @@ $hong : rgba(255, 0, 0, 1);
 $lv : rgba(54, 207, 0, 0.5);
 $qing : rgba(54, 207, 194, 0.5);
 $qing_quan : rgba(54, 207, 194, 1);
-$border_mask: $qing;
+$border_mask: white;
 /* .RingCirc{
      position: relative;
      overflow: hidden;
@@ -30,6 +30,11 @@ svg{
   left: 0 !important;
 }*/
 body {
+  svg{
+    text{
+      
+    }
+  }
   video{
     position: absolute;
     top:0;bottom:0;left:0;right:0;
@@ -44,22 +49,28 @@ body {
   //overflow: hidden;
   //background: black;
   //position:relative;
-  .logo {
-    position: absolute;
+  .logo{
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
-    width: 10%;
-    background: url(../resource/images/logo_lee_alien_bai.svg) no-repeat;
-    background-size: contain;
+    width:14%;
+    height:auto;
+    //transform: perspective(1000px) translateZ(-300px) translateY(-200px);
     //transform: perspective(1000px) translateZ(-1000px);
-    animation: logo_bye 4s infinite;
-    @keyframes logo_bye {
-      from{transform: perspective(1000px) translateZ(0px) translateY(0px);}
-      to {transform: perspective(1000px) translateZ(-300px) translateY(-200px);  }
+    animation: logo_move 4s forwards;
+    @keyframes logo_move {
+      from{transform: perspective(1000px) translateZ(100px) translateY(200px);}
+      to {transform: perspective(1000px) translateZ(-300px) translateY(-100px);  }
+      }
+    g .logo_eye{
+      animation: turn_red 4s 4s forwards;
+      @keyframes turn_red {
+        to {fill:red}
+      }
     }
+
   }
   .svg_bg_container {
     opacity: 0.1;

@@ -39,21 +39,24 @@ body {
     left: 0;
     right: 0; }
   body .logo {
-    position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
-    width: 10%;
-    background: url(../resource/images/logo_lee_alien_bai.svg) no-repeat;
-    background-size: contain;
-    animation: logo_bye 4s infinite; }
-@keyframes logo_bye {
+    width: 14%;
+    height: auto;
+    animation: logo_move 4s forwards; }
+@keyframes logo_move {
   from {
-    transform: perspective(1000px) translateZ(0px) translateY(0px); }
+    transform: perspective(1000px) translateZ(100px) translateY(200px); }
   to {
-    transform: perspective(1000px) translateZ(-300px) translateY(-200px); } }
+    transform: perspective(1000px) translateZ(-300px) translateY(-100px); } }
+    body .logo g .logo_eye {
+      animation: turn_red 4s 4s forwards; }
+@keyframes turn_red {
+  to {
+    fill: red; } }
   body .svg_bg_container {
     opacity: 0.1;
     position: fixed;
@@ -213,7 +216,7 @@ canvas {
   width: 100%;
   left: 0;
   bottom: 0px;
-  background-color: rgba(54, 207, 194, 0.5);
+  background-color: white;
   animation: mb1_move_heng 2s linear;
   animation-fill-mode: forwards; }
 
