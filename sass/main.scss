@@ -32,7 +32,7 @@ svg{
 body {
   svg{
     text{
-      
+
     }
   }
   video{
@@ -74,7 +74,7 @@ body {
   }
   .svg_bg_container {
     opacity: 0.1;
-    position: fixed;
+    position: absolute;
     width: 140vw;
     height: 140vh;
     right: -50%;
@@ -97,8 +97,8 @@ body {
     animation-fill-mode: forwards;
     .play-area {
       overflow: visible;
-      border: 2px solid $lv;
-      border-radius: 11%;
+      //border: 1px solid white;
+      //border-radius: 11%;
       transform-style: preserve-3d;
       transform: perspective(1vw) translateX(14%) translateY(-20%) translateZ(0.1vw) rotateX(0.4deg);;
       perspective-origin: center;
@@ -152,7 +152,6 @@ body {
   }
 
   .panel_bottom_2 {
-    overflow: visible;
     position: absolute;
     left: 0;
     right: 0;
@@ -161,8 +160,6 @@ body {
     right: 10%;
     left: auto;
     height: 200px;
-
-    background-color: transparent;
     svg {
       animation: none !important;
       width: 140px;
@@ -170,7 +167,6 @@ body {
       left: auto;
     }
   }
-
     /*****************************************************************************/
     .dot {
       z-index: 9999;
