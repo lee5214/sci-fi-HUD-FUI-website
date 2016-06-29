@@ -30,7 +30,11 @@ svg{
   left: 0 !important;
 }*/
 body {
-
+  video{
+    position: absolute;
+    top:0;bottom:0;left:0;right:0;
+  }
+  background-size: cover;
   width: 100vw;
   height: 100vh;
   background-color: black;
@@ -40,13 +44,30 @@ body {
   //overflow: hidden;
   //background: black;
   //position:relative;
-  .svg_bg_container{
-    opacity:0.1;
+  .logo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 10%;
+    background: url(../resource/images/logo_lee_alien_bai.svg) no-repeat;
+    background-size: contain;
+    //transform: perspective(1000px) translateZ(-1000px);
+    animation: logo_bye 4s infinite;
+    @keyframes logo_bye {
+      from{transform: perspective(1000px) translateZ(0px) translateY(0px);}
+      to {transform: perspective(1000px) translateZ(-300px) translateY(-200px);  }
+    }
+  }
+  .svg_bg_container {
+    opacity: 0.1;
     position: fixed;
-    width:140vw;
-    height:140vh;
-    right:-50%;
-    bottom:-20%;
+    width: 140vw;
+    height: 140vh;
+    right: -50%;
+    bottom: -20%;
   }
   .panel_bottom_1 {
     overflow: visible;
@@ -110,45 +131,56 @@ body {
     }
 
   }
-  .panel_bottom_2{
+  .biankuang_1 {
+    border: 10px solid red;
+    border-image: url(../resource/images/fang1.svg) 5% 5% 5% 5%;
+  }
+  .biankuang_2 {
+    border: 10px solid red;
+    background: url(../resource/images/biankuang/b.svg) no-repeat;
+  }
+
+  .panel_bottom_2 {
     overflow: visible;
     position: absolute;
-    left:0;right:0;
-    bottom:10%;
+    left: 0;
+    right: 0;
+    bottom: 10%;
     margin: auto;
-    right:10%;
-    left:auto;
+    right: 10%;
+    left: auto;
     height: 200px;
 
-    background-color:transparent;
-    svg{
+    background-color: transparent;
+    svg {
       animation: none !important;
-      width:140px;
-      right:10%;
+      width: 140px;
+      right: 10%;
       left: auto;
     }
   }
-  /*****************************************************************************/
-  .dot {
-    z-index: 9999;
-    background-size: 100%;
-    //background-position: 1100px 0 !important;
-    //position: fixed;
-  }
 
-  $dot5: url(../resource/images/dot/dot_5.png);
-  $dot10: url(../resource/images/dot/dot_10.png);
-  $dot25: url(../resource/images/dot/dot_25.png);
-  $dot50: url(../resource/images/dot/dot_50.png);
-  .bg-dot-5 {
-    background-image: $dot5;
-  }
-  .bg-dot-25 {
-    background-image: $dot25;
-  }
-  .bg-dot-50 {
-    background-image: $dot50;
-  }
+    /*****************************************************************************/
+    .dot {
+      z-index: 9999;
+      background-size: 100%;
+      //background-position: 1100px 0 !important;
+      //position: fixed;
+    }
+
+    $dot5: url(../resource/images/dot/dot_5.png);
+    $dot10: url(../resource/images/dot/dot_10.png);
+    $dot25: url(../resource/images/dot/dot_25.png);
+    $dot50: url(../resource/images/dot/dot_50.png);
+    .bg-dot-5 {
+      background-image: $dot5;
+    }
+    .bg-dot-25 {
+      background-image: $dot25;
+    }
+    .bg-dot-50 {
+      background-image: $dot50;
+    }
     /*******************************************************************/
 
     /*****************************************************************************/
@@ -165,119 +197,144 @@ body {
     }
   }
 
-canvas {
-  width:100%;
-  height:100%;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  background:transparent;
-  fill-style:red;
-}
-.hack_img2{
-  color:red;
-}
-.hack_img1 {
+  canvas {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background: transparent;
+    fill-style: red;
+  }
+  .hack_img2 {
+    color: red;
+  }
+  .hack_img1 {
 
-  left: 0%;
-}
+    left: 0%;
+  }
 
-.output-console {
-  //position:fixed;
-  color: $lv;
-  overflow:hidden;
-  height: 100%;
-}
+  .output-console {
+    //position:fixed;
+    color: $lv;
+    overflow: hidden;
+    height: 100%;
+  }
 
+  .mask {
+    height: 100%;
+    width: 100%;
+    z-index: 9999;
+    background-color: black;
+  }
+  .mb1 {
+    display: inline-block;
+    z-index: 100;
+    position: fixed;
+    overflow: hidden;
+  }
+  .mb10 {
+    @extend .mb1;
+    //height: 2px;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background-color: black;
+    opacity: 1;
+    animation: mb1_move_fadeout 3s linear;
+    //-webkit-animation: mb1_move_quan 2s linear, mb1_move_fade 2s linear 2s;
+    animation-fill-mode: forwards;
+    //animation-delay: 3s;
+    //transition: all 1.5s .6s ease-in-out;
+  }
+  .mb1fade {
+    z-index: 99;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 1;
+    animation: mb1_move_fade 2s linear;
+    -webkit-animation: mb1_move_fadeout 2s linear;
+    animation-fill-mode: forwards;
+  }
+  /*.mb11 {
+    @extend .mb1;
+    //height: 2px;
+    z-index: 99;
+    width: 2px;
+    height:100%;
+    left:0;
+    bottom: -100%;
+    background-color: $border_mask;
+    -webkit-animation: mb1_move_shu 2s linear;
+    animation-fill-mode: forwards;
+    //animation-delay: 3s;
+    //transition: all 1.5s .6s ease-in-out;
+    }*/
+  .mb12 {
+    @extend .mb1;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    bottom: 0px;
 
-.mask{
-  height:100%;
-  width:100%;
-  z-index:9999;
-  background-color:black;
-}
-.mb1 {
-  display: inline-block;
-  z-index: 100;
-  position:fixed;
-  overflow: hidden;
-}
-.mb10 {
-  @extend .mb1;
-  //height: 2px;
-  width: 100%;
-  height:100%;
-  left:0px;
-  top:0px;
-  background-color: black ;
-  opacity:1 ;
-  animation: mb1_move_fadeout 3s linear;
-  //-webkit-animation: mb1_move_quan 2s linear, mb1_move_fade 2s linear 2s;
-  animation-fill-mode: forwards;
-  //animation-delay: 3s;
-  //transition: all 1.5s .6s ease-in-out;
-}
-.mb1fade{
-  z-index: 99;
-  position: absolute;
-  width:100%;
-  height:100%;
-  background-color: black ;
-  opacity:1 ;
-  animation: mb1_move_fade 2s linear;
-  -webkit-animation: mb1_move_fadeout 2s linear;
-  animation-fill-mode: forwards;
-}
-/*.mb11 {
-  @extend .mb1;
-  //height: 2px;
-  z-index: 99;
-  width: 2px;
-  height:100%;
-  left:0;
-  bottom: -100%;
-  background-color: $border_mask;
-  -webkit-animation: mb1_move_shu 2s linear;
-  animation-fill-mode: forwards;
-  //animation-delay: 3s;
-  //transition: all 1.5s .6s ease-in-out;
-  }*/
-.mb12{
-  @extend .mb1;
-  height: 2px;
-  width:100%;
-  left: 0;
-  bottom: 0px;
+    background-color: $border_mask;
+    animation: mb1_move_heng 2s linear;
+    animation-fill-mode: forwards;
+    //transition: all 1.5s .6s ease-in-out;
+  }
+  @keyframes mb1_move_quan {
+    0% {
+      left: 0%;
+    }
+    99% {
+      left: 100%;
+    }
+    100% {
+      left: 1000%;
+    }
+    //100%{bottom:200%;opacity:0;}
+  }
+  @keyframes mb1_move_shu {
+    0% {
+      bottom: -100%
+    }
+    50% {
+      bottom: 0%
+    }
+    100% {
+      bottom: 200%
+    }
+  }
 
-  background-color: $border_mask;
-  animation: mb1_move_heng 2s linear;
-  animation-fill-mode: forwards;
-  //transition: all 1.5s .6s ease-in-out;
-}
-@keyframes mb1_move_quan {
-  0%{left:0%;}
-  99%{left:100%;}
-  100%{left:1000%;}
-  //100%{bottom:200%;opacity:0;}
-}
-@keyframes mb1_move_shu {
-  0%{bottom:-100%}
-  50%{bottom:0%}
-  100%{bottom:200%}
-}
-
-@keyframes mb1_move_heng {
-  0%{left:-100%}
-  50%{left:0%}
-  100%{left:100%}
-}
-@keyframes mb1_move_fadeout {
-  0%{opacity:1;}
-  100%{opacity:0;}
-  //100%{bottom:200%;opacity:0;}
-}
-@keyframes mb1_move_fadein {
-  0%{opacity:0;}
-  100%{opacity:1;}
-  //100%{bottom:200%;opacity:0;}
-}
+  @keyframes mb1_move_heng {
+    0% {
+      left: -100%
+    }
+    50% {
+      left: 0%
+    }
+    100% {
+      left: 100%
+    }
+  }
+  @keyframes mb1_move_fadeout {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+    //100%{bottom:200%;opacity:0;}
+  }
+  @keyframes mb1_move_fadein {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+    //100%{bottom:200%;opacity:0;}

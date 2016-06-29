@@ -25,12 +25,35 @@ svg{
   left: 0 !important;
 }*/
 body {
+  background-size: cover;
   width: 100vw;
   height: 100vh;
   background-color: black;
   /*****************************************************************************/
   /*******************************************************************/
   /*****************************************************************************/ }
+  body video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+  body .logo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 10%;
+    background: url(../resource/images/logo_lee_alien_bai.svg) no-repeat;
+    background-size: contain;
+    animation: logo_bye 4s infinite; }
+@keyframes logo_bye {
+  from {
+    transform: perspective(1000px) translateZ(0px) translateY(0px); }
+  to {
+    transform: perspective(1000px) translateZ(-300px) translateY(-200px); } }
   body .svg_bg_container {
     opacity: 0.1;
     position: fixed;
@@ -80,6 +103,12 @@ body {
         -moz-transition-property: -moz-transform;
         -o-transition-property: -o-transform;
         transition-property: transform; }
+  body .biankuang_1 {
+    border: 10px solid red;
+    border-image: url(../resource/images/fang1.svg) 5% 5% 5% 5%; }
+  body .biankuang_2 {
+    border: 10px solid red;
+    background: url(../resource/images/biankuang/b.svg) no-repeat; }
   body .panel_bottom_2 {
     overflow: visible;
     position: absolute;
