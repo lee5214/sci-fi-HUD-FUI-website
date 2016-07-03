@@ -33,11 +33,8 @@ body {
   /*******************************************************************/
   /*****************************************************************************/ }
   body video {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0; }
+    position: fixed;
+    opacity: 0.1; }
   body .logo {
     top: 0;
     bottom: 0;
@@ -166,7 +163,7 @@ canvas {
   z-index: 9999;
   background-color: black; }
 
-.mb1, .mb10, .mb12 {
+.mb1, .mb10, .mb11, .mb12 {
   display: inline-block;
   z-index: 100;
   position: fixed;
@@ -179,34 +176,31 @@ canvas {
   top: 0px;
   background-color: black;
   opacity: 1;
-  animation: mb1_move_fadeout 3s linear;
+  animation: mb1_move_quan 1s 1s linear;
   animation-fill-mode: forwards; }
 
-.mb1fade {
-  z-index: 99;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  opacity: 1;
-  animation: mb1_move_fade 2s linear;
-  -webkit-animation: mb1_move_fadeout 2s linear;
-  animation-fill-mode: forwards; }
-
-/*.mb11 {
-  @extend .mb1;
-  //height: 2px;
+/*
+  .mb1fade {
+    z-index: 99;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 1;
+    animation: mb1_move_fade 2s linear;
+    -webkit-animation: mb1_move_fadeout 2s linear;
+    animation-fill-mode: forwards;
+  }*/
+.mb11 {
   z-index: 99;
   width: 2px;
-  height:100%;
-  left:0;
+  height: 100%;
+  left: 0;
   bottom: -100%;
-  background-color: $border_mask;
+  background-color: white;
   -webkit-animation: mb1_move_shu 2s linear;
-  animation-fill-mode: forwards;
-  //animation-delay: 3s;
-  //transition: all 1.5s .6s ease-in-out;
-  }*/
+  animation-fill-mode: forwards; }
+
 .mb12 {
   height: 2px;
   width: 100%;
@@ -223,20 +217,27 @@ canvas {
     left: 100%; }
   100% {
     left: 1000%; } }
-@keyframes mb1_move_shu {
-  0% {
-    bottom: -100%; }
-  50% {
-    bottom: 0%; }
-  100% {
-    bottom: 200%; } }
+/*  @keyframes mb1_move_shu {
+    0% {
+      bottom: -100%
+    }
+    50% {
+      bottom: 0%
+    }
+    100% {
+      bottom: 200%
+    }
+  }*/
 @keyframes mb1_move_heng {
   0% {
-    left: -100%; }
+    left: -100%;
+    opacity: 1; }
   50% {
-    left: 0%; }
+    left: 0%;
+    opacity: 1; }
   100% {
-    left: 100%; } }
+    left: 200%;
+    opacity: 0; } }
 @keyframes mb1_move_fadeout {
   0% {
     opacity: 1; }
