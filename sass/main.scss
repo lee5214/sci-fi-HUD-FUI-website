@@ -265,7 +265,7 @@ body {
     animation-fill-mode: forwards;
   }*/
 
-  .mb11 {
+/*  .mb11 {
     @extend .mb1;
     //height: 2px;
     z-index: 99;
@@ -278,7 +278,7 @@ body {
     animation-fill-mode: forwards;
     //animation-delay: 3s;
     //transition: all 1.5s .6s ease-in-out;
-    }
+    }*/
 
   .mb12 {
     @extend .mb1;
@@ -300,7 +300,7 @@ body {
       left: 100%;
     }
     100% {
-      left: 1000%;
+      left: 300%;
     }
     //100%{bottom:200%;opacity:0;}
   }

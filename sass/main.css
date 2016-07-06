@@ -163,7 +163,7 @@ canvas {
   z-index: 9999;
   background-color: black; }
 
-.mb1, .mb10, .mb11, .mb12 {
+.mb1, .mb10, .mb12 {
   display: inline-block;
   z-index: 100;
   position: fixed;
@@ -191,16 +191,20 @@ canvas {
     -webkit-animation: mb1_move_fadeout 2s linear;
     animation-fill-mode: forwards;
   }*/
-.mb11 {
-  z-index: 99;
-  width: 2px;
-  height: 100%;
-  left: 0;
-  bottom: -100%;
-  background-color: white;
-  -webkit-animation: mb1_move_shu 2s linear;
-  animation-fill-mode: forwards; }
-
+/*  .mb11 {
+    @extend .mb1;
+    //height: 2px;
+    z-index: 99;
+    width: 2px;
+    height:100%;
+    left:0;
+    bottom: -100%;
+    background-color: $border_mask;
+    -webkit-animation: mb1_move_shu 2s linear;
+    animation-fill-mode: forwards;
+    //animation-delay: 3s;
+    //transition: all 1.5s .6s ease-in-out;
+    }*/
 .mb12 {
   height: 2px;
   width: 100%;
@@ -216,7 +220,7 @@ canvas {
   99% {
     left: 100%; }
   100% {
-    left: 1000%; } }
+    left: 300%; } }
 /*  @keyframes mb1_move_shu {
     0% {
       bottom: -100%
