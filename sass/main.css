@@ -51,6 +51,23 @@ body {
 @keyframes turn_red {
   to {
     fill: red; } }
+  body .compass {
+    z-index: -10000;
+    opacity: 0.2;
+    transform-origin: 50% 50%;
+    position: fixed;
+    width: 70%;
+    height: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform-style: preserve-3d;
+    animation: circleZ 60s linear infinite; }
+@keyframes circleZ {
+  100% {
+    transform: perspective(1000px) translateZ(0vw) rotateZ(360deg); } }
   body .svg_bg_container {
     opacity: 0.1;
     position: absolute;
