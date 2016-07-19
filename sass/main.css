@@ -184,14 +184,14 @@ canvas {
   overflow: hidden; }
 
 .mb10 {
+  display: block;
   width: 100%;
   height: 100%;
   left: 0px;
   top: 0px;
   background-color: black;
   opacity: 1;
-  animation: mb1_move_quan 1s 1s linear;
-  animation-fill-mode: forwards; }
+  animation: mb1_move_quan 1s 1s linear forwards; }
 
 /*
   .mb1fade {
@@ -230,11 +230,14 @@ canvas {
 
 @keyframes mb1_move_quan {
   0% {
-    left: 0%; }
+    left: 0%;
+    opacity: 1; }
   99% {
-    left: 100%; }
+    left: 99%;
+    opacity: 1; }
   100% {
-    left: 300%; } }
+    left: 900%;
+    opacity: 0; } }
 /*  @keyframes mb1_move_shu {
     0% {
       bottom: -100%
@@ -254,13 +257,15 @@ canvas {
     left: 0%;
     opacity: 1; }
   100% {
+    display: none;
     left: 200%;
     opacity: 0; } }
 @keyframes mb1_move_fadeout {
   0% {
     opacity: 1; }
   100% {
-    opacity: 0; } }
+    opacity: 0;
+    display: none; } }
 @keyframes mb1_move_fadein {
   0% {
     opacity: 0; }
