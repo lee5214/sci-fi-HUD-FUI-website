@@ -116,7 +116,7 @@ body {
         -o-transition-property: -o-transform;
         transition-property: transform; }
   body .biankuang_1 {
-    border: 10px solid red;
+    border: 20px solid;
     border-image: url(../resource/images/fang1.svg) 5% 5% 5% 5%; }
   body .biankuang_2 {
     border: 10px solid red;
@@ -130,6 +130,8 @@ body {
     right: 10%;
     left: auto;
     height: 200px; }
+    body .panel_bottom_2 svg {
+      display: none; }
     body .panel_bottom_2 svg {
       animation: none !important;
       width: 140px;
@@ -177,14 +179,13 @@ canvas {
   z-index: 9999;
   background-color: black; }
 
-.mb1, .mb10, .mb12 {
+.mb1, .mb10, .mb12, .mb20, .mb22 {
   display: inline-block;
-  z-index: 100;
+  z-index: 10;
   position: fixed;
   overflow: hidden; }
 
 .mb10 {
-  display: block;
   width: 100%;
   height: 100%;
   left: 0px;
@@ -228,6 +229,24 @@ canvas {
   animation: mb1_move_heng 2s linear;
   animation-fill-mode: forwards; }
 
+.mb20 {
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  background-color: black;
+  opacity: 1;
+  animation: mb1_move_quan_b 1s 1s linear forwards; }
+
+.mb22 {
+  height: 2px;
+  width: 100%;
+  left: 0;
+  bottom: 0px;
+  background-color: white;
+  animation: mb1_move_heng_b 2s linear;
+  animation-fill-mode: forwards; }
+
 @keyframes mb1_move_quan {
   0% {
     left: 0%;
@@ -236,7 +255,17 @@ canvas {
     left: 99%;
     opacity: 1; }
   100% {
-    left: 900%;
+    left: 1000%;
+    opacity: 0; } }
+@keyframes mb1_move_quan_b {
+  0% {
+    left: 0%;
+    opacity: 1; }
+  99% {
+    left: -99%;
+    opacity: 1; }
+  100% {
+    left: -1000%;
     opacity: 0; } }
 /*  @keyframes mb1_move_shu {
     0% {
@@ -259,6 +288,17 @@ canvas {
   100% {
     display: none;
     left: 200%;
+    opacity: 0; } }
+@keyframes mb1_move_heng_b {
+  0% {
+    left: 100%;
+    opacity: 1; }
+  50% {
+    left: 0%;
+    opacity: 1; }
+  100% {
+    display: none;
+    left: -200%;
     opacity: 0; } }
 @keyframes mb1_move_fadeout {
   0% {

@@ -9,6 +9,20 @@ line1.appendChild(spin);
 document.getElementsByClassName("center-animation").appendChild('spin');
 */
 
+$("document").ready(function(){
+    $(".hud_panel").hide();
+    $(".hud_panel_l1").delay(2000).fadeIn();
+    $(".hud_panel_r1").delay(2000).fadeIn();
+    $(".hud_panel_l2").delay(1000).fadeIn();
+    $(".hud_panel_r2").delay(1000).fadeIn();
+    $(".hud_panel_l3").delay(2000).fadeIn();
+    $(".hud_panel_r3").delay(2000).fadeIn();
+    //$(".hud_panel_l4").delay(1000).fadeIn();
+    $(".hud_panel_nav").delay(000).fadeIn();
+});
+$("button").hover(function(){
+    $("this").addClass("shanshuo");
+})
 $("button#about").click(function(){
     $(".hud_panel_l1").slideToggle(1000)
     $(".hud_panel_l2").delay(400).slideToggle(400)
