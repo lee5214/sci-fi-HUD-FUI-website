@@ -8,29 +8,43 @@ line1.src = "resource\animation\headline.png";
 line1.appendChild(spin);
 document.getElementsByClassName("center-animation").appendChild('spin');
 */
-
+$l1 = $(".hud_panel_l1"),$l2 = $(".hud_panel_l2"),$l3 = $(".hud_panel_l3"),
+$r1 = $(".hud_panel_r1"),$r2 = $(".hud_panel_r2"),$r3 = $(".hud_panel_r3"),
+$nav = $(".hud_panel_nav"),$about = $(".hud_panel_about");
+$leftside = $(".leftside"),$rightside = $(".rightside");
 $("document").ready(function(){
     $(".hud_panel").hide();
     $("#ai").hide();
-    $(".hud_panel_l1").delay(2000).fadeIn();
-    $(".hud_panel_r1").delay(2000).fadeIn();
-    $(".hud_panel_l2").delay(1000).fadeIn();
-    $(".hud_panel_r2").delay(1000).fadeIn();
-    $(".hud_panel_l3").delay(2000).fadeIn();
-    $(".hud_panel_r3").delay(2000).fadeIn();
-    //$(".hud_panel_l4").delay(1000).fadeIn();
-    $(".hud_panel_nav").delay(000).fadeIn();
-    $(".hud_panel_ai").delay(2000).fadeIn(12000);
-    $("#ai").delay(3000).fadeIn(2000);
+    $l2.add($r2).delay(1000).fadeIn();
+    $l1.add($r1).add($l3).add($r3).add($l2).add($r2).delay(2000).fadeIn().queue(function(next){
+        $(this).addClass("panel_on");
+        next();
+    });
+    $(".hud_panel_dot .st0").delay(8000).fadeIn().css("fill","rgba(54, 207, 194, .8)",2000);//.addClass("shanshuo");
+    $(".hud_panel_dot .st1").fadeIn().css("fill","white",4000).delay(2000).queue(function(next){
+        $(this).addClass("shanshuo_infinite");
+        next();
+    });
+    $nav.delay(2000).fadeIn();
+    $(".hud_panel_ai").delay(000).fadeIn(2000);
+    //$("#ai").delay(3000).fadeIn(2000);
+    $("hud_panel_ball").delay(2000).slide();
+
 });
+$leftside.delay(3000).animate({left:"4%"},{duration:1000});
+$rightside.delay(3000).animate({right:"4%"},{duration:1000});
 $("button").hover(function(){
     $("this").addClass("shanshuo");
 })
 $("button#about").click(function(){
-    $(".hud_panel_l1").slideToggle(1000)
-    $(".hud_panel_l2").delay(400).slideToggle(400)
-    $(".hud_panel_l3").delay(600).slideToggle(400)
-    $(".hud_panel_l4").delay(800).slideToggle(400)
+    $l1.slideToggle(1000)
+    $l2.delay(400).slideToggle(400)
+    $l3.delay(600).slideToggle(400)
+    $about.delay(800).slideToggle(400).queue(function(next){
+        $(this).addClass("panel_on");
+        next();
+    });
+    //$(".hud_panel_about .mb20").delay(800)..addClass("panel_on");
     //$(".hud_panel_l4").delay(1000).slideToggle(400)
         //$(".hud_panel_l1").toggleClass("hud_panel_l1_remove")
        // $(".hud_panel_l2").toggleClass("hud_panel_l2_remove")
@@ -39,7 +53,7 @@ $("button#about").click(function(){
 });
 
 window.addEventListener("load", windowLoadHandler, false);
-var sphereRad = 280;
+var sphereRad = 180;
 var radius_sp=1;
 //for debug messages
 var Debugger = function() { };
@@ -58,11 +72,11 @@ function windowLoadHandler() {
 
 
 function canvasApp() {
-
+    //jQuery.fx.interval = 1;
 
     var theCanvas = document.getElementById("canvasOne");
     var context = theCanvas.getContext("2d");
-
+    var fLen = 320;
     var displayWidth;
     var displayHeight;
     var timer;
@@ -97,7 +111,7 @@ function canvasApp() {
     var i;
     var theta, phi;
     var x0, y0, z0;
-    var fLen = 40;
+
 
     init();
 

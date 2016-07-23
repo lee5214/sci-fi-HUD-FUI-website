@@ -266,7 +266,8 @@ body {
     top: 0px;
     background-color: black;
     opacity: 1;
-    animation: mb1_move_quan 1s 1s linear forwards;
+    //animation: mb1_move_quan 0.5s linear forwards;
+    //animation-delay: 1s;
     //-webkit-animation: mb1_move_quan 2s linear, mb1_move_fade 2s linear 2s;
     //animation-delay: 3s;
     //transition: all 1.5s .6s ease-in-out;
@@ -306,10 +307,16 @@ body {
     left: 0;
     bottom: 0px;
 
-    background-color: $border_mask;
-    animation: mb1_move_heng 2s linear;
+    background-color: rgba(223, 245, 255, 0.5);
+    animation: mb1_move_heng 0.5s linear forwards;
     animation-fill-mode: forwards;
     //transition: all 1.5s .6s ease-in-out;
+  }
+  .panel_on{
+    .mb10{animation: mb1_move_quan 0.5s 0.5s linear forwards;}
+    .mb20{animation: mb1_move_quan_b 0.5s 0.5s linear forwards;}
+    .mb12{animation: mb1_move_heng2 0.5s 0.5s linear forwards;}
+    .mb22{animation: mb1_move_heng_b2 0.5s 0.5s linear forwards;}
   }
   .mb20{
     @extend .mb1;
@@ -321,7 +328,7 @@ body {
     top: 0px;
     background-color: black;
     opacity: 1;
-    animation: mb1_move_quan_b 1s 1s linear forwards;
+    //animation: mb1_move_quan_b 0.5s linear forwards;
   }
   .mb22{
     @extend .mb1;
@@ -330,8 +337,8 @@ body {
     left: 0;
     bottom: 0px;
 
-    background-color: $border_mask;
-    animation: mb1_move_heng_b 2s linear;
+    background-color: rgba(223, 245, 255, 0.5);
+    animation: mb1_move_heng_b 0.5s linear forwards;
     animation-fill-mode: forwards;
   }
   @keyframes mb1_move_quan {
@@ -381,28 +388,42 @@ body {
       left: -100%;
       opacity:1
     }
-    50% {
-      left: 0%;
-      opacity:1
-    }
     100% {
-      display: none;
-      left: 200%;
-      opacity: 0
+      //display: none;
+      left: 0%;
+      //opacity: 0
     }
   }
-@keyframes mb1_move_heng_b {
+@keyframes mb1_move_heng2 {
   0% {
-    left: 100%;
-    opacity:1
-  }
-  50% {
     left: 0%;
     opacity:1
   }
   100% {
     display: none;
-    left: -200%;
+    left: 100%;
+    opacity: 0
+  }
+}
+@keyframes mb1_move_heng_b {
+  0% {
+    left: 100%;
+    opacity:1
+  }
+  100% {
+    //display: none;
+    left: 0%;
+    //opacity: 0
+  }
+}
+@keyframes mb1_move_heng_b2 {
+  0% {
+    left: 0%;
+    opacity:1
+  }
+  100% {
+    display: none;
+    left: -100%;
     opacity: 0
   }
 }

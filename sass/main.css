@@ -191,8 +191,7 @@ canvas {
   left: 0px;
   top: 0px;
   background-color: black;
-  opacity: 1;
-  animation: mb1_move_quan 1s 1s linear forwards; }
+  opacity: 1; }
 
 /*
   .mb1fade {
@@ -225,9 +224,18 @@ canvas {
   width: 100%;
   left: 0;
   bottom: 0px;
-  background-color: white;
-  animation: mb1_move_heng 2s linear;
+  background-color: rgba(223, 245, 255, 0.5);
+  animation: mb1_move_heng 0.5s linear forwards;
   animation-fill-mode: forwards; }
+
+.panel_on .mb10 {
+  animation: mb1_move_quan 0.5s 0.5s linear forwards; }
+.panel_on .mb20 {
+  animation: mb1_move_quan_b 0.5s 0.5s linear forwards; }
+.panel_on .mb12 {
+  animation: mb1_move_heng2 0.5s 0.5s linear forwards; }
+.panel_on .mb22 {
+  animation: mb1_move_heng_b2 0.5s 0.5s linear forwards; }
 
 .mb20 {
   width: 100%;
@@ -235,16 +243,15 @@ canvas {
   left: 0px;
   top: 0px;
   background-color: black;
-  opacity: 1;
-  animation: mb1_move_quan_b 1s 1s linear forwards; }
+  opacity: 1; }
 
 .mb22 {
   height: 2px;
   width: 100%;
   left: 0;
   bottom: 0px;
-  background-color: white;
-  animation: mb1_move_heng_b 2s linear;
+  background-color: rgba(223, 245, 255, 0.5);
+  animation: mb1_move_heng_b 0.5s linear forwards;
   animation-fill-mode: forwards; }
 
 @keyframes mb1_move_quan {
@@ -282,23 +289,29 @@ canvas {
   0% {
     left: -100%;
     opacity: 1; }
-  50% {
+  100% {
+    left: 0%; } }
+@keyframes mb1_move_heng2 {
+  0% {
     left: 0%;
     opacity: 1; }
   100% {
     display: none;
-    left: 200%;
+    left: 100%;
     opacity: 0; } }
 @keyframes mb1_move_heng_b {
   0% {
     left: 100%;
     opacity: 1; }
-  50% {
+  100% {
+    left: 0%; } }
+@keyframes mb1_move_heng_b2 {
+  0% {
     left: 0%;
     opacity: 1; }
   100% {
     display: none;
-    left: -200%;
+    left: -100%;
     opacity: 0; } }
 @keyframes mb1_move_fadeout {
   0% {
