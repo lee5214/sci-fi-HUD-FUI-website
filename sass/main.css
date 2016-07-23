@@ -50,7 +50,7 @@ body {
       animation: turn_red 4s 4s forwards; }
 @keyframes turn_red {
   to {
-    fill: red; } }
+    fill: rgba(255, 0, 0, 0.8); } }
   body .compass {
     z-index: -10000;
     opacity: 0.2;
