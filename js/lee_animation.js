@@ -12,6 +12,7 @@ $l1 = $(".hud_panel_l1"),$l2 = $(".hud_panel_l2"),$l3 = $(".hud_panel_l3"),
 $r1 = $(".hud_panel_r1"),$r2 = $(".hud_panel_r2"),$r3 = $(".hud_panel_r3"),
 $nav = $(".hud_panel_nav"),$about = $(".hud_panel_about");
 $leftside = $(".leftside"),$rightside = $(".rightside");
+
 $("document").ready(function(){
     $(".hud_panel").hide();
     $("#ai").hide();
@@ -41,14 +42,13 @@ $rightside.delay(3000).animate({right:"4%"},{duration:1000});
 $("button").hover(function(){
     $("this").addClass("shanshuo");
 })
+//button function
 $("button#about").click(function(){
-    $l1.slideToggle(1000)
-    $l2.delay(400).slideToggle(400)
-    $l3.delay(200).slideToggle(400)
-    $leftside.animate({left:"40%"},{duration:1000}).queue(function(next){
-        $about.slideToggle(400).addClass("panel_on");
-        next();
-    }).queue(function(next) {
+    $l1.add($l2).add($l3).slideToggle("slow");
+
+    $leftside.delay(000).animate({left:"40%"},{duration:2000}).queue(function(next){
+
+        $about.slideToggle().addClass("panel_on");
         $leftside.animate({left:"4%"},{duration:1000});
         next();
     });
@@ -388,7 +388,6 @@ $(function() {
         }
     });
 });
-
 $(function() {
     $( "#slider-test" ).slider({
         range:false,
@@ -401,5 +400,4 @@ $(function() {
         }
     });
 });
-
 

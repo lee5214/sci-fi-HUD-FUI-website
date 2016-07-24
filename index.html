@@ -17,6 +17,7 @@
     <link href="sass/animation_control.css" rel="stylesheet">
     <link href="sass/svglist.css" rel="stylesheet">
     <link href="sass/center_core.css" rel="stylesheet">
+    <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" rel="stylesheet">
     <!--<link href="good_parts/side_bar/side_bar.css" rel="stylesheet" media="screen">-->
     <!--<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>--><!--可以去掉吧-->
     <!--<script src="js/jquery.lettering.js"></script>-->
@@ -1283,6 +1284,8 @@
     <div class="center_core">
         <div class="core_mask"></div>
         <div id="center_frame">
+            <div class="slider" id="slider-range"></div>
+            <div class="slider" id="slider-test"></div>
             <div class="core_mask"></div>
             <div class="baseline1">
                 <span></span>
@@ -1290,7 +1293,6 @@
             </div>
             <h2 class="glow">System Core</h2>
             <div class="baseline2">
-
                 <span></span>
                 <span></span>
             </div>
@@ -1499,32 +1501,23 @@
         </svg>
     </div>
     <div tabindex="0" class="hud_panel hud_panel_about biankuang_1">
-        <span class="mb20"></span>
         <span class="mb22"></span>
+        <span class="mb20"></span>
         <h2 class="glow ">About</h2>
-        <div class="glow">
+        <div class="glow " >
             <p>Hi, this is Cong, thank you for visiting my website.</p>
-
             <p>I'm a software engineer, a big fan of front-end technologies.
                 building fantastic and visualized web applications is always my love and passion.</p>
-
             <p>While watching "Iron Man", one idea came into my mind:</p>
-
             <p>The flat UI design for those HUD in sci-fi movies / games is just amazing, but why I never saw one
                 website has been built this way?</p>
-
             <p>Because it's impossible? Too hard to achieve? Or just no one wanna try it out?</p>
-
             <p>Anyway, after some research online, I found it's doable and decided to use my free time to design and
                 build a new website this way.</p>
-
             <p>The task was not easy for me, many problems poped up, svg/canvas, css/javascipt animation control, 3D
                 matrix calculation, etc. I managed to solve them one by one and finally got this prototype.</p>
-
             <p>It's a wonderful experience cause I learnt and built something I really enjoy.</p>
-
             <p>But is it finished? No, not even close.</p>
-
             <p>There are many features I'm planning to add:</p>
             <ul>
                 <li>3D space game using WebGL as background</li>
@@ -3517,7 +3510,8 @@
 
 
 </div>
-<script src="js/jquery-3.0.0.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <!--<script type="text/javascript">
     $(document).ready(function() {
