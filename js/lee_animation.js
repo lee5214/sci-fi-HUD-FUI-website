@@ -36,8 +36,8 @@ $("document").ready(function(){
     $(".baseline2").delay(4000).animate({bottom:"2%"},{duration:1000});
 
 });
-$leftside.delay(3000).animate({left:"4%"},{duration:2000});
-$rightside.delay(3000).animate({right:"4%"},{duration:2000});
+$leftside.delay(3000).animate({left:"4%"},{duration:1000});
+$rightside.delay(3000).animate({right:"4%"},{duration:1000});
 $("button").hover(function(){
     $("this").addClass("shanshuo");
 })
