@@ -8,11 +8,12 @@ line1.src = "resource\animation\headline.png";
 line1.appendChild(spin);
 document.getElementsByClassName("center-animation").appendChild('spin');
 */
+var sphereRad = 200;//qiu size
+var radius_sp=1;
 $l1 = $(".hud_panel_l1"),$l2 = $(".hud_panel_l2"),$l3 = $(".hud_panel_l3"),
 $r1 = $(".hud_panel_r1"),$r2 = $(".hud_panel_r2"),$r3 = $(".hud_panel_r3"),
 $nav = $(".hud_panel_nav"),$about = $(".hud_panel_about");
 $leftside = $(".leftside"),$rightside = $(".rightside");
-
 $("document").ready(function(){
     $(".hud_panel").hide();
     $("#ai").hide();
@@ -21,10 +22,10 @@ $("document").ready(function(){
         $(this).addClass("panel_on");
         next();
     });
-    $(".hud_panel_dot .st0").delay(2000).fadeIn().css("fill","rgba(54, 207, 194, .8)",2000).delay(444).queue(function(next){
+    $(".hud_panel_dot svg .st0").delay(2000).fadeIn().css("fill","rgba(54, 207, 194, .8)",2000).delay(444).queue(function(next){
         $(this).addClass("shanshuo_infite");
         next();
-    });;//.addClass("shanshuo");
+    });//.addClass("shanshuo");
     $(".hud_panel_dot .st1").fadeIn().css("fill","white",1000).delay(200).queue(function(next){
         $(this).addClass("shanshuo_infite");
         next();
@@ -32,7 +33,23 @@ $("document").ready(function(){
     $nav.delay(2000).fadeIn();
     $(".hud_panel_ai").delay(000).fadeIn(2000);
     $("#ai").delay(3000).fadeIn(2000);
-    $(".core_mask").delay(3000).fadeOut(2000);
+    $(".core_mask").delay(3000).fadeOut(100).queue(function(next){
+        $("#canvasOne").css({"transform":"translateZ(-6in)"});
+        $("#core_slider").delay(2000).fadeIn(100).addClass("shanshuo");
+        next();
+    });
+    /*.queue(function(next) {
+        var zoom = setInterval(function () {  //core zoom then stop slide bar
+            var value = $('#slider-zoom').slider("value");
+            var max = $('#slider-zoom').slider("option", "max");
+            $("#slider-zoom").slider("value", (value + 0.1) % (max + 1));
+            if(value>=1){
+                window.clearInterval(zoom);
+            }
+        }, 100);
+        zoom();
+        next();
+    });*/
     $(".baseline1").delay(4000).animate({top:"2%"},{duration:1000});
     $(".baseline2").delay(4000).animate({bottom:"2%"},{duration:1000});
 
@@ -45,14 +62,11 @@ $("button").hover(function(){
 //button function
 $("button#about").click(function(){
     $l1.add($l2).add($l3).slideToggle("slow");
-
-    $leftside.delay(000).animate({left:"40%"},{duration:2000}).queue(function(next){
-
+    $leftside.delay(000).animate({left:"40%"},{duration:1400}).queue(function(next){
         $about.slideToggle().addClass("panel_on");
         $leftside.animate({left:"4%"},{duration:1000});
         next();
     });
-
     //$(".hud_panel_about .mb20").delay(800)..addClass("panel_on");
     //$(".hud_panel_l4").delay(1000).slideToggle(400)
         //$(".hud_panel_l1").toggleClass("hud_panel_l1_remove")
@@ -60,10 +74,11 @@ $("button#about").click(function(){
       //  $(".hud_panel_l3").toggleClass("hud_panel_l3_remove")
     //$(".hud_panel_l4").toggleClass("hud_panel_l4_in")
 });
-
+$("button#home").click(function(){
+   $("hud_container").animation({height:"50%"},{duration:2000}) ;
+});
+/////////////////////////////////////////////////////////////////////////////////////
 window.addEventListener("load", windowLoadHandler, false);
-var sphereRad = 80;//qiu size
-var radius_sp=1;
 //for debug messages
 var Debugger = function() { };
 Debugger.log = function(message) {
@@ -128,7 +143,9 @@ function canvasApp() {
         r = 110;
         g = 255;
         b = 255;
-
+        $(".core_button").click(function(){
+            r=255;
+        });
         rgbString = "rgba("+r+","+g+","+b+","; //partial string for color which will be completed by appending alpha value.
         particleAlpha = 1; //maximum alpha
 
@@ -378,26 +395,33 @@ function canvasApp() {
 }
 $(function() {
     $( "#slider-range" ).slider({
+        animate:true,
         range:false,
-        min: 20,
+        min: 0,
         max: 500,
-        value: 280,
-        slide: function( event, ui ) {
-            console.log(ui.value);
+        value:250,
+        step:0.001,
+        slide:function( event, ui ) {
             sphereRad = ui.value;
-        }
+        },
     });
 });
+   /* setInterval(function () {
+        var value = $('#slider-range').slider("value");
+        var max = $('#slider-range').slider( "option", "max" );
+        $("#slider-range").slider("value", (value + 1)% (max+1));
+    }, 10);*/
 $(function() {
-    $( "#slider-test" ).slider({
+    $( "#slider-zoom" ).slider({
+        animate:true,
+        orientation: "vertical",
         range:false,
-        min: 1.0,
-        max: 2.0,
+        min: 0,
+        max: 2,
         value: 1,
-        step:0.01,
+        step:0.001,
         slide: function( event, ui ) {
-            radius_sp = ui.value;
+                radius_sp = ui.value;
         }
     });
 });
-

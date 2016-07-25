@@ -30,6 +30,15 @@ svg{
   left: 0 !important;
 }*/
 body {
+  #zhongxin{
+    position: fixed;
+    top:50%;
+    left:50%;
+    width:10px;
+    height:10px;
+    background: red;
+    z-index: 999;
+  }
 
   background-size: cover;
   width: 100vw;
@@ -360,15 +369,15 @@ body {
 @keyframes mb1_move_quan_b {
   0% {
     left: 0%;
-    opacity: 1;
+    //opacity: 1;
   }
   99% {
     left: -99%;
-    opacity: 1;
+    //opacity: 1;
   }
   100% {
     left: -1000%;
-    opacity: 0;
+    //opacity: 0;
   }
 }
 /*  @keyframes mb1_move_shu {

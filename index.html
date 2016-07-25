@@ -24,6 +24,7 @@
     <!--<script src="js/jquery.magicring.plugin.js"></script>-->
 </head>
 <body>
+<div id="zhongxin"></div>
 <!--<video src="resource/ccc.MP4" autoplay loop width="100%" ></video>-->
 <!--<div style="position: fixed; z-index: -99; width: 100%; height: 100%">
     <iframe autoplay loop frameborder="0"height="120%" width="100%"
@@ -1212,6 +1213,26 @@
 </div>-->
 <!--<img class="compass"src="resource/images/compass2.svg" />-->
 <div class="hud_container">
+    <div class="center_core">
+        <div class="core_mask"></div>
+        <div id="center_frame">
+            <div id="core_slider">
+                <div class="slider" id="slider-range"></div>
+                <div class="slider" id="slider-zoom"></div>
+            </div>
+            <div class="core_mask"></div>
+            <div class="glow syscore"><h2>System Core</h2></div>
+            <div class="baseline1">
+                <span></span>
+                <span></span>
+            </div>
+            <div class="baseline2">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <canvas id="canvasOne" width="1000" height="600"></canvas>
+    </div>
     <div class="logo">
         <svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="100%" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
@@ -1281,25 +1302,6 @@
 </g>
 </svg>
     </div>
-    <div class="center_core">
-        <div class="core_mask"></div>
-        <div id="center_frame">
-            <div class="slider" id="slider-range"></div>
-            <div class="slider" id="slider-test"></div>
-            <div class="core_mask"></div>
-            <div class="baseline1">
-                <span></span>
-                <span></span>
-            </div>
-            <h2 class="glow">System Core</h2>
-            <div class="baseline2">
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-        <canvas id="canvasOne" width="600" height="600"></canvas>
-    </div>
-    <div class="back_panel_1"></div>
     <div class="double_border_box b1">
         <span class="mb10"></span>
         <!--<canvas class='hack_img1'></canvas>-->
@@ -1314,8 +1316,8 @@
     <div class="hud_panel hud_panel_l1 biankuang_1">
         <span class="mb20"></span>
         <span class="mb22"></span>
+        <h1 class="glow">Hi, Captain</h1>
         <ul class="glow">
-            <h1>Hi, Captain</h1>
             <li>This is Cong Li 's personal website</li>
             <li>A sample of my Sci-Fi HUD FUI design</li>
             <li>Active navigation by moving cursor to right side</li>
@@ -1536,9 +1538,6 @@
             <li>github: <a href="https://github.com/lee5214">https://github.com/lee5214</a></li>
             <li>linkedin: <a href="https://github.com/lee5214">https://www.linkedin.com/in/lee5214</a></li>
             <li>location: San Francisco CA 94132</li>
-            <li>phone: 415-533-9485</li>
-
-
         </ul>
     </div>
     <div class="hud_panel hud_panel_r2 ">
@@ -1693,7 +1692,6 @@
             </div>
         </div>
     </div>
-
     <div class="expand leftside">
         <svg viewBox="0 0 62.5 866" width="64" px>
             <path class="st0" d="M17.5,0.5H36v141l-10,10v560l10,10v144H17.5"
