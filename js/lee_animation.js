@@ -17,14 +17,16 @@ $nav = $(".hud_panel_nav"),
 $home = $(".hud_panel_home"),$about = $(".hud_panel_about"),$project = $(".hud_panel_project"),$resume = $(".hud_panel_resume");
 $leftside = $(".leftside"),$rightside = $(".rightside");
 $reset = function(){
+    $(".hud_panel").hide();
+    $("#ai").hide();
     $l2.add($r2).delay(1000).fadeIn();
     $l1.add($r1).add($l3).add($r3).add($l2).add($r2).delay(2000).fadeIn().queue(function(next){
         $(this).addClass("panel_on");
         next();
     });
     $("#dot_p1 .st0").delay(1000).fadeIn().css("fill","rgba(54, 207, 194, .8)",2000).delay(444);
-    $("#dot_p1 .st1").delay(40000).fadeIn(4000).css("fill","white",4000).queue(function(next){
-        $(this).addClass("shanshuo");
+    $("#dot_p1 .st1").delay(4000).fadeIn(4000).css("fill","white",4000).queue(function(next){
+        $("#dot_p1").addClass("shanshuo_infinite");
         next();
     });//.addClass("shanshuo");
     $("#dot_p2 .st1").fadeIn().css("fill","white",1000).delay(200).queue(function(next){
@@ -40,15 +42,13 @@ $reset = function(){
             $(this).addClass("shanshuo");
             next();
         });
-
+        $(".hud_panel_svg").delay(4000).fadeIn("normal");
         next();
     });
     $(".baseline1").delay(4000).animate({top:"2%"},{duration:1000});
     $(".baseline2").delay(4000).animate({bottom:"2%"},{duration:1000});
 };
 $("document").ready(function(){
-    $(".hud_panel").hide();
-    $("#ai").hide();
     $reset();
     /*.queue(function(next) {
         var zoom = setInterval(function () {  //core zoom then stop slide bar
@@ -71,7 +71,7 @@ $("button").hover(function(){
 })
 //button function
 $("button#home").click(function(){
-
+    //$(window).animate({height:"50%"},{duration:10000});
     $leftside.delay(000).animate({left:"40%"},{duration:1400}).queue(function(next){
         $about.hide();
         $leftside.animate({left:"4%"},{duration:1000});
@@ -82,6 +82,7 @@ $("button#home").click(function(){
         $rightside.animate({right:"4%"},{duration:1000});
         next();
     });
+    $resume.hide();
     $reset();
     //$l1.add($l2).add($l3).add($r1).add($r2).add($r3).fadeIn(1000).addClass("panel_on");
 });
