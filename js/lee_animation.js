@@ -10,24 +10,25 @@ document.getElementsByClassName("center-animation").appendChild('spin');
 */
 var sphereRad = 200;//qiu size
 var radius_sp=1;
+var fLen = 40;
 $l1 = $(".hud_panel_l1"),$l2 = $(".hud_panel_l2"),$l3 = $(".hud_panel_l3"),
 $r1 = $(".hud_panel_r1"),$r2 = $(".hud_panel_r2"),$r3 = $(".hud_panel_r3"),
-$nav = $(".hud_panel_nav"),$about = $(".hud_panel_about");
+$nav = $(".hud_panel_nav"),
+$home = $(".hud_panel_home"),$about = $(".hud_panel_about"),$project = $(".hud_panel_project"),$resume = $(".hud_panel_resume");
 $leftside = $(".leftside"),$rightside = $(".rightside");
-$("document").ready(function(){
-    $(".hud_panel").hide();
-    $("#ai").hide();
+$reset = function(){
     $l2.add($r2).delay(1000).fadeIn();
     $l1.add($r1).add($l3).add($r3).add($l2).add($r2).delay(2000).fadeIn().queue(function(next){
         $(this).addClass("panel_on");
         next();
     });
-    $(".hud_panel_dot svg .st0").delay(2000).fadeIn().css("fill","rgba(54, 207, 194, .8)",2000).delay(444).queue(function(next){
-        $(this).addClass("shanshuo_infite");
+    $("#dot_p1 .st0").delay(1000).fadeIn().css("fill","rgba(54, 207, 194, .8)",2000).delay(444);
+    $("#dot_p1 .st1").delay(40000).fadeIn(4000).css("fill","white",4000).queue(function(next){
+        $(this).addClass("shanshuo");
         next();
     });//.addClass("shanshuo");
-    $(".hud_panel_dot .st1").fadeIn().css("fill","white",1000).delay(200).queue(function(next){
-        $(this).addClass("shanshuo_infite");
+    $("#dot_p2 .st1").fadeIn().css("fill","white",1000).delay(200).queue(function(next){
+        $(this).addClass("shanshuo");
         next();
     });
     $nav.delay(2000).fadeIn();
@@ -35,9 +36,20 @@ $("document").ready(function(){
     $("#ai").delay(3000).fadeIn(2000);
     $(".core_mask").delay(3000).fadeOut(100).queue(function(next){
         $("#canvasOne").css({"transform":"translateZ(-6in)"});
-        $("#core_slider").delay(2000).fadeIn(100).addClass("shanshuo");
+        $("#core_slider").delay(000).fadeIn(00).queue(function(next){
+            $(this).addClass("shanshuo");
+            next();
+        });
+
         next();
     });
+    $(".baseline1").delay(4000).animate({top:"2%"},{duration:1000});
+    $(".baseline2").delay(4000).animate({bottom:"2%"},{duration:1000});
+};
+$("document").ready(function(){
+    $(".hud_panel").hide();
+    $("#ai").hide();
+    $reset();
     /*.queue(function(next) {
         var zoom = setInterval(function () {  //core zoom then stop slide bar
             var value = $('#slider-zoom').slider("value");
@@ -50,8 +62,6 @@ $("document").ready(function(){
         zoom();
         next();
     });*/
-    $(".baseline1").delay(4000).animate({top:"2%"},{duration:1000});
-    $(".baseline2").delay(4000).animate({bottom:"2%"},{duration:1000});
 
 });
 $leftside.delay(3000).animate({left:"4%"},{duration:1000});
@@ -60,6 +70,21 @@ $("button").hover(function(){
     $("this").addClass("shanshuo");
 })
 //button function
+$("button#home").click(function(){
+
+    $leftside.delay(000).animate({left:"40%"},{duration:1400}).queue(function(next){
+        $about.hide();
+        $leftside.animate({left:"4%"},{duration:1000});
+        next();
+    });
+    $rightside.delay(000).animate({right:"40%"},{duration:1400}).queue(function(next){
+        $project.hide();
+        $rightside.animate({right:"4%"},{duration:1000});
+        next();
+    });
+    $reset();
+    //$l1.add($l2).add($l3).add($r1).add($r2).add($r3).fadeIn(1000).addClass("panel_on");
+});
 $("button#about").click(function(){
     $l1.add($l2).add($l3).slideToggle("slow");
     $leftside.delay(000).animate({left:"40%"},{duration:1400}).queue(function(next){
@@ -67,16 +92,17 @@ $("button#about").click(function(){
         $leftside.animate({left:"4%"},{duration:1000});
         next();
     });
-    //$(".hud_panel_about .mb20").delay(800)..addClass("panel_on");
-    //$(".hud_panel_l4").delay(1000).slideToggle(400)
-        //$(".hud_panel_l1").toggleClass("hud_panel_l1_remove")
-       // $(".hud_panel_l2").toggleClass("hud_panel_l2_remove")
-      //  $(".hud_panel_l3").toggleClass("hud_panel_l3_remove")
-    //$(".hud_panel_l4").toggleClass("hud_panel_l4_in")
 });
-$("button#home").click(function(){
-   $("hud_container").animation({height:"50%"},{duration:2000}) ;
+$("button#project").click(function(){
+    $r1.add($r2).add($r3).slideToggle("slow");
+    $rightside.delay(000).animate({right:"40%"},{duration:1400}).queue(function(next){
+        $project.slideToggle().addClass("panel_on");
+        $rightside.animate({right:"4%"},{duration:1000});
+        next();
+    });
+   //$(".hud_panel").animate({top:"50%"},{duration:1000});
 });
+
 /////////////////////////////////////////////////////////////////////////////////////
 window.addEventListener("load", windowLoadHandler, false);
 //for debug messages
@@ -95,7 +121,6 @@ function windowLoadHandler() {
 function canvasApp() {
     var theCanvas = document.getElementById("canvasOne");
     var context = theCanvas.getContext("2d");
-    var fLen = 340;
     var displayWidth;
     var displayHeight;
     var timer;
@@ -106,7 +131,6 @@ function canvasApp() {
     var recycleBin;
     var particleAlpha;
     var r,g,b;
-    var fLen;
     var m;
     var projCenterX;
     var projCenterY;
@@ -418,7 +442,7 @@ $(function() {
         range:false,
         min: 0,
         max: 2,
-        value: 1,
+        value:1,
         step:0.001,
         slide: function( event, ui ) {
                 radius_sp = ui.value;

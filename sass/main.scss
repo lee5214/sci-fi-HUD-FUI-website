@@ -63,7 +63,7 @@ body {
     animation: logo_move 4s forwards;
     @keyframes logo_move {
       from{transform: perspective(1000px) translateZ(100px) translateY(200px);}
-      to {transform: perspective(1000px) translateZ(-300px) translateY(-100px);  }
+      to {transform: perspective(1000px) translateZ(-500px) translateY(-100px);  }
       }
     g .logo_eye{
       animation: turn_red 4s 4s forwards;
