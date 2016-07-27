@@ -36,20 +36,38 @@ $reset = function(){
     $nav.delay(2000).fadeIn();
     $(".hud_panel_ai").delay(000).fadeIn(2000);
     $("#ai").delay(3000).fadeIn(2000);
+    $(".hud_panel_svg").delay(3000).fadeIn(2000);
     $(".core_mask").delay(3000).fadeOut(100).queue(function(next){
         $("#canvasOne").css({"transform":"translateZ(-6in)"});
         $("#core_slider").delay(000).fadeIn(00).queue(function(next){
             $(this).addClass("shanshuo");
             next();
         });
-        $(".hud_panel_svg").delay(4000).fadeIn("normal");
         next();
     });
     $(".baseline1").delay(4000).animate({top:"2%"},{duration:1000});
     $(".baseline2").delay(4000).animate({bottom:"2%"},{duration:1000});
+
 };
+$leftside.delay(3000).animate({left:"4%"},{duration:500});
+$rightside.delay(3000).animate({right:"4%"},{duration:500});
+////////////////////////////////////////
+/*$("#view_2d").click(function(){
+    //$reset();
+    $("body").off("mouseover");
+});
+$("#view_full3d").click(function(){
+    $("body").css('transform', 'rotateX(' + roX + 'deg) rotateY('+roY + 'deg)');
+});
+$("#view_horizontal").click(function(){
+    $("body").css('transform', 'rotateY('+roY + 'deg)');
+});*/
+////////////////////////////////////////
 $("document").ready(function(){
     $reset();
+    setInterval('updateClock()', 1000);
+
+
     /*.queue(function(next) {
         var zoom = setInterval(function () {  //core zoom then stop slide bar
             var value = $('#slider-zoom').slider("value");
@@ -64,8 +82,7 @@ $("document").ready(function(){
     });*/
 
 });
-$leftside.delay(3000).animate({left:"4%"},{duration:1000});
-$rightside.delay(3000).animate({right:"4%"},{duration:1000});
+
 $("button").hover(function(){
     $("this").addClass("shanshuo");
 })
@@ -104,6 +121,28 @@ $("button#project").click(function(){
    //$(".hud_panel").animate({top:"50%"},{duration:1000});
 });
 
+/////////////////////////////////////////////////////////////////////////////////////
+//timer
+function updateClock ( )
+{
+    var currentTime = new Date ( );
+    var currentHours = currentTime.getHours ( );
+    var currentMinutes = currentTime.getMinutes ( );
+    var currentSeconds = currentTime.getSeconds ( );
+    // Pad the minutes and seconds with leading zeros, if required
+    currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
+    currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
+    // Choose either "AM" or "PM" as appropriate
+    var timeOfDay = ( currentHours < 12 ) ? "AM" : "PM";
+    // Convert the hours component to 12-hour format if needed
+    currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours;
+    // Convert an hours component of "0" to "12"
+    currentHours = ( currentHours == 0 ) ? 12 : currentHours;
+    // Compose the string for display
+    var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
+    $("#eye4").html(currentTimeString);
+
+}
 /////////////////////////////////////////////////////////////////////////////////////
 window.addEventListener("load", windowLoadHandler, false);
 //for debug messages

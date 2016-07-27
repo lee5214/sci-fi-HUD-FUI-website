@@ -1,3 +1,4 @@
+
 $hong : rgba(255, 0, 0, 1);
 $lv : rgba(54, 207, 0, 0.5);
 $qing : rgba(54, 207, 194, 0.5);
@@ -34,12 +35,14 @@ body {
     position: fixed;
     top:50%;
     left:50%;
-    width:10px;
-    height:10px;
-    background: red;
+    width:100%;
+    height:100%;
+    //background: red;
     z-index: 999;
-  }
+    border-left:1px solid white;
+    border-top:1px solid white;
 
+  }
   background-size: cover;
   width: 100vw;
   height: 100vh;
