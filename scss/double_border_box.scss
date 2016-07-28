@@ -1,0 +1,82 @@
+$anime-time: 8s;
+$box-size: 60px;
+$clip-distance: .05;
+$clip-size: $box-size * (1 + $clip-distance * 2);
+$path-width: 2px;
+$main-color: white;
+%full-fill {
+  //background-color: red;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.double_border_box {
+  @extend %full-fill;
+  width: $box-size;
+  height: $box-size;
+  margin: auto;
+  background: transparent no-repeat;
+  color: $main-color;
+  box-shadow: inset 0 0 0 1px rgba($main-color, .5);
+  &.b1{
+    margin-right:30%;
+    margin-top:1%;
+  }
+  &.b2{
+    margin-right:20%;
+    margin-top:1%;
+  }
+  &.b3{
+    div{
+      width:100%;
+      height:100%;
+      background-image: url(../resource/images/earth_ui.png), url(../resource/images/earth.png) ;
+      //background-size: cover;
+      //background-repeat: no-repeat;
+      //animation: bling 0.4s infinite;
+    }
+    @keyframes bling {
+      0% { opacity: 1  }
+      50%{ opacity: 0.7 }
+      100%{opacity: 1}
+    }
+    margin-right:10%;
+    margin-top:1%;
+  }
+
+  &::before,
+  &::after {
+    @extend %full-fill;
+    content: '';
+    z-index: -1;
+    margin: -1 * $clip-distance * 100%;
+    box-shadow: inset 0 0 0 $path-width;
+    animation: clipMe $anime-time linear infinite;
+  }
+
+  &::before {
+    animation-delay: $anime-time * -.5;
+  }
+
+  // for debug
+  /*&:hover {
+    &::after,
+    &::before {
+      background-color: rgba(#f00, .3);
+    }
+  }*/
+
+}
+
+@keyframes clipMe {
+  0%, 100% {clip: rect(0px, $clip-size, $path-width, 0px); }
+  25% {clip: rect(0px, $path-width, $clip-size, 0px); }
+  50% {clip: rect($clip-size - $path-width, $clip-size, $clip-size, 0px); }
+  75% {clip: rect(0px, $clip-size, $clip-size, $clip-size - $path-width); }
+}

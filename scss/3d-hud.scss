@@ -1,0 +1,523 @@
+@import "main.css";
+//@import "general_animation.css";
+$hong : rgba(255, 0, 0, 1);
+$lv : rgba(54, 207, 0, 0.14);
+$qing : rgba(54, 207, 194, 0.5);
+$qing_quan : rgba(54, 207, 194, 1);
+
+$panel1_rotate: -10deg 33deg 0;
+
+:root {
+  //background-color: black;
+  //color: pink;
+  transform-origin: 50% 50%;
+  -webkit-perspective: 12in;
+  //perspective: 12in;
+  overflow: hidden;
+}
+.hud_container {
+  #zhongxin2{
+    position: fixed;
+    top:0%;
+    left:50%;
+    margin-left:0px;
+    margin-top:0px;
+    width:1px;
+    border-left: red solid 1px;
+    height:100%;
+    background: green;
+    z-index: 999;
+  }
+  #zhongxin3{
+    position: fixed;
+    top:50%;
+    left:0%;
+    margin-left:0px;
+    margin-top:0px;
+    height:1px;
+    width:100%;
+    border-top: red solid 1px;
+    //background: green;
+    z-index: 999;
+  }
+  //background: white;
+  //transform: rotateX(10deg);
+  //position: relative;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+
+  .hud_panel_top{
+     @extend .panel;
+     //background: red;
+     width:100%;
+     height:40%;
+     transform:
+             translate3d(0vw, -60vh, -2in)
+             rotatex(-60deg)
+   ;
+   }
+  .hud_panel_bottom{
+    @extend .panel;
+    //background: red;
+    text-align: center;
+    transform-style: preserve-3d;
+    width:100%;
+    height:10%;
+    transform:
+            translateY(60vh)
+            rotateX(20deg)
+            //rotateY(-2deg)
+  ;
+    &:focus{
+      transition: 1s ease;
+      transform:
+              translate3d(0vw, 0vh, 0in)
+              rotatey(0deg)
+              rotatex(0deg);
+    }
+  }
+}
+  //background-color: rgba(255,255,255,0.1);
+  //overflow: hidden;
+  //position:absolute;
+
+  //animation:move_right 4s 10s;
+  //animation: test 7.5s ease-in-out infinite;
+
+ /* -webkit-animation: test 7.5s ease-in-out infinite;
+  animation: test 7.5s ease-in-out infinite;*/
+
+.panel {
+  //box-shadow: 1px 1px 5px #888888;
+  transition: 1s ease;
+  z-index: 1;
+  display: block;
+  transform-style: preserve-3d;
+  position: absolute;
+  left:0;right:0;top:0;bottom:0;
+  margin: auto;
+  overflow: hidden;
+  perspective-origin: center;
+  h2 {
+    color: white;
+    text-align: center;
+    /*text-shadow:0px 8px 8px red;*/
+  }
+  p{
+    color: white;
+    padding-bottom: 1vh;
+  }
+  li{
+    vertical-align: middle;
+    color: white;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    /*text-shadow:0px 8px 8px red;*/
+  }
+  a{
+    color: white;
+    background-color:transparent;
+  }
+}
+.hud_panel_l1 {
+  @extend .panel;
+  position: absolute;
+  height:30%;
+  width:20%;
+  transform:
+          translate3d(-40vw, -30vh, -3in)
+          rotatey(20deg)
+          rotatex(0deg)
+;
+  &:hover{
+    //border-image-width: 14%;
+    border-image-outset: 2;
+    transition: 0.5s ease;
+    transform:
+            translate3d(-40vw, -30vh, -3in)
+            rotatey(50deg)
+            rotatex(0deg);
+    background: white;
+    *{color:black;}
+  }
+}
+.hud_panel_l2 {
+  @extend .panel;
+  position: absolute;
+  height:27%;
+  width:20%;
+  transform:
+          translate3d(-15vw, -30vh, -3in)
+          rotatey(20deg)
+          rotatex(0deg)
+;
+  &:hover{
+
+    transition: 0.5s ease;
+    transform:
+            translate3d(-15vw, -30vh, -3in)
+            rotatey(20deg)
+            rotatex(-20deg);
+
+  }
+
+  #trial {
+    left:0%;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0;
+    position: relative; }
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+  #pulsar{
+    stroke-dasharray:411;
+    -webkit-animation: dash 8s infinite linear forwards;
+  }
+
+  @-webkit-keyframes dash{
+    from{
+      stroke-dashoffset:814;
+    }
+    to {
+      stroke-dashoffset:-1814;
+
+    }
+
+  }
+}
+.hud_panel_l3 {
+  @extend .panel;
+  position: absolute;
+  height: 24%;
+  width:20%;
+  transform:
+          translate3d(-40vw, 40vh, -3in)
+          rotatey(20deg)
+          rotatex(0deg)
+;
+  &:hover{
+    border-image-outset: 2;
+    transition: 0.5s ease;
+    transform:
+            translate3d(-40vw, 40vh, -3in)
+            rotatey(50deg)
+            rotatex(0deg);
+    background: white;
+    *{color:black;}
+  }
+
+}
+.hud_panel_dot{
+  @extend .panel;
+  //background: red;
+  position: absolute;
+  height:20%;
+  width:20%;
+
+}
+#dot_p1{
+  width:15%;
+  left:0;
+  transform:
+          translate3d(0vw, 60vh, -2in)
+          rotatey(-0deg)
+          rotatex(30deg)
+;
+}
+#dot_p2{
+  width:40%;
+  left:0;
+  transform:
+          translate3d(0vw, 60vh, -3in)
+          rotatey(-0deg)
+          rotatex(10deg)
+;
+}
+
+.hud_panel_about {
+  background: black;
+  @extend .panel;
+  position: absolute;
+  padding-bottom:1%;
+  width:30%;
+  height: auto;
+  transform:
+          translate3d(-30vw, 2vh, -1in)
+          rotatey(20deg)
+          rotatex(0deg)
+;
+  &:hover{
+    border-image-outset: 1;
+    //outline:0;
+    transition: 0.5s ease;
+    transform:
+            translate3d(-20vw, 0vh, -1in)
+            rotatey(20deg)
+            rotatex(0deg);
+    background: white;
+    *{color:black;}
+  }
+  &:focus{
+    border-image-outset: 1;
+    outline:0;
+    transition: 1s ease;
+    transform:
+            translate3d(0vw, 0vh, 0in)
+            rotatey(0deg)
+            rotatex(0deg);
+  }
+}
+.hud_panel_project {
+  background: black;
+  @extend .panel;
+  position: absolute;
+  padding-bottom:1%;
+  width:30%;
+  transform:
+          translate3d(30vw, 0vh, -1in)
+          rotatey(-20deg)
+          rotatex(0deg)
+;
+  &:hover{
+    border-image-outset: 1;
+    //outline:0;
+    transition: 0.5s ease;
+    transform:
+            translate3d(20vw, 0vh, -1in)
+            rotatey(-20deg)
+            rotatex(0deg);
+    background: white;
+    *{color:black;}
+  }
+  &:focus{
+    border-image-outset: 1;
+    outline:0;
+    transition: 1s ease;
+    transform:
+            translate3d(0vw, 0vh, 0in)
+            rotatey(0deg)
+            rotatex(0deg);
+  }
+}
+.hud_panel_r1 {
+  @extend .panel;
+  height:30%;
+  width:20%;
+  position:absolute;
+  transform:
+          translate3d(40vw, -30vh, -3in)
+          rotatey(-20deg)
+          rotatex(0deg)
+;
+  &:hover{
+    border-image-outset: 2;
+    transition: 0.5s ease;
+    transform:
+            translate3d(40vw, -30vh, -3in)
+            rotatey(-50deg)
+            rotatex(0deg);
+    background: white;
+    *{color:black;}
+
+  }
+}
+.hud_panel_r2 {
+  @extend .panel;
+  position: absolute;
+  opacity:1;
+  height:27%;
+  width:20%;
+  transform:
+          translate3d(15vw, -30vh, -3in)
+          rotatey(-20deg)
+          rotatex(0deg)
+;
+  image{position:absolute;top:20%;}
+  &:hover{
+    transition: 0.5s ease;
+    transform:
+            translate3d(15vw, -30vh, -3in)
+            rotatey(-20deg)
+            rotatex(-20deg);
+    opacity:1;
+
+  }
+  ul{
+    //animation: i1 4s linear infinite;
+    @keyframes i1 {
+      0%{opacity: 0.4}
+      50%{opacity: 1;}
+      100%{opacity: 0.4;}
+    }
+  }
+}
+.hud_panel_r3 {
+  //background: blue;
+  //transform: translate3d(40vw, -40vh, -3in)  rotatey(-33deg) rotatex(-10deg);
+  @extend .panel;
+  height:24%;
+  width:20%;
+  position: absolute;
+  transform:
+          translate3d(40vw, 40vh, -3in)
+          rotatey(-20deg)
+          rotatex(0deg)
+;
+  &:hover{
+    border-image-outset: 2;
+    transition: 0.5s ease;
+    transform:
+            translate3d(40vw, 40vh, -3in)
+            rotatey(-50deg)
+            rotatex(0deg);
+    background: white;
+    *{color:black;}
+
+  }
+}
+.hud_panel_nav {
+  //h2{text-shadow: none !important;}
+  //background: blue;
+  //transform: translate3d(40vw, -40vh, -3in)  rotatey(-33deg) rotatex(-10deg);
+  @extend .panel;
+  //background: red;
+  opacity:0.2;
+  height:auto;
+  width:20%;
+  position: absolute;
+  transition: all 0.5s linear;
+  transform-origin: 0% 50%;
+  transform:
+          translate3d(74vw, 0vh, -3in)
+          rotatey(-100deg)
+          rotatex(0deg)
+;
+  &:hover {
+        transition: all 0.5s ease;
+        transform: translate3d(74vw, 0vh, -3in) rotatey(-45deg) rotatex(0deg);
+        opacity:1;
+  }
+  button{
+    outline:0;
+    left:-10vw;
+    background: none;
+    width:90%;
+    height:14%;
+    transform: rotateZ(-14deg);
+    padding: 1vh;
+    margin: 3vh;
+    h2{align:center;}
+    a{text-decoration: none;}
+    &:hover{
+      background: white;
+      *{color:black;}
+    }
+    &:focus {
+      outline:0;
+      color:white;
+    }
+    &:active{
+      outline:0;
+    }
+  }
+}
+.view2d_nav{
+
+  transition: 1s ease;
+  width:20%;
+  right:0;
+  transform: translate3d(45vw, 2vh, 1in) rotatey(0deg) rotatex(0deg);
+  button{
+    width:70% !important;
+  }
+  &:hover {
+    background: rgba(0,0,0,1);
+    transition: all 0.5s ease;
+    transform: translate3d(40vw, 2vh, 1in) rotatey(0deg) rotatex(0deg);
+    opacity:1;
+  }
+}
+.hud_panel_ai{
+  @extend .panel;
+  //background: red;
+  overflow: visible;
+  z-index:3;
+  opacity:1;
+  height:30%;
+  width:30%;
+  transform-origin: 50% 50%;
+  //position: absolute;
+  //transition: all 0.5s linear;
+
+  transform:
+          translate3d(44vw, 10vh, -5in)
+          rotatey(-60deg)
+          rotatex(0deg)
+;
+
+}
+.hud_panel_svg{
+  @extend .panel;
+  //background: red;
+  overflow: hidden;
+  //background: red;
+  position: relative;
+  z-index:3;
+  opacity:1;
+  height:30%;
+  width:30%;
+  transform-origin: 50% 50%;
+  //position: absolute;
+  //transition: all 0.5s linear;
+
+  transform:
+          translate3d(-40vw, 10vh, -4in)
+          rotatey(20deg)
+          rotatex(0deg);
+  .svg_box{
+    display: block;
+    width:40%;
+    height:50%;
+    //background: green;
+    margin:auto;
+    position:relative;
+    float: left;
+  }
+}
+.hud_panel_1 ul > li::before {
+  content: "[" attr(data-who) "]\00A0";
+}
+.hud_panel_1 > ul {
+  height: 20vh;
+  font-family: 'Sintony';
+  font-size: 0.6rem;
+  line-height: 1.48;
+}
+.hud_panel_3 > ul,
+
+.hud_panel_3 ul > li::before {
+  content: ">\00A0";
+}
+.long_border{
+  border: 2px solid white;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+  opacity:0.8;
+}
+.glow {
+  color: white;
+  text-shadow: 0 0 1rem white, -0.1rem 0 rgba(255, 45, 0, 0.25), 0.1rem 0 rgba(102, 198, 0, 0.25), 0 0.1rem rgba(102, 198, 153, 0.25), 0 -0.1rem rgba(102, 45, 153, 0.25), 0 0 0.75rem rgba(0, 0, 0, 0.5);
+}
+
+.hud_panel_info{
+  overflow: hidden;
+  //position:absolute;
+  width: 100%;
+}
+
+/******************************************************/

@@ -1,0 +1,35 @@
+@import "animation_control.css";
+
+
+  .svg_ui{
+    overflow: visible;
+    width:100%;
+    height:100%;
+    //border: 2px white solid;
+    transform-origin: 50% 50%;
+    transform-style: preserve-3d;
+    *{transform-origin: 50% 50%;
+      transform-style: preserve-3d;
+    }
+    //transform-origin: 50% 50%;
+   //position: relative;
+     // animation: around 4s linear infinite;
+  }
+#s01_3{
+  path{fill: white;}
+}
+#svg02 {
+  overflow: visible;
+  //transform: rotatex(30deg) rotatey(-40deg);
+  //animation: svg_rotate  8s;
+  ._01move1{
+    animation: svg_moveZ1 8s 4s forwards;
+  }
+  ._01move2 {
+    animation: svg_moveZ1 8s 8s forwards;
+  }
+  ._01move3 {
+    animation: svg_moveZ1 8s 12s forwards;
+  }
+
+}

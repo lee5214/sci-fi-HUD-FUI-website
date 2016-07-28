@@ -1,0 +1,24 @@
+@import url(animation_control.css);
+.svg_ui {
+  overflow: visible;
+  width: 100%;
+  height: 100%;
+  transform-origin: 50% 50%;
+  transform-style: preserve-3d; }
+  .svg_ui * {
+    transform-origin: 50% 50%;
+    transform-style: preserve-3d; }
+
+#s01_3 path {
+  fill: white; }
+
+#svg02 {
+  overflow: visible; }
+  #svg02 ._01move1 {
+    animation: svg_moveZ1 8s 4s forwards; }
+  #svg02 ._01move2 {
+    animation: svg_moveZ1 8s 8s forwards; }
+  #svg02 ._01move3 {
+    animation: svg_moveZ1 8s 12s forwards; }
+
+/*# sourceMappingURL=svglist.css.map */

@@ -1,0 +1,38 @@
+/*body {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  //overflow: hidden;
+}
+*/
+.leftside, .rightside {
+  position: absolute;
+  top: 2%;
+  opacity: 1;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+  opacity: 1; }
+  .leftside.on path, .rightside.on path {
+    stroke-dashoffset: 0 !important;
+    transition: 1s ease; }
+  .leftside.leftside, .rightside.leftside {
+    left: 24%; }
+  .leftside.rightside, .rightside.rightside {
+    right: 24%; }
+  .leftside svg, .rightside svg {
+    transform-origin: 50% 50% 0px;
+    vertical-align: bottom; }
+    .leftside svg:hover path.st1, .rightside svg:hover path.st1 {
+      stroke: rgba(54, 207, 194, 0.5); }
+    .leftside svg:hover path.st0, .rightside svg:hover path.st0 {
+      stroke: rgba(54, 207, 194, 0.5); }
+    .leftside svg .st0, .rightside svg .st0 {
+      stroke: #344045; }
+    .leftside svg .st1, .rightside svg .st1 {
+      stroke: rgba(196, 50, 58, 0.8); }
+    .leftside svg .st2, .rightside svg .st2 {
+      stroke: rgba(224, 58, 67, 0.5); }
+    .leftside svg .st3, .rightside svg .st3 {
+      stroke: rgba(54, 207, 194, 0.5); }
+
+/*# sourceMappingURL=side_bar.css.map */
