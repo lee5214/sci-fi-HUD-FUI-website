@@ -170,12 +170,12 @@ body {
 
   }
   .biankuang_1 {
-    border: 20px solid;
-    border-image: url(../resource/images/fang1.svg) 5% 5% 5% 5%;
+    border: 20px dotted;
+    @include border-image(url(../resource/images/fang1.svg) 5% 5% 5% 5%);
   }
   .biankuang_2 {
     border: 10px solid red;
-    background: url(../resource/images/biankuang/b.svg) no-repeat;
+    @include background(url(../resource/images/biankuang/b.svg) no-repeat);
   }
 
   .panel_bottom_2 {

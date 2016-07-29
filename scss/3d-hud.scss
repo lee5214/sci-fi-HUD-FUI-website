@@ -155,13 +155,13 @@
   padding-bottom:1%;
   width:30%;
   height: auto;
-  @include transform(translate3d(-30vw, 2vh, -1in) rotatey(20deg));
+  @include transform(translate3d(-30vw, 0vh, -2in) rotatey(20deg));
   &:hover{
     border-image-outset: 1;
     background: white;
     //outline:0;
     @include transition(0.5s ease);
-    @include transform(translate3d(-20vw, 0vh, -1in) rotatey(20deg));
+    @include transform(translate3d(-20vw, 0vh, -2in) rotatey(20deg));
 
     *{color:black;}
   }
@@ -178,12 +178,12 @@
   position: absolute;
   padding-bottom:1%;
   width:30%;
-  @include transform(translate3d(30vw, 0vh, -1in) rotatey(-20deg));
+  @include transform(translate3d(30vw, 0vh, -2in) rotatey(-20deg));
   &:hover{
     border-image-outset: 1;
     //outline:0;
     @include transition(0.5s ease);
-    @include transform(translate3d(20vw, 0vh, -1in) rotateX(0deg) rotateY(-20deg));
+    @include transform(translate3d(20vw, 0vh, -2in) rotateX(0deg) rotateY(-20deg));
     background: white;
     *{color:black;}
   }
@@ -293,14 +293,14 @@
 }
 .view2d_nav{
   @include transition(1s ease);
-  height:80%;
-  width:20%;
-  right:0;
-  top:0%;
-  @include transform(translate3d(40vw, 0vh, 1in) rotatey(0deg) rotatex(0deg));
+  height:100%;
+  width:15%;
+  margin-right:-5%;
+  @include transform(translate3d(0vw, 0vh, 0in) rotatey(0deg) rotatex(0deg));
   button{
-    width:80% !important;
+    width:60% !important;
     h2{
+      align:left !important;
       top:0;bottom:0;
       margin:auto;
       }
@@ -308,7 +308,9 @@
   &:hover {
     background: rgba(0,0,0,1);
     @include transition(all 0.5s ease);
-    @include transform(translate3d(36vw, 0vh, 1in) rotatey(0deg) rotatex(0deg));
+    //margin-right:0%;
+    width:20%;
+    @include transform(translate3d(0vw, 0vh, 0in) rotatey(0deg) rotatex(0deg));
     opacity:1;
   }
 }

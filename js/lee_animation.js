@@ -539,10 +539,10 @@ $('body').on('mousemove', function(event) {
         //$(".hud_container").css({"transform":"translateZ(-16in)"});
         //$(".hud_container").animate({"perspective":"8in"},1000);
         /*resp = 8;*/
-        //$(":root").css("perspective","6in");
+        $(":root").css("perspective","6in");
         $(".hud_panel_nav").addClass("view2d_nav");
-        //$leftside.animate({left:"8%"},{duration:1000});
-        //$rightside.animate({right:"8%"},{duration:1000});
+        $leftside.stop().animate({left:"15%"},{duration:1000});
+        $rightside.stop().animate({right:"15%"},{duration:1000});
         //$(":root").animate({perspective:"12in"},"slow");
         view_option=2;
     });
@@ -552,9 +552,9 @@ $('body').on('mousemove', function(event) {
         //$(":root").animate({"perspective":"12in"},2000);
         //$(":root").css("perspective","10in");
         //$(":root").animate({"perspective":"1in"},1000).animate({"perspective":"12in"},1000).stop();
-        //$(":root").css("perspective","9in");
-        $leftside.stop().animate({left:"5%"},{duration:1000});
-        $rightside.stop().animate({right:"5%"},{duration:1000});
+        $(":root").css("perspective","12in");
+        $leftside.stop().animate({left:"8%"},{duration:1000});
+        $rightside.stop().animate({right:"8%"},{duration:1000});
         //$("body").animate({perspective:"10in"},"slow");
         $(".hud_panel_nav").removeClass("view2d_nav");
 
@@ -569,9 +569,10 @@ $('body').on('mousemove', function(event) {
         //$(":root").css("perspective","12in");
         //$(":root").css("perspective","12in");
         //$("body").animate({perspective:"15in"},"slow");
+        $(":root").css("perspective","16in");
         $(".hud_panel_nav").removeClass("view2d_nav");
-        $leftside.stop().animate({left:"2%"},{duration:1000});
-        $rightside.stop().animate({right:"2%"},{duration:1000});
+        $leftside.stop().animate({left:"0%"},{duration:1000});
+        $rightside.stop().animate({right:"0%"},{duration:1000});
         view_option=3;
         //$("body").css('transform', 'rotateX(' + roX + 'deg) rotateY('+roY + 'deg)');
     });
