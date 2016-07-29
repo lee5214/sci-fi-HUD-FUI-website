@@ -1,4 +1,4 @@
-
+@import "compass/css3";
 $hong : rgba(255, 0, 0, 1);
 $lv : rgba(54, 207, 0, 0.5);
 $qing : rgba(54, 207, 194, 0.5);
@@ -31,6 +31,7 @@ svg{
   left: 0 !important;
 }*/
 body {
+
   background-size: cover;
   width: 100vw;
   height: 100vh;

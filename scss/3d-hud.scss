@@ -4,10 +4,6 @@
   @include perspective(12in);
   overflow: hidden;
 }
-.html_zoom{
-  transition: 2s ease;
-  @include perspective(1in);
-}
 .panel {
   //writing-mode: vertical-lr;
   //box-shadow: 1px 1px 5px #888888;
@@ -44,6 +40,7 @@
 .hud_container {
   height: 100%;
   width: 100%;
+  perspective: 12in;
   @include transform-style(preserve-3d);
   .hud_panel_top{
      @extend .panel;
@@ -260,7 +257,7 @@
   opacity:0.2;
   height:auto;
   width:20%;
-  position: absolute;
+  position: fixed;
   @include transition(all 0.5s linear);
   @include transform-origin(0%,50%);
   @include transform(translate3d(74vw, 0vh, -3in) rotatey(-100deg));
@@ -295,18 +292,23 @@
   }
 }
 .view2d_nav{
-
   @include transition(1s ease);
+  height:80%;
   width:20%;
   right:0;
-  @include transform(translate3d(45vw, 2vh, 1in) rotatey(0deg) rotatex(0deg));
+  top:0%;
+  @include transform(translate3d(40vw, 0vh, 1in) rotatey(0deg) rotatex(0deg));
   button{
-    width:70% !important;
+    width:80% !important;
+    h2{
+      top:0;bottom:0;
+      margin:auto;
+      }
   }
   &:hover {
     background: rgba(0,0,0,1);
     @include transition(all 0.5s ease);
-    @include transform(translate3d(40vw, 2vh, 1in) rotatey(0deg) rotatex(0deg));
+    @include transform(translate3d(36vw, 0vh, 1in) rotatey(0deg) rotatex(0deg));
     opacity:1;
   }
 }

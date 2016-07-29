@@ -11,18 +11,28 @@ document.getElementsByClassName("center-animation").appendChild('spin');
 var sphereRad = 200;//qiu size
 var radius_sp=1;
 var fLen = 40;
+var resp = 12;
 $l1 = $(".hud_panel_l1"),$l2 = $(".hud_panel_l2"),$l3 = $(".hud_panel_l3"),
 $r1 = $(".hud_panel_r1"),$r2 = $(".hud_panel_r2"),$r3 = $(".hud_panel_r3"),
 $nav = $(".hud_panel_nav"),
 $home = $(".hud_panel_home"),$about = $(".hud_panel_about"),$project = $(".hud_panel_project"),$resume = $(".hud_panel_resume");
 $leftside = $(".leftside"),$rightside = $(".rightside");
 $reset = function(){
+    $(":root").css("perspective","'"+resp+"in'");
     $(".hud_panel").hide();
     $("#ai").hide();
+    $(".logo").hide();
     $("#core_slider").hide();
+    $("#view_change").hide();
+    //$(":root").animate({"perspective":"12in"},{"duration":1000});
     $l2.add($r2).delay(1000).fadeIn();
     $l1.add($r1).add($l3).add($r3).add($l2).add($r2).delay(2000).fadeIn().queue(function(next){
         $(this).addClass("panel_on");
+        next();
+        $(".logo").fadeIn();
+    });
+    $("#dot_p2 .st1").fadeIn().css("fill","white",1000).delay(200).queue(function(next){
+        $(this).addClass("shanshuo");
         next();
     });
     $("#dot_p1 .st0").delay(1000).fadeIn().css("fill","rgba(54, 207, 194, .8)",2000).delay(444);
@@ -30,10 +40,7 @@ $reset = function(){
         $("#dot_p1").addClass("shanshuo_infinite");
         next();
     });//.addClass("shanshuo");
-    $("#dot_p2 .st1").fadeIn().css("fill","white",1000).delay(200).queue(function(next){
-        $(this).addClass("shanshuo");
-        next();
-    });
+
     $nav.delay(2000).fadeIn();
     $(".hud_panel_ai").delay(000).fadeIn(2000);
     $("#ai").delay(3000).fadeIn(2000);
@@ -44,6 +51,7 @@ $reset = function(){
             $(this).addClass("shanshuo");
             next();
         });
+        $("#view_change").delay(1000).fadeIn(2000);
         next();
     });
     $(".baseline1").delay(4000).animate({top:"2%"},{duration:1000});
@@ -105,7 +113,7 @@ $("button#home").click(function(){
     //$l1.add($l2).add($l3).add($r1).add($r2).add($r3).fadeIn(1000).addClass("panel_on");
 });
 $("button#about").click(function(){
-    $l1.add($l2).add($l3).slideToggle("slow");
+    $l1.add($l2).add($l3).hide("slow");
     $leftside.delay(000).animate({left:"40%"},{duration:1400}).queue(function(next){
         $about.slideToggle().addClass("panel_on");
         $leftside.animate({left:"4%"},{duration:1000});
@@ -113,7 +121,7 @@ $("button#about").click(function(){
     });
 });
 $("button#project").click(function(){
-    $r1.add($r2).add($r3).slideToggle("slow");
+    $r1.add($r2).add($r3).hide("slow");
     $rightside.delay(000).animate({right:"40%"},{duration:1400}).queue(function(next){
         $project.slideToggle().addClass("panel_on");
         $rightside.animate({right:"4%"},{duration:1000});
@@ -520,28 +528,50 @@ $('body').on('mousemove', function(event) {
     //$this.css('transform', 'rotateY('+roY + 'deg)');
     //horizontal  and vertical
     $("#view_2D").click(function(){
+        //$(":root").transition({perspective:"6in"},"slow");
+        //$(":root").animate({perspective:"6in"},"slow");
         /*var a = function(){
             $(":root").animate({perspective:"12in"},"fast");
         }
         console.log("2D view");
         $(":root").animate({perspective:"6in"},"slow");
         setTimeout(a,3000);*/
-        $("body").animate({perspective:"6in"},"slow");
+        //$(".hud_container").css({"transform":"translateZ(-16in)"});
+        //$(".hud_container").animate({"perspective":"8in"},1000);
+        /*resp = 8;*/
+        //$(":root").css("perspective","6in");
         $(".hud_panel_nav").addClass("view2d_nav");
-        $leftside.animate({left:"1%"},{duration:1000});
-        $rightside.animate({right:"1%"},{duration:1000});
+        //$leftside.animate({left:"8%"},{duration:1000});
+        //$rightside.animate({right:"8%"},{duration:1000});
         //$(":root").animate({perspective:"12in"},"slow");
         view_option=2;
     });
     $("#view_25D").click(function(){
         console.log("2.5D view");
-        $("body").animate({perspective:"12in"},"slow");
-        //reset();
+        //$(".hud_container").animate({"perspective":"12in"},1000);
+        //$(":root").animate({"perspective":"12in"},2000);
+        //$(":root").css("perspective","10in");
+        //$(":root").animate({"perspective":"1in"},1000).animate({"perspective":"12in"},1000).stop();
+        //$(":root").css("perspective","9in");
+        $leftside.stop().animate({left:"5%"},{duration:1000});
+        $rightside.stop().animate({right:"5%"},{duration:1000});
+        //$("body").animate({perspective:"10in"},"slow");
+        $(".hud_panel_nav").removeClass("view2d_nav");
+
+
         view_option=2.5;
     });
     $("#view_3D").click(function(){
+
         console.log("3D view");
-        $(":root").css("perspective","6in").animate({perspective:"14in"},"slow");
+        //$(".hud_container").animate({"perspective":"16in"},1000);
+        //$(":root").animate({"perspective":"16in"},2000);
+        //$(":root").css("perspective","12in");
+        //$(":root").css("perspective","12in");
+        //$("body").animate({perspective:"15in"},"slow");
+        $(".hud_panel_nav").removeClass("view2d_nav");
+        $leftside.stop().animate({left:"2%"},{duration:1000});
+        $rightside.stop().animate({right:"2%"},{duration:1000});
         view_option=3;
         //$("body").css('transform', 'rotateX(' + roX + 'deg) rotateY('+roY + 'deg)');
     });
@@ -557,7 +587,7 @@ $('body').on('mousemove', function(event) {
     };
     if (view_option==3){
         $this.css('transform', 'rotateX(' + roX + 'deg) rotateY('+ roY + 'deg)');
-        $(".hud_panel_nav").removeClass("view2d_nav");
+
     };
 
 });

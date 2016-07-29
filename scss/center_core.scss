@@ -1,8 +1,6 @@
+@import "animation_control";
 .center_core{
   z-index:-9;
-  //@extend .panel;
-  //background: red;
-  //width:50%;
   border-radius: 50%;
   overflow: visible;
   transform-style: preserve-3d;
@@ -141,9 +139,28 @@
     transform-style: preserve-3d;
     transform: translateZ(1in);
     button{
-      height:100%;width:33.3333%;
+      height:100%;width:20%;
       position: relative;
       float: left;
+      background: transparent;
+      border-color: white;
+      border-radius:15%;
+      margin-left:10%;
+      //background-color: rgba(222,222,222,0.1) !important;
+      &:hover{
+        animation: laidian1 0.3s ease;
+        background: white;
+        *{color:black;}
+      }
+      &:focus {
+        outline:0;
+        background-color:white;
+        *{color:rgba(54, 207, 194,0.8);}
+      }
+      &:active{
+        *{color:white;}
+        outline:0;
+      }
     }
 
   }
