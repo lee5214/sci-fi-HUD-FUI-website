@@ -31,6 +31,10 @@ svg{
   left: 0 !important;
 }*/
 body {
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
   #zhongxin{
     position: fixed;
     top:50%;
@@ -43,10 +47,8 @@ body {
     border-top:1px solid white;
 
   }
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
+
+
   //background: url(../resource/images/bgtemp.jpg);
   //background-repeat:no-repeat;
   //background-position:50% 300%;

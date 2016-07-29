@@ -19,6 +19,7 @@ $leftside = $(".leftside"),$rightside = $(".rightside");
 $reset = function(){
     $(".hud_panel").hide();
     $("#ai").hide();
+    $("#core_slider").hide();
     $l2.add($r2).delay(1000).fadeIn();
     $l1.add($r1).add($l3).add($r3).add($l2).add($r2).delay(2000).fadeIn().queue(function(next){
         $(this).addClass("panel_on");
@@ -488,4 +489,75 @@ $(function() {
                 radius_sp = ui.value;
         }
     });
+});
+/**********************************************************************************/
+
+var maxRotate = 20; //deg
+var maxRotateY = 15;
+var view_option=3;
+
+$('body').on('mousemove', function(event) {
+    var $this = $('.hud_container'),
+        width = $this.width(),
+        height = $this.height(),
+        centerX = width / 2,
+        centerY = height / 2,
+        left = $this.position().left,
+        top =  $this.position().top;
+
+    //console.log("height "+height+"    width "+width);
+    /* console.log("left"+left);
+     console.log("top:"+top);*/
+    curRelPosX = event.clientX - left,
+        curRelPosY = event.clientY - top,
+        percentX = (curRelPosX - centerX) / centerX,
+        percentY = (curRelPosY - centerY) / centerY,
+        roY = percentX * maxRotateY;
+    roX = -percentY * maxRotate;
+
+    //$this.css('transform', 'none');
+    //horizontal
+    //$this.css('transform', 'rotateY('+roY + 'deg)');
+    //horizontal  and vertical
+    $("#view_2D").click(function(){
+        /*var a = function(){
+            $(":root").animate({perspective:"12in"},"fast");
+        }
+        console.log("2D view");
+        $(":root").animate({perspective:"6in"},"slow");
+        setTimeout(a,3000);*/
+        $("body").animate({perspective:"6in"},"slow");
+        $(".hud_panel_nav").addClass("view2d_nav");
+        $leftside.animate({left:"1%"},{duration:1000});
+        $rightside.animate({right:"1%"},{duration:1000});
+        //$(":root").animate({perspective:"12in"},"slow");
+        view_option=2;
+    });
+    $("#view_25D").click(function(){
+        console.log("2.5D view");
+        $("body").animate({perspective:"12in"},"slow");
+        //reset();
+        view_option=2.5;
+    });
+    $("#view_3D").click(function(){
+        console.log("3D view");
+        $(":root").css("perspective","6in").animate({perspective:"14in"},"slow");
+        view_option=3;
+        //$("body").css('transform', 'rotateX(' + roX + 'deg) rotateY('+roY + 'deg)');
+    });
+
+    if(view_option==2){
+        //$(body).setTimeout($reset,1000);
+        $this.css('transform', 'rotateX(' + 0 + 'deg) rotateY('+0 + 'deg)');
+
+    };
+    if(view_option==2.5){
+        $this.css('transform', 'rotateX(' + 0 + 'deg) rotateY('+ roY + 'deg)');
+
+    };
+    if (view_option==3){
+        $this.css('transform', 'rotateX(' + roX + 'deg) rotateY('+ roY + 'deg)');
+        $(".hud_panel_nav").removeClass("view2d_nav");
+    };
+
 });

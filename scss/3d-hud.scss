@@ -1,99 +1,20 @@
-@import "main.css";
-//@import "general_animation.css";
-$hong : rgba(255, 0, 0, 1);
-$lv : rgba(54, 207, 0, 0.14);
-$qing : rgba(54, 207, 194, 0.5);
-$qing_quan : rgba(54, 207, 194, 1);
-
-$panel1_rotate: -10deg 33deg 0;
-
+@import "compass/css3";
 :root {
-  //background-color: black;
-  //color: pink;
-  transform-origin: 50% 50%;
-  -webkit-perspective: 12in;
-  //perspective: 12in;
+  @include transform-origin(50%);
+  @include perspective(12in);
   overflow: hidden;
 }
-.hud_container {
-  #zhongxin2{
-    position: fixed;
-    top:0%;
-    left:50%;
-    margin-left:0px;
-    margin-top:0px;
-    width:1px;
-    border-left: red solid 1px;
-    height:100%;
-    background: green;
-    z-index: 999;
-  }
-  #zhongxin3{
-    position: fixed;
-    top:50%;
-    left:0%;
-    margin-left:0px;
-    margin-top:0px;
-    height:1px;
-    width:100%;
-    border-top: red solid 1px;
-    //background: green;
-    z-index: 999;
-  }
-  //background: white;
-  //transform: rotateX(10deg);
-  //position: relative;
-  height: 100%;
-  width: 100%;
-  transform-style: preserve-3d;
-
-  .hud_panel_top{
-     @extend .panel;
-     //background: red;
-     width:100%;
-     height:40%;
-     transform:
-             translate3d(0vw, -60vh, -2in)
-             rotatex(-60deg)
-   ;
-   }
-  .hud_panel_bottom{
-    @extend .panel;
-    //background: red;
-    text-align: center;
-    transform-style: preserve-3d;
-    width:100%;
-    height:10%;
-    transform:
-            translateY(60vh)
-            rotateX(20deg)
-            //rotateY(-2deg)
-  ;
-    &:focus{
-      transition: 1s ease;
-      transform:
-              translate3d(0vw, 0vh, 0in)
-              rotatey(0deg)
-              rotatex(0deg);
-    }
-  }
+.html_zoom{
+  transition: 2s ease;
+  @include perspective(1in);
 }
-  //background-color: rgba(255,255,255,0.1);
-  //overflow: hidden;
-  //position:absolute;
-
-  //animation:move_right 4s 10s;
-  //animation: test 7.5s ease-in-out infinite;
-
- /* -webkit-animation: test 7.5s ease-in-out infinite;
-  animation: test 7.5s ease-in-out infinite;*/
-
 .panel {
+  //writing-mode: vertical-lr;
   //box-shadow: 1px 1px 5px #888888;
-  transition: 1s ease;
+  @include transition(1s ease);
   z-index: 1;
   display: block;
-  transform-style: preserve-3d;
+  @include transform-style(preserve-3d);
   position: absolute;
   left:0;right:0;top:0;bottom:0;
   margin: auto;
@@ -120,24 +41,40 @@ $panel1_rotate: -10deg 33deg 0;
     background-color:transparent;
   }
 }
+.hud_container {
+  height: 100%;
+  width: 100%;
+  @include transform-style(preserve-3d);
+  .hud_panel_top{
+     @extend .panel;
+     //background: red;
+     width:100%;
+     height:40%;
+     @include transform(translate3d(0vw, -60vh, -2in) rotatex(-60deg));
+   }
+  .hud_panel_bottom{
+    @extend .panel;
+    text-align: center;
+    width:100%;
+    height:10%;
+    @include transform(translateY(60vh) rotateX(20deg));
+    &:focus{
+      @include transition(1s ease);
+      @include transform(translate3d(0vw, 0vh, 0in) rotate3d(0,0,0,0deg));
+    }
+  }
+}
 .hud_panel_l1 {
   @extend .panel;
   position: absolute;
   height:30%;
   width:20%;
-  transform:
-          translate3d(-40vw, -30vh, -3in)
-          rotatey(20deg)
-          rotatex(0deg)
-;
+  @include transform(translate3d(-40vw, -30vh, -3in) rotatey(20deg));
   &:hover{
     //border-image-width: 14%;
     border-image-outset: 2;
-    transition: 0.5s ease;
-    transform:
-            translate3d(-40vw, -30vh, -3in)
-            rotatey(50deg)
-            rotatex(0deg);
+    @include transition(0.5s ease);
+    @include transform(translate3d(-40vw, -30vh, -3in) rotatey(50deg));
     background: white;
     *{color:black;}
   }
@@ -147,19 +84,10 @@ $panel1_rotate: -10deg 33deg 0;
   position: absolute;
   height:27%;
   width:20%;
-  transform:
-          translate3d(-15vw, -30vh, -3in)
-          rotatey(20deg)
-          rotatex(0deg)
-;
+  @include transform(translate3d(-15vw, -30vh, -3in) rotatey(20deg));
   &:hover{
-
-    transition: 0.5s ease;
-    transform:
-            translate3d(-15vw, -30vh, -3in)
-            rotatey(20deg)
-            rotatex(-20deg);
-
+    @include transition(0.5s ease);
+    @include transform(translate3d(-15vw, -30vh, -3in) rotatey(20deg) rotatex(-20deg));
   }
 
   #trial {
@@ -168,7 +96,8 @@ $panel1_rotate: -10deg 33deg 0;
     max-width: 600px;
     margin: 0 auto;
     padding: 0;
-    position: relative; }
+    position: relative;
+  }
 
   svg {
     width: 100%;
@@ -176,10 +105,10 @@ $panel1_rotate: -10deg 33deg 0;
   }
   #pulsar{
     stroke-dasharray:411;
-    -webkit-animation: dash 8s infinite linear forwards;
+    @include animation(dash 8s infinite linear forwards);
   }
 
-  @-webkit-keyframes dash{
+  @keyframes  dash{
     from{
       stroke-dashoffset:814;
     }
@@ -195,26 +124,17 @@ $panel1_rotate: -10deg 33deg 0;
   position: absolute;
   height: 24%;
   width:20%;
-  transform:
-          translate3d(-40vw, 40vh, -3in)
-          rotatey(20deg)
-          rotatex(0deg)
-;
+  @include transform(translate3d(-40vw, 40vh, -3in) rotatey(20deg));
   &:hover{
     border-image-outset: 2;
-    transition: 0.5s ease;
-    transform:
-            translate3d(-40vw, 40vh, -3in)
-            rotatey(50deg)
-            rotatex(0deg);
+    @include transition(0.5s ease);
+    @include transform(translate3d(-40vw, 40vh, -3in) rotatey(50deg));
     background: white;
     *{color:black;}
   }
-
 }
 .hud_panel_dot{
   @extend .panel;
-  //background: red;
   position: absolute;
   height:20%;
   width:20%;
@@ -223,53 +143,36 @@ $panel1_rotate: -10deg 33deg 0;
 #dot_p1{
   width:15%;
   left:0;
-  transform:
-          translate3d(0vw, 60vh, -2in)
-          rotatey(-0deg)
-          rotatex(30deg)
-;
+  @include transform(translate3d(0vw, 60vh, -2in) rotatey(-0deg) rotatex(30deg));
 }
 #dot_p2{
   width:40%;
   left:0;
-  transform:
-          translate3d(0vw, 60vh, -3in)
-          rotatey(-0deg)
-          rotatex(10deg)
-;
+  @include transform(translate3d(0vw, 60vh, -3in) rotatex(10deg));
 }
 
 .hud_panel_about {
-  background: black;
   @extend .panel;
+  background: black;
   position: absolute;
   padding-bottom:1%;
   width:30%;
   height: auto;
-  transform:
-          translate3d(-30vw, 2vh, -1in)
-          rotatey(20deg)
-          rotatex(0deg)
-;
+  @include transform(translate3d(-30vw, 2vh, -1in) rotatey(20deg));
   &:hover{
     border-image-outset: 1;
-    //outline:0;
-    transition: 0.5s ease;
-    transform:
-            translate3d(-20vw, 0vh, -1in)
-            rotatey(20deg)
-            rotatex(0deg);
     background: white;
+    //outline:0;
+    @include transition(0.5s ease);
+    @include transform(translate3d(-20vw, 0vh, -1in) rotatey(20deg));
+
     *{color:black;}
   }
   &:focus{
     border-image-outset: 1;
     outline:0;
-    transition: 1s ease;
-    transform:
-            translate3d(0vw, 0vh, 0in)
-            rotatey(0deg)
-            rotatex(0deg);
+    @include transition(1s ease);
+    @include transform(translate3d(0vw, 0vh, 0in) rotatey(0deg) rotatex(0deg));
   }
 }
 .hud_panel_project {
@@ -278,30 +181,20 @@ $panel1_rotate: -10deg 33deg 0;
   position: absolute;
   padding-bottom:1%;
   width:30%;
-  transform:
-          translate3d(30vw, 0vh, -1in)
-          rotatey(-20deg)
-          rotatex(0deg)
-;
+  @include transform(translate3d(30vw, 0vh, -1in) rotatey(-20deg));
   &:hover{
     border-image-outset: 1;
     //outline:0;
-    transition: 0.5s ease;
-    transform:
-            translate3d(20vw, 0vh, -1in)
-            rotatey(-20deg)
-            rotatex(0deg);
+    @include transition(0.5s ease);
+    @include transform(translate3d(20vw, 0vh, -1in) rotateX(0deg) rotateY(-20deg));
     background: white;
     *{color:black;}
   }
   &:focus{
     border-image-outset: 1;
     outline:0;
-    transition: 1s ease;
-    transform:
-            translate3d(0vw, 0vh, 0in)
-            rotatey(0deg)
-            rotatex(0deg);
+    @include transition(1s ease);
+    @include transform(translate3d(0vw, 0vh, 0in) rotatey(0deg) rotatex(0deg));
   }
 }
 .hud_panel_r1 {
@@ -309,19 +202,12 @@ $panel1_rotate: -10deg 33deg 0;
   height:30%;
   width:20%;
   position:absolute;
-  transform:
-          translate3d(40vw, -30vh, -3in)
-          rotatey(-20deg)
-          rotatex(0deg)
-;
+  @include transform(translate3d(40vw, -30vh, -3in) rotatey(-20deg) rotatex(0deg));
   &:hover{
     border-image-outset: 2;
-    transition: 0.5s ease;
-    transform:
-            translate3d(40vw, -30vh, -3in)
-            rotatey(-50deg)
-            rotatex(0deg);
     background: white;
+    @include transition(0.5s ease);
+    @include transform(translate3d(40vw, -30vh, -3in) rotatey(-50deg) rotatex(0deg));
     *{color:black;}
 
   }
@@ -332,18 +218,11 @@ $panel1_rotate: -10deg 33deg 0;
   opacity:1;
   height:27%;
   width:20%;
-  transform:
-          translate3d(15vw, -30vh, -3in)
-          rotatey(-20deg)
-          rotatex(0deg)
-;
+  @include transform(translate3d(15vw, -30vh, -3in) rotatey(-20deg) rotatex(0deg));
   image{position:absolute;top:20%;}
   &:hover{
-    transition: 0.5s ease;
-    transform:
-            translate3d(15vw, -30vh, -3in)
-            rotatey(-20deg)
-            rotatex(-20deg);
+    @include transition(0.5s ease);
+    @include transform(translate3d(15vw, -30vh, -3in) rotatey(-20deg) rotatex(-20deg));
     opacity:1;
 
   }
@@ -358,49 +237,38 @@ $panel1_rotate: -10deg 33deg 0;
 }
 .hud_panel_r3 {
   //background: blue;
-  //transform: translate3d(40vw, -40vh, -3in)  rotatey(-33deg) rotatex(-10deg);
+  //@include transform(translate3d(40vw, -40vh, -3in)  rotatey(-33deg) rotatex(-10deg);
   @extend .panel;
   height:24%;
   width:20%;
   position: absolute;
-  transform:
-          translate3d(40vw, 40vh, -3in)
-          rotatey(-20deg)
-          rotatex(0deg)
-;
+  @include transform(translate3d(40vw, 40vh, -3in) rotatey(-20deg) rotatex(0deg));
   &:hover{
     border-image-outset: 2;
-    transition: 0.5s ease;
-    transform:
-            translate3d(40vw, 40vh, -3in)
-            rotatey(-50deg)
-            rotatex(0deg);
+    @include transition(0.5s ease);
+    @include transform(translate3d(40vw, 40vh, -3in) rotatey(-50deg) rotatex(0deg));
     background: white;
     *{color:black;}
-
   }
 }
 .hud_panel_nav {
   //h2{text-shadow: none !important;}
   //background: blue;
-  //transform: translate3d(40vw, -40vh, -3in)  rotatey(-33deg) rotatex(-10deg);
+  //@include transform(translate3d(40vw, -40vh, -3in)  rotatey(-33deg) rotatex(-10deg);
   @extend .panel;
   //background: red;
   opacity:0.2;
   height:auto;
   width:20%;
   position: absolute;
-  transition: all 0.5s linear;
-  transform-origin: 0% 50%;
-  transform:
-          translate3d(74vw, 0vh, -3in)
-          rotatey(-100deg)
-          rotatex(0deg)
-;
+  @include transition(all 0.5s linear);
+  @include transform-origin(0%,50%);
+  @include transform(translate3d(74vw, 0vh, -3in) rotatey(-100deg));
   &:hover {
-        transition: all 0.5s ease;
-        transform: translate3d(74vw, 0vh, -3in) rotatey(-45deg) rotatex(0deg);
-        opacity:1;
+    opacity:1;
+    @include transition(all 0.5s ease);
+    @include transform( translate3d(74vw, 0vh, -3in) rotatey(-45deg) rotatex(0deg));
+
   }
   button{
     outline:0;
@@ -408,7 +276,7 @@ $panel1_rotate: -10deg 33deg 0;
     background: none;
     width:90%;
     height:14%;
-    transform: rotateZ(-14deg);
+    @include transform( rotateZ(-14deg));
     padding: 1vh;
     margin: 3vh;
     h2{align:center;}
@@ -428,17 +296,17 @@ $panel1_rotate: -10deg 33deg 0;
 }
 .view2d_nav{
 
-  transition: 1s ease;
+  @include transition(1s ease);
   width:20%;
   right:0;
-  transform: translate3d(45vw, 2vh, 1in) rotatey(0deg) rotatex(0deg);
+  @include transform(translate3d(45vw, 2vh, 1in) rotatey(0deg) rotatex(0deg));
   button{
     width:70% !important;
   }
   &:hover {
     background: rgba(0,0,0,1);
-    transition: all 0.5s ease;
-    transform: translate3d(40vw, 2vh, 1in) rotatey(0deg) rotatex(0deg);
+    @include transition(all 0.5s ease);
+    @include transform(translate3d(40vw, 2vh, 1in) rotatey(0deg) rotatex(0deg));
     opacity:1;
   }
 }
@@ -452,12 +320,9 @@ $panel1_rotate: -10deg 33deg 0;
   width:30%;
   transform-origin: 50% 50%;
   //position: absolute;
-  //transition: all 0.5s linear;
+  //@include transition(all 0.5)s linear;
 
-  transform:
-          translate3d(44vw, 10vh, -5in)
-          rotatey(-60deg)
-          rotatex(0deg)
+  @include transform(translate3d(44vw, 10vh, -5in) rotatey(-60deg));
 ;
 
 }
@@ -473,12 +338,9 @@ $panel1_rotate: -10deg 33deg 0;
   width:30%;
   transform-origin: 50% 50%;
   //position: absolute;
-  //transition: all 0.5s linear;
+  //@include transition: all 0.5s linear;
 
-  transform:
-          translate3d(-40vw, 10vh, -4in)
-          rotatey(20deg)
-          rotatex(0deg);
+  @include transform(translate3d(-40vw, 10vh, -4in) rotatey(20deg));
   .svg_box{
     display: block;
     width:40%;
@@ -521,3 +383,26 @@ $panel1_rotate: -10deg 33deg 0;
 }
 
 /******************************************************/
+#zhongxin2{
+  position: fixed;
+  top:0%;
+  left:50%;
+  margin-left:0px;
+  margin-top:0px;
+  width:1px;
+  border-left: red solid 1px;
+  height:100%;
+  background: green;
+  z-index: 999;
+}
+#zhongxin3{
+  position: fixed;
+  top:50%;
+  left:0%;
+  margin-left:0px;
+  margin-top:0px;
+  height:1px;
+  width:100%;
+  border-top: red solid 1px;
+  z-index: 999;
+}
