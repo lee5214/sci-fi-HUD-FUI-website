@@ -10,54 +10,13 @@ document.getElementsByClassName("center-animation").appendChild('spin');
 */
 var sphereRad = 200;//qiu size
 var radius_sp=1;
-var fLen = 40;
-var resp = 12;
+var fLen = 200;
 $l1 = $(".hud_panel_l1"),$l2 = $(".hud_panel_l2"),$l3 = $(".hud_panel_l3"),
 $r1 = $(".hud_panel_r1"),$r2 = $(".hud_panel_r2"),$r3 = $(".hud_panel_r3"),
 $nav = $(".hud_panel_nav"),
 $home = $(".hud_panel_home"),$about = $(".hud_panel_about"),$project = $(".hud_panel_project"),$resume = $(".hud_panel_resume");
 $leftside = $(".leftside"),$rightside = $(".rightside");
-$reset = function(){
-    $(":root").css("perspective","'"+resp+"in'");
-    $(".hud_panel").hide();
-    $("#ai").hide();
-    $(".logo").hide();
-    $("#core_slider").hide();
-    $("#view_change").hide();
-    //$(":root").animate({"perspective":"12in"},{"duration":1000});
-    $l2.add($r2).delay(1000).fadeIn();
-    $l1.add($r1).add($l3).add($r3).add($l2).add($r2).delay(2000).fadeIn().queue(function(next){
-        $(this).addClass("panel_on");
-        next();
-        $(".logo").fadeIn();
-    });
-    $("#dot_p2 .st1").fadeIn().css("fill","white",1000).delay(200).queue(function(next){
-        $(this).addClass("shanshuo");
-        next();
-    });
-    $("#dot_p1 .st0").delay(1000).fadeIn().css("fill","rgba(54, 207, 194, .8)",2000).delay(444);
-    $("#dot_p1 .st1").delay(4000).fadeIn(4000).css("fill","white",4000).queue(function(next){
-        $("#dot_p1").addClass("shanshuo_infinite");
-        next();
-    });//.addClass("shanshuo");
 
-    $nav.delay(2000).fadeIn();
-    $(".hud_panel_ai").delay(000).fadeIn(2000);
-    $("#ai").delay(3000).fadeIn(2000);
-    $(".hud_panel_svg").delay(3000).fadeIn(2000);
-    $(".core_mask").delay(3000).fadeOut(100).queue(function(next){
-        $("#canvasOne").css({"transform":"translateZ(-6in)"});
-        $("#core_slider").delay(000).fadeIn(00).queue(function(next){
-            $(this).addClass("shanshuo");
-            next();
-        });
-        $("#view_change").delay(1000).fadeIn(2000);
-        next();
-    });
-    $(".baseline1").delay(4000).animate({top:"2%"},{duration:1000});
-    $(".baseline2").delay(4000).animate({bottom:"2%"},{duration:1000});
-
-};
 $leftside.delay(3000).animate({left:"4%"},{duration:500});
 $rightside.delay(3000).animate({right:"4%"},{duration:500});
 ////////////////////////////////////////
@@ -75,26 +34,56 @@ $("#view_horizontal").click(function(){
 $("document").ready(function(){
     $reset();
     setInterval('updateClock()', 1000);
-
-
-    /*.queue(function(next) {
-        var zoom = setInterval(function () {  //core zoom then stop slide bar
-            var value = $('#slider-zoom').slider("value");
-            var max = $('#slider-zoom').slider("option", "max");
-            $("#slider-zoom").slider("value", (value + 0.1) % (max + 1));
-            if(value>=1){
-                window.clearInterval(zoom);
-            }
-        }, 100);
-        zoom();
-        next();
-    });*/
-
 });
+//loader
+$(window).load(function(){
+    $('#loading').fadeOut(00);
+});
+//panel reset
+$reset = function(){
+    $(".hud_panel").hide();
+    $("#ai").hide();
+    $(".logo").hide();
+    $("#core_slider").hide();
+    $("#view_change").hide();
+    //$(":root").css("perspective","'"+resp+"in'");
 
-$("button").hover(function(){
-    $("this").addClass("shanshuo");
-})
+    //$(":root").animate({"perspective":"12in"},{"duration":1000});
+    $l2.add($r2).delay(500).show();
+    $l1.add($r1).add($l3).add($r3).add($l2).add($r2).delay(2000).fadeIn().queue(function(next){
+        $(this).addClass("panel_on");
+        next();
+        $(".logo").delay(2000).show();
+    });
+    $("#dot_p2 .st1").fadeIn().css("fill","white").queue(function(next){
+        $(this).addClass("shanshuo");
+        next();
+    });
+    $("#dot_p1 .st0").delay(1000).fadeIn().css("fill","rgba(54, 207, 194, .8)").delay(444);
+    $("#dot_p1 .st1").delay(4000).fadeIn(4000).css("fill","white").queue(function(next){
+        $("#dot_p1").addClass("shanshuo_infinite");
+        next();
+    });//.addClass("shanshuo");
+
+    $nav.delay(2000).fadeIn();
+    $(".hud_panel_ai").delay(000).fadeIn(2000);
+    $("#ai").delay(3000).fadeIn(2000);
+    $(".hud_panel_svg").delay(3000).fadeIn(2000);
+    $(".core_mask").delay(4000).fadeOut(100).queue(function(next){
+        $(".syscore").fadeIn();
+        $("#canvasOne").css({"transform":"translateZ(-2in)"});
+        $("#core_slider").delay(1000).fadeIn(00).queue(function(next){
+            $(this).addClass("shanshuo");
+            next();
+        });
+        $("#view_change").delay(1000).fadeIn(2000);
+        next();
+    });
+    $(".baseline1").delay(4000).animate({top:"2%"},{duration:1000});
+    $(".baseline2").delay(4000).animate({bottom:"2%"},{duration:1000});
+
+};
+
 //button function
 $("button#home").click(function(){
     //$(window).animate({height:"50%"},{duration:10000});
@@ -192,7 +181,6 @@ function canvasApp() {
     var randAccelX, randAccelY, randAccelZ;
     var gravity;
     var rgbString;
-    //we are defining a lot of variables used in the screen update functions globally so that they don't have to be redefined every frame.
     var p;
     var outsideTest;
     var nextParticle;
@@ -498,6 +486,19 @@ $(function() {
         }
     });
 });
+$(function() {
+    $( "#slider-travel" ).slider({
+        animate:true,
+        range:false,
+        min: 100,
+        max: 300,
+        value:200,
+        step:0.001,
+        slide:function( event, ui ) {
+            fLen = ui.value;
+        },
+    });
+});
 /**********************************************************************************/
 
 var maxRotate = 20; //deg
@@ -523,26 +524,12 @@ $('body').on('mousemove', function(event) {
         roY = percentX * maxRotateY;
     roX = -percentY * maxRotate;
 
-    //$this.css('transform', 'none');
-    //horizontal
-    //$this.css('transform', 'rotateY('+roY + 'deg)');
-    //horizontal  and vertical
     $("#view_2D").click(function(){
-        //$(":root").transition({perspective:"6in"},"slow");
-        //$(":root").animate({perspective:"6in"},"slow");
-        /*var a = function(){
-            $(":root").animate({perspective:"12in"},"fast");
-        }
-        console.log("2D view");
-        $(":root").animate({perspective:"6in"},"slow");
-        setTimeout(a,3000);*/
-        //$(".hud_container").css({"transform":"translateZ(-16in)"});
-        //$(".hud_container").animate({"perspective":"8in"},1000);
-        /*resp = 8;*/
-        $(":root").css("perspective","6in");
         $(".hud_panel_nav").addClass("view2d_nav");
-        $leftside.stop().animate({left:"15%"},{duration:1000});
-        $rightside.stop().animate({right:"15%"},{duration:1000});
+        $(".hud_panel_bottom").addClass("view2d_bottom");
+        $leftside.stop().animate({left:"10%"},{duration:1000});
+        $rightside.stop().animate({right:"10%"},{duration:1000});
+        $(":root").css("perspective","6in");
         //$(":root").animate({perspective:"12in"},"slow");
         view_option=2;
     });
@@ -552,29 +539,24 @@ $('body').on('mousemove', function(event) {
         //$(":root").animate({"perspective":"12in"},2000);
         //$(":root").css("perspective","10in");
         //$(":root").animate({"perspective":"1in"},1000).animate({"perspective":"12in"},1000).stop();
-        $(":root").css("perspective","12in");
-        $leftside.stop().animate({left:"8%"},{duration:1000});
-        $rightside.stop().animate({right:"8%"},{duration:1000});
-        //$("body").animate({perspective:"10in"},"slow");
         $(".hud_panel_nav").removeClass("view2d_nav");
-
+        $(".hud_panel_bottom").removeClass("view2d_bottom");
+        $leftside.stop().animate({left:"4%"},{duration:1000});
+        $rightside.stop().animate({right:"4%"},{duration:1000});
+        $(":root").css("perspective","12in");
+        //$("body").animate({perspective:"10in"},"slow");
 
         view_option=2.5;
     });
     $("#view_3D").click(function(){
-
         console.log("3D view");
-        //$(".hud_container").animate({"perspective":"16in"},1000);
-        //$(":root").animate({"perspective":"16in"},2000);
-        //$(":root").css("perspective","12in");
-        //$(":root").css("perspective","12in");
-        //$("body").animate({perspective:"15in"},"slow");
-        $(":root").css("perspective","16in");
+
         $(".hud_panel_nav").removeClass("view2d_nav");
+        $(".hud_panel_bottom").removeClass("view2d_bottom");
         $leftside.stop().animate({left:"0%"},{duration:1000});
         $rightside.stop().animate({right:"0%"},{duration:1000});
+        $(":root").css("perspective","16in");
         view_option=3;
-        //$("body").css('transform', 'rotateX(' + roX + 'deg) rotateY('+roY + 'deg)');
     });
 
     if(view_option==2){
@@ -592,3 +574,44 @@ $('body').on('mousemove', function(event) {
     };
 
 });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+var loaded = !1,
+    ratio = 1,
+    richFlag = !1,
+    ajax = !1;
+$(document).on({
+}), $(function () {
+    richFlag && ($(".hide").each(function (t, a) {
+        var e = $(this),
+            o = 2 * Math.random();
+        e.css({
+            "transition-delay": o + "s"
+        })
+    }), $(".hidechild").children().each(function (t, a) {
+        var e = $(this),
+            o = 2 * Math.random();
+        e.css({
+            "transition-delay": o + "s"
+        })
+    }));
+    var t = 0,
+        a = 0;
+    setTimeout(function () {
+        clearInterval(loaderInt), loaderInt = setInterval(function () {
+        }, 30), $(".expand").addClass("on")
+    }, 1200)
+});
+var loaderInt;
+$.fn.pathReset = function (t) {
+    var a = this;
+    a.each(function (t) {
+        var a = $(this),
+            e = this,
+            o = e.getTotalLength();
+        a.css({
+            "transition-delay": t / 20 + "s",
+            "stroke-dashoffset": o,
+            "stroke-dasharray": o
+        })
+    })
+};

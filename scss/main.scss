@@ -48,7 +48,14 @@ body {
     border-top:1px solid white;
 
   }
+  #loading{
+    position: fixed;
+    width:200%;
+    height:200%;
+    z-index: 999;
+    background: black;
 
+  }
 
   //background: url(../resource/images/bgtemp.jpg);
   //background-repeat:no-repeat;
@@ -328,10 +335,10 @@ body {
     //transition: all 1.5s .6s ease-in-out;
   }
   .panel_on{
-    .mb10{animation: mb1_move_quan 0.5s 0.5s linear forwards;}
-    .mb20{animation: mb1_move_quan_b 0.5s 0.5s linear forwards;}
-    .mb12{animation: mb1_move_heng2 0.5s 0.5s linear forwards;}
-    .mb22{animation: mb1_move_heng_b2 0.5s 0.5s linear forwards;}
+    .mb10{animation: mb1_move_quan 0.5s 0.5s ease forwards;}
+    .mb20{animation: mb1_move_quan_b 0.5s 0.5s ease forwards;}
+    .mb12{animation: mb1_move_heng2 0.5s 0.5s ease forwards;}
+    .mb22{animation: mb1_move_heng_b2 0.5s 0.5s ease forwards;}
   }
   .mb20{
     @extend .mb1;

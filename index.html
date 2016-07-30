@@ -24,6 +24,8 @@
     <!--<script src="js/jquery.magicring.plugin.js"></script>-->
 </head>
 <body>
+<div id="loading">
+</div>
 <!--<div id="zhongxin"></div>-->
 <!--<video src="resource/ccc.MP4" autoplay loop width="100%" ></video>-->
 <!--<div style="position: fixed; z-index: -99; width: 100%; height: 100%">
@@ -49,6 +51,7 @@
             <div id="core_slider">
                 <div class="slider" id="slider-range"></div>
                 <div class="slider" id="slider-zoom"></div>
+                <div class="slider" id="slider-travel"></div>
             </div>
             <div class="core_mask"></div>
             <div class="glow syscore"><h2>System Core</h2></div>
@@ -157,8 +160,6 @@
             <li>A sample of my Sci-Fi HUD FUI design</li>
             <li>Active navigation by moving cursor to right side</li>
             <li>Feel free to fork >> github @ lee5214</li>
-            <li>Or send me an email >> <a href="mailto:admin@lee5214.com" target="_top">admin@lee5214.com</a></li>
-
             <!--<div class="output-console"></div>-->
         </ul>
     </div>
@@ -348,7 +349,7 @@
             <p>While watching "Iron Man", one idea came into my mind:</p>
             <p>The flat UI design for those HUD in sci-fi movies / games is just amazing, but why I never saw one
                 website has been built this way?</p>
-            <p>Because it's impossible? Too hard to achieve? Or just no one wanna try it out?</p>
+            <p>Because it's impossible? Limited by browser rendering engine's functionality? Or just no one wanna try it out?</p>
             <p>Anyway, after some research online, I found it's doable and decided to use my free time to design and
                 build a new website this way.</p>
             <p>The task was not easy for me, many problems poped up, svg/canvas, css/javascipt animation control, 3D
@@ -357,10 +358,11 @@
             <p>But is it finished? No, not even close.</p>
             <p>There are many features I'm planning to add:</p>
             <ul>
-                <li>3D space game using WebGL as background</li>
+                <li>implementation of audio visualization</li>
+                <li>3D space game using WebGL (ThreeJS maybe?) as background</li>
                 <li>mutiple 2D interactive animations using canvas/svg</li>
                 <li>fully responsive on mobile</li>
-                <li>a open source library of sci-fi ui on my github</li>
+                <li>a open source project of sci-fi ui</li>
             </ul>
             <p>So, send me a message or email if you got any questions or ideas</p>
         </div>
@@ -385,6 +387,8 @@
             <li>github: <a href="https://github.com/lee5214">https://github.com/lee5214</a></li>
             <li>linkedin: <a href="https://github.com/lee5214">https://www.linkedin.com/in/lee5214</a></li>
             <li>location: San Francisco CA 94132</li>
+            <li>Email: <a href="mailto:admin@lee5214.com" target="_top">admin@lee5214.com</a></li>
+
         </ul>
     </div>
     <div class="hud_panel hud_panel_r2 ">
@@ -400,11 +404,8 @@
     <div class="hud_panel hud_panel_r3  biankuang_1">
         <span class="mb10"></span>
         <span class="mb12"></span>
-        <h2 class="glow ">Visitor Log</h2>
-        <ul class="glow">
-            <li>number:</li>
-            <li>Can not comply...</li>
-            <li>Device update needed</li>
+        <h2 class="glow">Visitor Log</h2>
+        <ul class="glow" id="visitor_log">
         </ul>
     </div>
     <div class="hud_panel hud_panel_nav ">
@@ -4127,12 +4128,12 @@
 </script>
 <!--side bar dependency-->
 <!--<script src="js/greensock_plugin.js"></script>-->
-<script src="js/sidebar.js"></script>
+<script src="js/lee_animation.js"></script>
+<script src="js/visitor_info.js"></script>
 <!--<script src="js/mouse_3d.js"></script>-->
-<script src="js/three.min.js"></script>
+<!--<script src="js/three.min.js"></script>-->
 <!--<script src="bgshan.js"></script>-->
 <script src="js/generator_hack.js"></script>
-<script src="js/lee_animation.js"></script>
 <!--<script>
     (function(){
         $('.hud_container div').append( "<div class='mask'></div>");

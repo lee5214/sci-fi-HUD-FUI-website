@@ -1,4 +1,5 @@
 @import "compass/css3";
+@import "animation_control";
 :root {
   @include transform-origin(50%);
   @include perspective(12in);
@@ -19,7 +20,6 @@
   h2 {
     color: white;
     text-align: center;
-    /*text-shadow:0px 8px 8px red;*/
   }
   p{
     color: white;
@@ -30,7 +30,6 @@
     color: white;
     padding-top: 4px;
     padding-bottom: 4px;
-    /*text-shadow:0px 8px 8px red;*/
   }
   a{
     color: white;
@@ -40,7 +39,6 @@
 .hud_container {
   height: 100%;
   width: 100%;
-  perspective: 12in;
   @include transform-style(preserve-3d);
   .hud_panel_top{
      @extend .panel;
@@ -54,11 +52,16 @@
     text-align: center;
     width:100%;
     height:10%;
-    @include transform(translateY(60vh) rotateX(20deg));
+    @include transform(translateY(55vh) rotateX(40deg));
     &:focus{
       @include transition(1s ease);
       @include transform(translate3d(0vw, 0vh, 0in) rotate3d(0,0,0,0deg));
     }
+  }
+  .view2d_bottom{
+    @include transform(translateY(0vh) rotateX(0deg));
+    position: fixed;
+    margin-bottom:0%;
   }
 }
 .hud_panel_l1 {
@@ -95,7 +98,6 @@
     padding: 0;
     position: relative;
   }
-
   svg {
     width: 100%;
     height: 100%;
@@ -104,7 +106,6 @@
     stroke-dasharray:411;
     @include animation(dash 8s infinite linear forwards);
   }
-
   @keyframes  dash{
     from{
       stroke-dashoffset:814;
@@ -149,6 +150,7 @@
 }
 
 .hud_panel_about {
+  display: none;
   @extend .panel;
   background: black;
   position: absolute;
@@ -173,6 +175,7 @@
   }
 }
 .hud_panel_project {
+  display: none;
   background: black;
   @extend .panel;
   position: absolute;
@@ -236,9 +239,9 @@
   //background: blue;
   //@include transform(translate3d(40vw, -40vh, -3in)  rotatey(-33deg) rotatex(-10deg);
   @extend .panel;
-  height:24%;
-  width:20%;
   position: absolute;
+  height: 24%;
+  width:20%;
   @include transform(translate3d(40vw, 40vh, -3in) rotatey(-20deg) rotatex(0deg));
   &:hover{
     border-image-outset: 2;
@@ -322,20 +325,18 @@
   opacity:1;
   height:30%;
   width:30%;
-  transform-origin: 50% 50%;
+  //transform-origin: 50% 50%;
   //position: absolute;
   //@include transition(all 0.5)s linear;
 
   @include transform(translate3d(44vw, 10vh, -5in) rotatey(-60deg));
-;
-
 }
 .hud_panel_svg{
   @extend .panel;
   //background: red;
   overflow: hidden;
   //background: red;
-  position: relative;
+  position: absolute;
   z-index:3;
   opacity:1;
   height:30%;
@@ -343,7 +344,6 @@
   transform-origin: 50% 50%;
   //position: absolute;
   //@include transition: all 0.5s linear;
-
   @include transform(translate3d(-40vw, 10vh, -4in) rotatey(20deg));
   .svg_box{
     display: block;
@@ -365,7 +365,6 @@
   line-height: 1.48;
 }
 .hud_panel_3 > ul,
-
 .hud_panel_3 ul > li::before {
   content: ">\00A0";
 }
