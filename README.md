@@ -1,2 +1,2 @@
 demo:
-http://test.lee5214.com
+http://lee5214.com
