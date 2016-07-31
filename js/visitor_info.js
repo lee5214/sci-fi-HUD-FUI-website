@@ -47,7 +47,7 @@ setCookie("counter", visits, now)
 //$("#visitor_num").html("visited number: <span>"+parseInt(visits)+"</span>");
 
 $( "#visitor_log" ).html(
-    "<li>Total Visit:  <span>"+parseInt(visits)+"</span></li>"
+    "<li>You Visited:  <span>"+parseInt(visits)+"</span></li>"
     + "<li>Language:  "+navigator.language+"</li>"
     + "<li>Platform:  "+navigator.platform+"</li>"
 

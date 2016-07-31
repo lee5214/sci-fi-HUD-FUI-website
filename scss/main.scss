@@ -71,15 +71,15 @@ body {
     margin: auto;
     width:14%;
     height:auto;
-    //transform: perspective(1000px) translateZ(-300px) translateY(-200px);
-    //transform: perspective(1000px) translateZ(-1000px);
-    animation: logo_move 4s forwards;
+    //@include transform(perspective(1000px) translateZ(-300px) translateY(-200px);
+    //@include transform(perspective(1000px) translateZ(-1000px);
+    @include animation( logo_move 4s forwards);
     @keyframes logo_move {
-      from{transform: perspective(1000px) translateZ(100px) translateY(200px);}
-      to {transform: perspective(1000px) translateZ(-500px) translateY(-100px);  }
+      from{@include transform( perspective(1000px) translateZ(100px) translateY(200px));}
+      to {@include transform( perspective(1000px) translateZ(-500px) translateY(-100px));  }
       }
     g .logo_eye{
-      animation: turn_red 4s 4s forwards;
+      @include animation( turn_red 4s 4s forwards);
       @keyframes turn_red {
         to {fill:rgba(255,0,0,0.8)}
       }
@@ -97,12 +97,12 @@ body {
     left: 0;
     right: 0;
     margin: auto;
-    //transform: perspective(1000px) translateZ(-30vw)  ;
+    //@include transform(perspective(1000px) translateZ(-30vw)  ;
     transform-style: preserve-3d;
-    animation: circleZ 60s linear infinite;
+    @include animation( circleZ 60s linear infinite);
     @keyframes circleZ {
       100% {
-        transform: perspective(1000px) translateZ(0vw) rotateZ(360deg)
+        @include transform( perspective(1000px) translateZ(0vw) rotateZ(360deg))
       }
     }
   }
@@ -126,15 +126,15 @@ body {
     //background-color:black;//parent elem's opacity = 0.5 while child elem's opacity = 1
     height: 20%;
     width: 20%;
-    transform: perspective(1vw) rotateX(0.5deg) rotateY(1deg) rotateZ(-2deg);
-    //-webkit-animation: left_bar_move_from_left 0.6s linear 0s;
+    @include transform( perspective(1vw) rotateX(0.5deg) rotateY(1deg) rotateZ(-2deg));
+    //-webkit-@include animation(left_bar_move_from_left 0.6s linear 0s;
     animation-fill-mode: forwards;
     .play-area {
       overflow: visible;
       //border: 1px solid white;
       //border-radius: 11%;
       transform-style: preserve-3d;
-      transform: perspective(1vw) translateX(14%) translateY(-20%) translateZ(0.1vw) rotateX(0.4deg);;
+      @include transform( perspective(1vw) translateX(14%) translateY(-20%) translateZ(0.1vw) rotateX(0.4deg));
       perspective-origin: center;
       height: 140%;
       width: 120%;
@@ -143,18 +143,17 @@ body {
       left: -40%;
 
       &:hover * {
-        transform: rotateX(-1deg) rotateY(-1deg) rotateZ(2.5deg);
-        /*-webkit-transform: rotate3D(0, 3, 0, -0.9deg);
-        -moz-transform: rotate3D(0, 1, 0, -0.9deg);
-        -o-transform: rotate3D(0, 1, 0, -0.9deg);*/
+        @include transform( rotateX(-1deg) rotateY(-1deg) rotateZ(2.5deg));
+        /*-webkit-@include transform(rotate3D(0, 3, 0, -0.9deg);
+        -moz-@include transform(rotate3D(0, 1, 0, -0.9deg);
+        -o-@include transform(rotate3D(0, 1, 0, -0.9deg);*/
       }
 
       //background-color: mediumpurple;
-      -webkit-animation: left_bar_move_from_left 3s linear 1s;
+      @include animation( left_bar_move_from_left 3s linear 1s);
       animation-fill-mode: forwards;
-      //transform: translate(100vw, 0);
-      transition-duration: 2s;
-      transition-timing-function: linear;
+      //@include transform(translate(100vw, 0);
+      @include transition( 2s linear);
       img {
         position: relative;
         opacity: 1;
@@ -162,16 +161,11 @@ body {
         width: 40%;
         left: 4%;
         margin: 2%;
-        //transform: perspective(1vw) rotate3d(0, 0, 1, 10deg);
-        //transition-duration: 1s;
-        //transition-timing-function: linear;
+        //@include transform(perspective(1vw) rotate3d(0, 0, 1, 10deg);
+        //@include transition(uration: 1s;
+        //@include transition(iming-function: linear;
 
-        //transform: translate3d(0px, 0px, 0px)      add animation later
-        -webkit-transition-duration: 0.8s;
-        -webkit-transition-property: -webkit-transform;
-        -moz-transition-property: -moz-transform;
-        -o-transition-property: -o-transform;
-        transition-property: transform;
+        //@include transform(translate3d(0px, 0px, 0px)      add animation later
       }
     }
 
@@ -196,7 +190,7 @@ body {
     left: auto;
     height: 200px;
     svg {
-      animation: none !important;
+      @include animation( none !important);
       width: 140px;
       right: 10%;
       left: auto;
@@ -288,11 +282,11 @@ body {
     top: 0px;
     background-color: black;
     opacity: 1;
-    //animation: mb1_move_quan 0.5s linear forwards;
+    //@include animation(mb1_move_quan 0.5s linear forwards;
     //animation-delay: 1s;
-    //-webkit-animation: mb1_move_quan 2s linear, mb1_move_fade 2s linear 2s;
+    //-webkit-@include animation(mb1_move_quan 2s linear, mb1_move_fade 2s linear 2s;
     //animation-delay: 3s;
-    //transition: all 1.5s .6s ease-in-out;
+    //@include transition(all 1.5s .6s ease-in-out;
   }
 /*
   .mb1fade {
@@ -302,8 +296,8 @@ body {
     height: 100%;
     background-color: black;
     opacity: 1;
-    animation: mb1_move_fade 2s linear;
-    -webkit-animation: mb1_move_fadeout 2s linear;
+    @include animation(mb1_move_fade 2s linear;
+    -webkit-@include animation(mb1_move_fadeout 2s linear;
     animation-fill-mode: forwards;
   }*/
 
@@ -316,10 +310,10 @@ body {
     left:0;
     bottom: -100%;
     background-color: $border_mask;
-    -webkit-animation: mb1_move_shu 2s linear;
+    -webkit-@include animation(mb1_move_shu 2s linear;
     animation-fill-mode: forwards;
     //animation-delay: 3s;
-    //transition: all 1.5s .6s ease-in-out;
+    //@include transition(all 1.5s .6s ease-in-out;
     }*/
 
   .mb12 { //bottom white line
@@ -330,15 +324,15 @@ body {
     bottom: 0px;
 
     background-color: rgba(223, 245, 255, 0.5);
-    animation: mb1_move_heng 0.5s linear forwards;
+    @include animation( mb1_move_heng 0.5s linear forwards);
     animation-fill-mode: forwards;
-    //transition: all 1.5s .6s ease-in-out;
+    //@include transition(all 1.5s .6s ease-in-out;
   }
   .panel_on{
-    .mb10{animation: mb1_move_quan 0.5s 0.5s ease forwards;}
-    .mb20{animation: mb1_move_quan_b 0.5s 0.5s ease forwards;}
-    .mb12{animation: mb1_move_heng2 0.5s 0.5s ease forwards;}
-    .mb22{animation: mb1_move_heng_b2 0.5s 0.5s ease forwards;}
+    .mb10{@include animation( mb1_move_quan 0.5s 0.5s ease forwards);}
+    .mb20{@include animation( mb1_move_quan_b 0.5s 0.5s ease forwards);}
+    .mb12{@include animation( mb1_move_heng2 0.5s 0.5s ease forwards);}
+    .mb22{@include animation( mb1_move_heng_b2 0.5s 0.5s ease forwards);}
   }
   .mb20{
     @extend .mb1;
@@ -350,7 +344,7 @@ body {
     top: 0px;
     background-color: black;
     opacity: 1;
-    //animation: mb1_move_quan_b 0.5s linear forwards;
+    //@include animation(mb1_move_quan_b 0.5s linear forwards;
   }
   .mb22{
     @extend .mb1;
@@ -360,7 +354,7 @@ body {
     bottom: 0px;
 
     background-color: rgba(223, 245, 255, 0.5);
-    animation: mb1_move_heng_b 0.5s linear forwards;
+    @include animation( mb1_move_heng_b 0.5s linear forwards);
     animation-fill-mode: forwards;
   }
   @keyframes mb1_move_quan {

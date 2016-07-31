@@ -1,3 +1,4 @@
+@import "compass/css3";
 $color1 : rgba(54, 207, 194, 0.5);
 $qing : rgba(54, 207, 194, 0.5);
 $hong : rgba(255, 0, 0, 1);
@@ -7,17 +8,16 @@ $lv : rgba(54, 207, 0, 1);
   overflow: visible;
   border-radius:50%;
   z-index:0;
-  transform-style: preserve-3d;
+  @include transform-style(preserve-3d);
   position:absolute;
-  left:0; right:0;
-  margin:0 auto;
+  left:0; right:0;top:0;bottom:0;
+  margin:auto;
   height: 200px;
   width: 200px;
   //transform: translatex(0vw) translateZ(-20vw) rotateX(-10deg);
   //transform: rotateX(40deg) rotateY(-20deg);
   div {
     position: absolute;
-
   }
 
 }
@@ -52,25 +52,24 @@ $lv : rgba(54, 207, 0, 1);
   text-align:center;
   width:110px;
   font-size: 200%;
-  transform: translate(340px,-20px);
+  @include transform(translate(340px,-20px));
   font-size: 140%;
 }
 
 #eye4 {
   width:150px;
   font-size: 200%;
-  transform: translate(290px,-20px);
+  @include transform(translate(290px,-20px));
   font-size: 140%;
 }
 
 #eye5 {
   font-size: 50%;
 }
-
 #eye6 {
   width:300px;
   font-size: 200%;
-  transform: translate(-100px,120px);
+  @include transform(translate(-100px,120px));
 }
 /*Nice to meet you human
 I'm the master of Cong Li......'s website
@@ -83,37 +82,34 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
 
 
 #figure {
-  top: 0px;
+  top: 0;
   left: 20px;
   height: 170px;
   width: 170px;
   border-radius: 5px;
-  -webkit-transform: rotateY(-30deg) rotateX(10deg);
-  -webkit-transform-style: preserve-3d;
-  -webkit-animation: figure 16s ease-in-out infinite;
-  -moz-transform: rotateY(-30deg) rotateX(10deg);
-  -moz-transform-style: preserve-3d;
-  -moz-animation: figure 16s ease-in-out infinite;
+  @include transform(rotateY(-30deg) rotateX(10deg));
+  @include transform-style(preserve-3d);
+  @include animation(figure 16s ease-in-out infinite);
 }
 
 @-webkit-keyframes figure {
   from {
-    -webkit-transform: rotateY(-30deg) rotateX(30deg);
+    @include transform(rotateY(-30deg) rotateX(30deg));
   }
   20% {
-    -webkit-transform: rotateY(30deg) rotateX(30deg);
+    @include transform(rotateY(30deg) rotateX(30deg));
   }
   40% {
-    -webkit-transform: rotateY(30deg) rotateX(-30deg);
+    @include transform(rotateY(30deg) rotateX(-30deg));
   }
   60% {
-    -webkit-transform: rotateY(-10deg) rotateX(0deg);
+    @include transform(rotateY(-10deg) rotateX(0deg));
   }
   80% {
-    -webkit-transform: rotateY(30deg) rotateX(0deg);
+    @include transform(rotateY(30deg) rotateX(0deg));
   }
   to {
-    -webkit-transform: rotateY(-30deg) rotateX(30deg);
+    @include transform(rotateY(-30deg) rotateX(30deg));
   }
 }
 
@@ -142,10 +138,9 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
   left: -100px;
   top: 20px;
   color: #03f;
-  -webkit-transform: scale(0.7);
-  -webkit-animation: feye 2s ease-in-out infinite;
+  @include transform(scale(0.6));
+  @include animation(feye 2s ease-in-out infinite);
 }
-
 @-webkit-keyframes feye {
   from {
     color: #09f;
@@ -166,24 +161,24 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
 
 #figure div,
 #figure span {
-  -webkit-transform-style: preserve-3d;
+  @include transform-style(preserve-3d);
 }
 #f0{
   left: -70px;
-  top: 0px;
+  top: 0;
   height: 300px;
   width: 300px;
   border-radius: 50%;
   background-image: url(../resource/images/round_circle/yuanpan_lv.png);
   background-size: contain;
-  -webkit-animation: f0 4s linear infinite;
+  @include animation(f0 4s linear infinite);
 }
 @-webkit-keyframes f0 {
   from {
-    -webkit-transform: rotateX(40deg)rotateZ(0deg);
+    @include transform(rotateX(40deg)rotateZ(0deg));
   }
   to {
-    -webkit-transform: rotateX(40deg)rotateZ(360deg);
+    @include transform(rotateX(40deg)rotateZ(360deg));
   }
 }
 #f1 {
@@ -192,66 +187,65 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
   height: 170px;
   width: 170px;
   border-radius: 50%;
-  border-width: 2px;
-  border-style: solid;
+  border: 2px solid;
   box-shadow: 0 0 5px $color1;
-  -webkit-animation: f1 4s ease-in-out infinite;
+  @include animation(f1 4s ease-in-out infinite);
 }
 
 
 @-webkit-keyframes f1 {
   from {
-    -webkit-transform: rotateZ(0deg);
+    @include transform(rotateZ(0deg));
     opacity: 1;
     border-color: $color1;
   }
   10% {
-    -webkit-transform: rotateZ(30deg);
+    @include transform(rotateZ(30deg));
     opacity: 1;
     border-color: #16f;
   }
   20% {
-    -webkit-transform: rotateZ(-30deg);
+    @include transform(rotateZ(-30deg));
     opacity: 0;
     border-color: $color1;
   }
   30% {
-    -webkit-transform: rotateZ(0deg);
+    @include transform(rotateZ(0deg));
     opacity: 1;
     border-color: #99c;
   }
   40% {
-    -webkit-transform: rotateZ(-60deg);
+    @include transform(rotateZ(-60deg));
     opacity: 1;
     border-color: $color1;
   }
   50% {
-    -webkit-transform: rotateZ(-40deg);
+    @include transform(rotateZ(-40deg));
     opacity: 1;
     border-color: #03f;
   }
   60% {
-    -webkit-transform: rotateZ(-100deg);
+    @include transform(rotateZ(-100deg));
     opacity: 0;
     border-color: #03c;
   }
   70% {
-    -webkit-transform: rotateZ(-150deg);
+    @include transform(rotateZ(-150deg));
     opacity: 1;
     border-color: $color1;
   }
   80% {
-    -webkit-transform: rotateZ(100deg);
+    @include transform(rotateZ(100deg));
     opacity: 0;
     border-color: $color1;
   }
   90% {
-    -webkit-transform: rotateZ(30deg);
+    @include transform(rotateZ(30deg));
     opacity: 1;
     border-color: #099;
   }
   to {
-    -webkit-transform: rotateZ(0deg);
+    @include transform(rotateZ(0deg));
     opacity: 1;
     border-color: $color1;
   }
@@ -267,7 +261,7 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
   width: 3px;
   background: $color1;
   box-shadow: 0 0 5px $color1;
-  -webkit-animation: f1div 4s ease-in-out infinite;
+  @include animation(f1div 4s ease-in-out infinite);
 }
 
 @-webkit-keyframes f1div {
@@ -309,15 +303,15 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
 #f2 {
   height: 170px;
   width: 170px;
-  -webkit-animation: f2 20s linear infinite;
+  @include animation(f2 20s linear infinite);
 }
 
 @-webkit-keyframes f2 {
   from {
-    -webkit-transform: translateZ(-5px) rotateZ(0deg);
+    @include transform(translateZ(-5px) rotateZ(0deg));
   }
   to {
-    -webkit-transform: translateZ(-5px) rotateZ(360deg);
+    @include transform(translateZ(-5px) rotateZ(360deg));
   }
 }
 
@@ -342,78 +336,78 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
   border-style: solid;
   border-color: #03c;
   box-shadow: 0 0 5px #03c;
-  -webkit-transform: translateZ(10px);
-  -webkit-animation: f3 6s ease-in-out infinite;
+  @include transform(translateZ(10px));
+  @include animation(f3 6s ease-in-out infinite);
 }
 
 @-webkit-keyframes f3 {
   from {
-    -webkit-transform: translateZ(10px) rotateZ(0deg);
+    @include transform(translateZ(10px) rotateZ(0deg));
     border-color: #03c;
     opacity: 1;
   }
   10% {
-    -webkit-transform: translateZ(10px) rotateZ(-80deg);
+    @include transform(translateZ(10px) rotateZ(-80d)eg);
     border-color: #00ccff;
     opacity: 1;
   }
   20% {
-    -webkit-transform: translateZ(10px) rotateZ(-60deg);
+    @include transform(translateZ(10px) rotateZ(-60d)eg);
     border-color: #03c;
     opacity: 0;
   }
   30% {
-    -webkit-transform: translateZ(10px) rotateZ(-200deg);
+    @include transform(translateZ(10px) rotateZ(-200)deg);
     border-color: #00ccff;
     opacity: 1;
   }
   40% {
-    -webkit-transform: translateZ(10px) rotateZ(-210deg);
+    @include transform(translateZ(10px) rotateZ(-210)deg);
     border-color: #0033cc;
     opacity: 1;
   }
   50% {
-    -webkit-transform: translateZ(10px) rotateZ(-120deg);
+    @include transform(translateZ(10px) rotateZ(-120)deg);
     border-color: #069;
     opacity: 1;
   }
   60% {
-    -webkit-transform: translateZ(10px) rotateZ(-100deg);
+    @include transform(translateZ(10px) rotateZ(-100)deg);
     border-color: #03c;
     opacity: 1;
   }
   70% {
-    -webkit-transform: translateZ(10px) rotateZ(-30deg);
+    @include transform(translateZ(10px) rotateZ(-30d)eg);
     border-color: #03c;
     opacity: 1;
   }
   80% {
-    -webkit-transform: translateZ(10px) rotateZ(0deg);
+    @include transform(translateZ(10px) rotateZ(0deg));
     border-color: #003;
     opacity: 0;
   }
   90% {
-    -webkit-transform: translateZ(10px) rotateZ(90deg);
+    @include transform(translateZ(10px) rotateZ(90deg));
     border-color: #03c;
     opacity: 1;
   }
   to {
-    -webkit-transform: translateZ(10px) rotateZ(0deg);
+    @include transform(translateZ(10px) rotateZ(0deg));
     border-color: #03c;
     opacity: 1;
   }
 }
 
 #f31 {
-  width: 40px;
+  width: 80px;
   background: #000;
   top: -13px;
   left: 45px;
   bottom: -13px;
-  -webkit-transform: translateZ(1px);
+  //@include transform(ranslateZ(1px);
 }
 
-#f31 span {
+#f31 span{
   left: 12px;
   position: absolute;
   display: block;
@@ -421,7 +415,7 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
   height: 14px;
   width: 14px;
   border-radius: 100%;
-  -webkit-transform: translateZ(2px);
+  @include transform(translateZ(2px));
 }
 
 .f312 {
@@ -436,7 +430,7 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
   width: 8px;
   background: #03c;
   border-radius: 100%;
-  -webkit-animation: f31span 2s ease-in-out infinite;
+  @include animation(f31span 2s ease-in-out infinite);
 }
 
 @-webkit-keyframes f31span {
@@ -468,7 +462,7 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
   top: 45px;
   left: -15px;
   right: -15px;
-  -webkit-transform: translateZ(1px);
+  @include transform(translateZ(1px));
 }
 
 #f32 span {
@@ -479,11 +473,11 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
   height: 6px;
   width: 6px;
   top: 15px;
-  -webkit-transform: translateZ(2px);
+  @include transform(translateZ(2px));
 }
 
 .f321 {
-  left: 6px;
+ left: 6px;
 }
 
 .f322 {
@@ -496,7 +490,7 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
   top: -10px;
   left: 64px;
   bottom: -10px;
-  -webkit-transform: translateZ(1px) rotateZ(45deg);
+  @include transform(translateZ(1px) rotateZ(45deg));
 }
 
 #f34 {
@@ -505,7 +499,7 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
   top: -10px;
   left: 64px;
   bottom: -10px;
-  -webkit-transform: translateZ(1px) rotateZ(-45deg);
+  @include transform( translateZ(1px) rotateZ(-45deg));
 }
 
 #f4 {
@@ -515,29 +509,29 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
   width: 100px;
   border: 2px solid $lv;
   border-radius: 100%;
-  -webkit-transform: translateZ(20px);
-  -webkit-animation: f4 6s ease-in-out infinite;
+  @include transform( translateZ(20px));
+  @include animation(f4 6s ease-in-out infinite);
 }
 
 @-webkit-keyframes f4 {
   from {
-    -webkit-transform: translateZ(20px) rotateZ(0deg);
+    @include transform(translateZ(20px) rotateZ(0deg));
     opacity: 1;
   }
   25% {
-    -webkit-transform: translateZ(20px) rotateZ(120deg);
+    @include transform(translateZ(20px) rotateZ(120deg));
     opacity: 1;
   }
   50% {
-    -webkit-transform: translateZ(20px) rotateZ(0deg);
+    @include transform(translateZ(20px) rotateZ(0deg));
     opacity: 0;
   }
   75% {
-    -webkit-transform: translateZ(20px) rotateZ(-120deg);
+    @include transform(translateZ(20px) rotateZ(-120deg));
     opacity: 1;
   }
   to {
-    -webkit-transform: translateZ(20px) rotateZ(0deg);
+    @include transform(translateZ(20px) rotateZ(0deg));
     opacity: 1;
   }
 }
@@ -548,7 +542,7 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
   bottom: -3px;
   width: 10px;
   background: #000;
-  -webkit-transform: translateZ(1px);
+  @include transform(translateZ(1px));
 }
 
 #f42 {
@@ -557,7 +551,7 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
   right: -3px;
   height: 10px;
   background: #000;
-  -webkit-transform: translateZ(1px);
+  @include transform(translateZ(1px));
 }
 
 #f43 {
@@ -569,19 +563,19 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
 }
 
 .f431 {
-  -webkit-transform: rotateZ(45deg) translateY(55px);
+  @include transform(rotateZ(45deg) translateY(55px));
 }
 
 .f432 {
-  -webkit-transform: rotateZ(-45deg) translateY(55px);
+  @include transform(rotateZ(-45deg) translateY(55)px);
 }
 
 .f433 {
-  -webkit-transform: rotateZ(135deg) translateY(55px);
+  @include transform(rotateZ(135deg) translateY(55)px);
 }
 
 .f434 {
-  -webkit-transform: rotateZ(225deg) translateY(55px);
+  @include transform(rotateZ(225deg) translateY(55)px);
 }
 @font-face {
   font-family: mage;
@@ -595,15 +589,15 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
   height: 80px;
   width: 80px;
   color: #00ccff;
-  -webkit-animation: f5 20s linear infinite;
+  @include animation(f5 20s linear infinite);
 }
 
 @-webkit-keyframes f5 {
   from {
-    -webkit-transform: translateZ(25px) rotateZ(360deg);
+    @include transform(translateZ(25px) rotateZ(360deg));
   }
   to {
-    -webkit-transform: translateZ(25px) rotateZ(0deg);
+    @include transform(translateZ(25px) rotateZ(0deg));
   }
 }
 
@@ -635,7 +629,7 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
   width: 46px;
   border-radius: 50%;
   border: 1px solid #06f;
-  -webkit-transform: translateZ(30px);
+  @include transform(translateZ(30px));
 }
 
 #f7 {
@@ -646,37 +640,37 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
   border-radius: 50%;
   border: 2px solid #06f;
   background: #000;
-  -webkit-transform: translateZ(34px);
-  -webkit-animation: f7 6s linear infinite;
+  @include transform(translateZ(34px));
+  @include animation( f7 6s linear infinite);
 }
 
 @-webkit-keyframes f7 {
   from {
-    -webkit-transform: translateZ(34px) rotateZ(0deg);
+    @include transform(translateZ(34px) rotateZ(0deg));
     opacity: 1;
   }
   10% {
-    -webkit-transform: translateZ(34px) rotateZ(36deg);
+    @include transform(translateZ(34px) rotateZ(36deg));
     opacity: 0;
   }
   20% {
-    -webkit-transform: translateZ(34px) rotateZ(72deg);
+    @include transform(translateZ(34px) rotateZ(72deg));
     opacity: 1;
   }
   70% {
-    -webkit-transform: translateZ(34px) rotateZ(252deg);
+    @include transform(translateZ(34px) rotateZ(252deg));
     opacity: 1;
   }
   80% {
-    -webkit-transform: translateZ(34px) rotateZ(288deg);
+    @include transform(translateZ(34px) rotateZ(288deg));
     opacity: 0;
   }
   90% {
-    -webkit-transform: translateZ(34px) rotateZ(324deg);
+    @include transform(translateZ(34px) rotateZ(324deg));
     opacity: 1;
   }
   to {
-    -webkit-transform: translateZ(34px) rotateZ(360deg);
+    @include transform(translateZ(34px) rotateZ(360deg));
   }
 }
 
@@ -686,7 +680,7 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
   height: 60px;
   width: 2px;
   background: #06f;
-  -webkit-transform: translateZ(-1px);
+  @include transform(translateZ(-1px));
 }
 
 #f72 {
@@ -695,7 +689,7 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
   height: 60px;
   width: 2px;
   background: #06f;
-  -webkit-transform: translateZ(-1px) rotateZ(90deg);
+  @include transform(translateZ(-1px) rotateZ(90deg));
 }
 
 #f8 {
@@ -706,32 +700,32 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
   border-radius: 50%;
   border: 1px solid #00ccff;
   background: #000;
-  -webkit-transform: translateZ(40px);
-  -webkit-animation: f8 8s linear infinite;
+  @include transform(translateZ(40px));
+  @include animation( f8 8s linear infinite);
 }
 
 @-webkit-keyframes f8 {
   from {
-    -webkit-transform: translateZ(40px) rotateZ(360deg);
+    @include transform(translateZ(40px) rotateZ(360deg));
     border-color: #00ccff;
     opacity: 1;
   }
   10% {
-    -webkit-transform: translateZ(40px) rotateZ(324deg);
+    @include transform( translateZ(40px) rotateZ(324deg));
     border-color: #00ccff;
     opacity: 0;
   }
   20% {
-    -webkit-transform: translateZ(40px) rotateZ(288deg);
+    @include transform( translateZ(40px) rotateZ(288deg));
     border-color: #00ccff;
     opacity: 1;
   }
   50% {
-    -webkit-transform: translateZ(40px) rotateZ(180deg);
+    @include transform( translateZ(40px) rotateZ(180deg));
     border-color: #09f;
   }
   to {
-    -webkit-transform: translateZ(40px) rotateZ(0deg);
+    @include transform( translateZ(40px) rotateZ(0deg));
     border-color: #00ccff;
   }
 }
@@ -742,9 +736,9 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
   height: 50px;
   width: 10px;
   background: #00ccff;
-  -webkit-transform: translateZ(-1px);
+  @include transform(translateZ(-1px));
   border-radius: 5px;
-  -webkit-animation: f8div 8s linear infinite;
+  @include animation(f8div 8s linear infinite);
 }
 
 #f82 {
@@ -753,9 +747,9 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
   height: 50px;
   width: 10px;
   background: #00ccff;
-  -webkit-transform: translateZ(-1px) rotateZ(90deg);
+  @include transform(translateZ(-1px) rotateZ(90deg));
   border-radius: 5px;
-  -webkit-animation: f8div 8s linear infinite;
+  @include animation(f8div 8s linear infinite);
 }
 
 @-webkit-keyframes f8div {
@@ -777,7 +771,7 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
   width: 10px;
   border-radius: 50%;
   border: 1px solid #06f;
-  -webkit-transform: translateZ(50px);
+  @include transform(translateZ(50px));
 }
 
 #f9 span {
@@ -789,5 +783,5 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
   width: 4px;
   background: #06f;
   border-radius: 50%;
-  -webkit-transform: translateZ(1px);
+  @include transform(translateZ(1px));
 }

@@ -1,3 +1,4 @@
+@import "compass/css3";
 $anime-time: 8s;
 $box-size: 60px;
 $clip-distance: .05;
@@ -6,15 +7,13 @@ $path-width: 2px;
 $main-color: white;
 %full-fill {
   //background-color: red;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
-  transform-style: preserve-3d;
+  @include transform-style(preserve-3d);
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+  margin: auto;
 }
 .double_border_box {
   @extend %full-fill;
@@ -39,7 +38,7 @@ $main-color: white;
       background-image: url(../resource/images/earth_ui.png), url(../resource/images/earth.png) ;
       //background-size: cover;
       //background-repeat: no-repeat;
-      //animation: bling 0.4s infinite;
+      //@include animation:(bling 0.4s infinite;
     }
     @keyframes bling {
       0% { opacity: 1  }
@@ -57,11 +56,11 @@ $main-color: white;
     z-index: -1;
     margin: -1 * $clip-distance * 100%;
     box-shadow: inset 0 0 0 $path-width;
-    animation: clipMe $anime-time linear infinite;
+    @include animation( clipMe $anime-time linear infinite);
   }
 
   &::before {
-    animation-delay: $anime-time * -.5;
+    @include animation-delay($anime-time * -.5);
   }
 
   // for debug
@@ -75,8 +74,8 @@ $main-color: white;
 }
 
 @keyframes clipMe {
-  0%, 100% {clip: rect(0px, $clip-size, $path-width, 0px); }
-  25% {clip: rect(0px, $path-width, $clip-size, 0px); }
-  50% {clip: rect($clip-size - $path-width, $clip-size, $clip-size, 0px); }
-  75% {clip: rect(0px, $clip-size, $clip-size, $clip-size - $path-width); }
+  0%, 100% { clip: rect(0px, $clip-size, $path-width, 0px); }
+  25% { clip: rect(0px, $path-width, $clip-size, 0px); }
+  50% { clip: rect($clip-size - $path-width, $clip-size, $clip-size, 0px); }
+  75% { clip: rect(0px, $clip-size, $clip-size, $clip-size - $path-width); }
 }

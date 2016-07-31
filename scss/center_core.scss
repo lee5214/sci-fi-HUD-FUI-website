@@ -1,4 +1,5 @@
 @import "animation_control";
+@import "compass/css3";
 .center_core{
   z-index:-9;
   border-radius: 50%;
@@ -8,7 +9,7 @@
   margin: auto;
   position: absolute;
   opacity:1;
-  transform: translateY(6vh) translateZ(-5in) rotateX(0deg);
+  @include transform( translateY(6vh) translateZ(-5in) rotateX(0deg));
   .core_mask{
     position:absolute;
     width:100%;
@@ -24,15 +25,14 @@
     margin:auto;
     canvas{
       transition: 1s ease-in-out;
-      transform-origine: 50% 50%;
-      transform: translateY(0vh) translateZ(-100in) rotateX(0deg);
+      @include transform( translateY(0vh) translateZ(-100in) rotateX(0deg));
       top:0;bottom:0;left:0;right:0;
       margin:auto;
       position:absolute;
       width:100%;
       height:100%;
       //transform-style: preserve-3d;
-      //transform: translateZ(70vh);
+      //@include transform( translateZ(70vh);
     }
 
   }
@@ -46,11 +46,11 @@
     height:50%;
     //background: red;
     opacity:1;
-    transform:translateZ(0in);
+    @include transform(translateZ(0in));
     .syscore{
       opacity:0;
       transform-style: preserve-3d;
-      transform:translateX(-10vw)translateZ(-20in)translateY(20vh);
+      @include transform(translateX(-10vw)translateZ(-20in)translateY(20vh));
       position: absolute;
       top: 0!important;bottom:0 !important;margin:auto;
       text-align: center;
@@ -62,32 +62,32 @@
       display: flex;
       justify-content: center; /* align horizontal */
       align-items: center; /* align vertical */
-      animation: movefar 3s 5s linear forwards;
+      @include animation( movefar 3s 5s ease forwards);
       @keyframes movefar {
         0%{
           opacity:0;
-          transform:translateZ(-20in) translateX(-10vw);
+          @include transform(translateZ(-20in) translateX(-10vw));
         }
         30%{
           opacity:1;
-          transform:translateZ(3in) translateX(0vw);
+          @include transform(translateZ(3in) translateX(0vw));
         }
         50%{
           opacity:1;
-          transform:translateZ(3in) translateX(0vw);
+          @include transform(translateZ(3in) translateX(0vw));
         }
 
         70%{
           opacity:1;
-          transform:translateZ(3in) translateX(0vw);
+          @include transform(translateZ(3in) translateX(0vw));
         }
         80%{
           opacity:1;
-          transform:translateZ(3in) translateX(0vw);
+          @include transform(translateZ(3in) translateX(0vw));
         }
         100%{
           opacity:1;
-          transform:translateZ(0in) translateX(0vw);
+          @include transform(translateZ(0in) translateX(0vw));
         }
       }
       h2{
@@ -99,7 +99,7 @@
       width:20%;
       height:1px;
       position:absolute;
-      //transform:translateZ(2in);
+      //@include transform(translateZ(2in);
       //background: red;
       //border: 1px red solid;
       span:first-child{
@@ -137,7 +137,7 @@
     left:0;right:0;bottom:10%;
     margin:auto;
     transform-style: preserve-3d;
-    transform: translateZ(1in);
+    @include transform( translateZ(1in));
     button{
       height:100%;width:20%;
       overflow: hidden;
@@ -152,7 +152,7 @@
       margin:0;padding:0;}
       span{height:70%;}
       &:hover{
-        animation: laidian1 0.3s ease;
+        @include animation( laidian1 0.3s ease);
         background: white;
         *{color:black;}
       }
@@ -173,7 +173,7 @@
 //slider
 #core_slider{
   transform-style: preserve-3d;
-  transform:translateZ(1in);
+  @include transform(translateZ(1in));
   width:100%;
   height:100%;
   position: absolute;
@@ -229,7 +229,7 @@
 
   .slider{
     z-index: 999;
-    //transform: translateY(0vh) translateZ(1in) rotateX(0deg);
+    //@include transform( translateY(0vh) translateZ(1in) rotateX(0deg));
     position:absolute;
     //margin:0 auto;
     background: transparent;

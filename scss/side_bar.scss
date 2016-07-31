@@ -1,3 +1,4 @@
+@import "compass/css3";
 $anim_duration: 1s;
 /*body {
   width: 100vw;
@@ -15,7 +16,7 @@ $anim_duration: 1s;
   //left: -85px;
   opacity: 1;
   //margin-top: -22%;
-  //transition: 2.5s ;
+  //@include transition(2.5s ;
   //transform: rotate(2deg);
   stroke-linecap: round;
   stroke-miterlimit: 10;
@@ -29,7 +30,7 @@ $anim_duration: 1s;
   //position: relative;
   &.on path {
     stroke-dashoffset: 0 !important;
-    transition: $anim_duration ease;
+    @include transition( $anim_duration ease);
   }
   //top: 50%;
   //left: 50%;
@@ -58,7 +59,7 @@ $anim_duration: 1s;
     &:hover path.st0{
       stroke:rgba(54, 207, 194, .5);
     }
-    transform-origin: 50% 50% 0px;
+    @include transform-origin( 50% 50% 0px);
     //transform: stroke(red);
     //position: relative;
     //top:10%;

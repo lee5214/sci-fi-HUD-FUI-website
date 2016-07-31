@@ -1,51 +1,53 @@
+@import "compass/css3";
+
 @keyframes circle4s {
-  0%{ transform:rotateZ(0deg);}
-  100%{transform:rotateZ(360deg);}
+  0%{ @include transform(rotateZ(0deg));}
+  100%{@include transform(rotateZ(360deg));}
 }
 @keyframes circleback4s {
-  0%{ transform:rotateZ(0deg);}
-  100%{transform:rotateZ(-360deg);}
+  0%{ @include transform(rotateZ(0deg));}
+  100%{@include transform(rotateZ(-360deg));}
 }
 .circle4s{
-  animation: circle4s 8s linear infinite !important;
+  @include animation( circle4s 8s linear infinite !important);
 }
 .circleback4s{
-  animation: circleback4s 8s linear infinite !important;
+  @include animation( circleback4s 8s linear infinite !important);
 }
 /*
 move
 */
 @keyframes move_up_down{
-  0%{transform: translateY(0%)}
-  50%{transform: translateY(-100%)}
-  100%{transform: translateY(0%)}
+  0%{@include transform( translateY(0%))}
+  50%{@include transform( translateY(-100%))}
+  100%{@include transform( translateY(0%))}
 }
 @keyframes move_down_up {
-  0%{transform: translateY(0%)}
-  50%{transform: translateY(100%)}
-  100%{transform: translateY(0%)}
+  0%{@include transform( translateY(0%))}
+  50%{@include transform( translateY(100%))}
+  100%{@include transform( translateY(0%))}
 }
 @keyframes move_left_right {
-  0%{transform: translateX(0%)}
-  50%{transform: translateX(-100%)}
-  100%{transform: translateX(0%)}
+  0%{@include transform( translateX(0%))}
+  50%{@include transform( translateX(-100%))}
+  100%{@include transform( translateX(0%))}
 }
 @keyframes move_right_left{
-  0%{transform: translateX(0%)}
-  50%{transform: translateX(100%)}
-  100%{transform: translateX(0%)}
+  0%{@include transform( translateX(0%))}
+  50%{@include transform( translateX(100%))}
+  100%{@include transform( translateX(0%))}
 }
 .move_up_down4s{
-  animation: move_up_down 4s linear infinite !important;
+  @include animation( move_up_down 4s linear infinite !important);
 }
 .move_down_up4s{
-  animation: move_down_up 4s linear infinite !important;
+  @include animation( move_down_up 4s linear infinite !important);
 }
 .move_left_right4s{
-  animation: move_left_right 4s linear infinite !important;
+  @include animation( move_left_right 4s linear infinite !important);
 }
 .move_right_left4s{
-  animation: move_right_left 4s linear infinite !important;
+  @include animation( move_right_left 4s linear infinite !important);
 }
 
 /*
@@ -57,10 +59,10 @@ bling
   100%{opacity: 1}
 }
 .shanguang1s{
-  animation: shanguang 1s linear infinite !important;
+  @include animation( shanguang 1s linear infinite !important);
 }
 .shanguang2s{
-  animation: shanguang 2s linear infinite !important;
+  @include animation( shanguang 2s linear infinite !important);
 }
 @keyframes laidian1 {
   0% {
@@ -139,40 +141,40 @@ bling
   }
 }
 .shanshuo{
-  animation: laidian2 1s ease-in-out;
+  @include animation( laidian2 1s ease-in-out);
 }
 .shanshuo2{
-  animation: laidian2 1s 2s ease-in-out;
+  @include animation( laidian2 1s 2s ease-in-out);
 }
 .shanshuo_infite{
-  animation: laidian1 4s ease-in-out infinite;
+  @include animation( laidian1 4s ease-in-out infinite);
 }
 /*
 scale
 */
 @keyframes zoom_in_0-2-1_4s {
-  0%{transform: scale(0, 0)}
-  50%{transform: scale(1.5, 1.5)}
-  100%{transform: scale(1, 1)}
+  0%{@include transform( scale(0, 0))}
+  50%{@include transform( scale(1.5, 1.5))}
+  100%{@include transform( scale(1, 1))}
 }
 .zoom_in_0-2-1_4s{
-  animation: zoom_in_0-2-1_4s 4s  infinite;
+  @include animation( zoom_in_0-2-1_4s 4s  infinite);
 }
 
 @keyframes svg_rotate {
-  0%{transform: perspective(1000px) rotatex(0deg) rotatey(0deg) }
-  30%{transform: perspective(1000px) rotatex(0deg) rotatey(0deg) }
-  100%{transform:perspective(1000px)rotatex(40deg) rotatey(-60deg) }
+  0%{@include transform( perspective(1000px) rotatex(0deg) rotatey(0deg)) }
+  30%{@include transform( perspective(1000px) rotatex(0deg) rotatey(0deg) )}
+  100%{@include transform(perspective(1000px)rotatex(40deg) rotatey(-60deg)) }
 }
 @keyframes svg_moveZ1{
-  0%{transform:perspective(100px)translateZ(0px)}
-  100%{transform:perspective(100px)  translateZ(30px)}
+  0%{@include transform(perspective(100px)translateZ(0px))}
+  100%{@include transform(perspective(100px)  translateZ(30px))}
 }
 /*move up*/
 @keyframes move_up1 {
-  0%{transform: translateY(0%)}
-  100%{transform: translateY(-100%)}
+  0%{@include transform( translateY(0%))}
+  100%{@include transform( translateY(-100%))}
 }
 .move_up1{
-  animation: move_up1 4s forwards;
+  @include animation( move_up1 4s forwards);
 }
