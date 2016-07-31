@@ -158,6 +158,13 @@
   width:30%;
   height: auto;
   @include transform(translate3d(-30vw, 0vh, -2in) rotatey(20deg));
+  *{
+    img{
+      height:100px;
+      width:100px;
+      background: black;
+    }
+  }
   &:hover{
     border-image-outset: 1;
     background: white;
@@ -165,7 +172,10 @@
     @include transition(0.5s ease);
     @include transform(translate3d(-20vw, 0vh, -2in) rotatey(20deg));
 
-    *{color:black;}
+    *{
+      color:black;
+      }
+
   }
   &:focus{
     border-image-outset: 1;

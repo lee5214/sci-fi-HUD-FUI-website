@@ -47,7 +47,7 @@ setCookie("counter", visits, now)
 //$("#visitor_num").html("visited number: <span>"+parseInt(visits)+"</span>");
 
 $( "#visitor_log" ).html(
-    "<li>You Visited:  <span>"+parseInt(visits)+"</span></li>"
+    "<li>Total Visitors: <span>"+parseInt(visits)+"</span>You Visited:  <span>"+parseInt(visits)+"</span></li>"
     + "<li>Language:  "+navigator.language+"</li>"
     + "<li>Platform:  "+navigator.platform+"</li>"
 
@@ -60,3 +60,33 @@ $( "#visitor_log span" ).css
     "padding":"2px",
     "font-size":"200%"
 });
+//////////////////////////////////////////////////////
+function show_num(n){
+    var it = $(".t_num i");
+    var len = String(n).length;
+    for(var i=0;i<len;i++){
+        if(it.length<=i){
+            $(".t_num").append("<i></i>");
+        }
+        var num=String(n).charAt(i);
+        var y = -parseInt(num)*30; //y轴位置
+        var obj = $(".t_num i").eq(i);
+        obj.animate({ //滚动动画
+                backgroundPosition :'(0 '+String(y)+'px)'
+            }, 'slow','swing',function(){}
+        );
+    }
+}
+function getdata(){
+    $.ajax({
+        url: 'data.php',
+        type: 'POST',
+        dataType: "json",
+        cache: false,
+        timeout: 10000,
+        error: function(){},
+        success: function(data){
+            show_num(data.count);
+        }
+    });
+}
