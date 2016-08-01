@@ -1,4 +1,4 @@
-![lee5214](resource/images/logo/logo_lee_title.png)
+![lee5214](resource/images/logo/logo_lee_black2.png)
 
 ##What is this project for?
 
