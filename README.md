@@ -1,10 +1,10 @@
 ![lee5214](resource/images/logo/logo_lee_black2.png)
 
 ##What is this project for?
-for fun and practice....
+For fun and practice mostly....
 
 
-love HUD/FUI in sci-fi movies/games, but I've never seen one website designed this way (mostly people develp for moives by using after effect, so I decided to make one to test.
+Love HUD/FUI in sci-fi movies/games, but I've never seen one website designed this way (mostly people develp for moives by using after effect, so I decided to make one to test.
 
 ##Features?
 3D canvas svg webgl
