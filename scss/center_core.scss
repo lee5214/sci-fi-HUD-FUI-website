@@ -44,90 +44,120 @@
     z-index:9;
     width:50%;
     height:50%;
-    //background: red;
     opacity:1;
     @include transform(translateZ(0in));
-    .syscore{
-      opacity:0;
-      transform-style: preserve-3d;
-      @include transform(translateX(-10vw)translateZ(-20in)translateY(20vh));
+    .center_left{
       position: absolute;
-      top: 0!important;bottom:0 !important;margin:auto;
-      text-align: center;
-      //background: rgba(255, 255, 255, .1);
-      width:20%;
-      height:10%;
-      //line-height:10%;
-      vertical-align: middle;
-      display: flex;
-      justify-content: center; /* align horizontal */
-      align-items: center; /* align vertical */
-      @include animation( movefar 3s 5s ease forwards);
-      @keyframes movefar {
-        0%{
-          opacity:0;
-          @include transform(translateZ(-20in) translateX(-10vw));
-        }
-        30%{
-          opacity:1;
-          @include transform(translateZ(3in) translateX(0vw));
-        }
-        50%{
-          opacity:1;
-          @include transform(translateZ(3in) translateX(0vw));
-        }
-
-        70%{
-          opacity:1;
-          @include transform(translateZ(3in) translateX(0vw));
-        }
-        80%{
-          opacity:1;
-          @include transform(translateZ(3in) translateX(0vw));
-        }
-        100%{
-          opacity:1;
-          @include transform(translateZ(0in) translateX(0vw));
-        }
-      }
-      h2{
-        margin-top:0;
-        margin-bottom:0;
-      }
-    }
-    .line{
-      width:20%;
-      height:1px;
-      position:absolute;
-      //@include transform(translateZ(2in);
-      //background: red;
-      //border: 1px red solid;
-      span:first-child{
-        opacity:1;
+      top:0;left:0;
+      z-index:10;
+      width:30%;
+      height:100%;
+      //background: green;
+      .syscore{
+        opacity:0;
+        transform-style: preserve-3d;
+        @include transform(translateX(-10vw)translateZ(-20in)translateY(20vh));
         position: absolute;
-        height:1px;
-        width:30%;
-        background: white;
-      }
-      span:last-child{
-        opacity:0.2;
-        position: absolute;
-        height:1px;
-        width:69%;
-        background: white;
-        left:34%;
-      }
-    }
-    .baseline1{
-      top:40%;
-      left:0;
-      @extend .line;
-    }
-    .baseline2{
-      bottom:40%;
-      left:0;
-      @extend .line;
+        top: 0;bottom:0;margin:auto;
+        text-align: center;
+        //background: rgba(255, 255, 255, .1);
+        width:100%;
+        height:100%;
+        //line-height:10%;
+        vertical-align: middle;
+        display: flex;
+        justify-content: center; /* align horizontal */
+        align-items: center; /* align vertical */
+        @include animation( movefar 3s 5s ease forwards);
+        @keyframes movefar {
+          0%{
+            opacity:0;
+            @include transform(translateZ(-20in) translateX(-10vw));
+          }
+          30%{
+            opacity:1;
+            @include transform(translateZ(3in) translateX(0vw));
+          }
+          50%{
+            opacity:1;
+            @include transform(translateZ(3in) translateX(0vw));
+          }
 
+          70%{
+            opacity:1;
+            @include transform(translateZ(3in) translateX(0vw));
+          }
+          80%{
+            opacity:1;
+            @include transform(translateZ(3in) translateX(0vw));
+          }
+          100%{
+            opacity:1;
+            @include transform(translateZ(0in) translateX(0vw));
+          }
+        }
+        h2{
+          margin-top:0;
+          margin-bottom:0;
+        }
+      }
+      .line{
+        width:50%;
+        height:1px;
+        position:absolute;
+        //@include transform(translateZ(2in);
+        //background: red;
+        //border: 1px red solid;
+        span:first-child{
+          opacity:1;
+          position: absolute;
+          height:1px;
+          width:30%;
+          background: white;
+        }
+        span:last-child{
+          opacity:0.2;
+          position: absolute;
+          height:1px;
+          width:69%;
+          background: white;
+          left:34%;
+        }
+      }
+      .baseline1{
+        top:40%;
+        left:0;
+        @extend .line;
+      }
+      .baseline2{
+        bottom:40%;
+        left:0;
+        @extend .line;
+
+      }
+      .random_dot{
+        position: relative;
+        z-index:10;
+        height:6px;
+        width:6px;
+        opacity:0.8;
+        background: white;
+        @include border-radius(50%);
+        @include animation(rand 4s ease infinite);
+        @keyframes rand {
+          0%{top:50%; left: 50%;}
+          10%{top:percentage(random(100)/100); left: percentage(random(100)/100);}
+          20%{top:percentage(random(100)/100); left: percentage(random(100)/100);}
+          30%{top:percentage(random(100)/100); left: percentage(random(100)/100);}
+          40%{top:percentage(random(100)/100); left: percentage(random(100)/100);}
+          50%{top:percentage(random(100)/100); left: percentage(random(100)/100);}
+          60%{top:percentage(random(100)/100); left: percentage(random(100)/100);}
+          70%{top:percentage(random(100)/100); left: percentage(random(100)/100);}
+          80%{top:percentage(random(100)/100); left: percentage(random(100)/100);}
+          90%{top:percentage(random(100)/100); left: percentage(random(100)/100);}
+          100%{top:50%; left: 50%;}
+        }
+      }
     }
   }
   #view_change{
@@ -139,6 +169,7 @@
     transform-style: preserve-3d;
     @include transform( translateZ(1in));
     button{
+      @include box-shadow(0px 0px 20px #2D8DBD);
       height:100%;width:20%;
       overflow: hidden;
       position: relative;
@@ -181,9 +212,12 @@
   .ui-state-default{
     outline:0;
     background:none;
-    &:hover{
-      background-color:white ;
-    }
+  }
+  @keyframes bianbai {
+    0%{background-color:transparent;}
+    20%{background-color:white;}
+    70%{background-color:white;}
+    100%{background-color:transparent;}
   }
   #slider-travel{//top
     height: 1px;
@@ -195,6 +229,11 @@
       width: 50px;
       margin-left: -25px !important;
       margin-top:-30px;
+      @include animation(bianbai 3s ease infinite);
+      &:active{
+        background-color:white ;
+        @include animation-play-state(paused);
+      }
     }
   }
   #slider-range{//bottom
@@ -207,6 +246,11 @@
       width: 50px;
       margin-left: -25px !important;
       margin-top:30px;
+      @include animation(bianbai 3s ease infinite);
+      &:active{
+      background-color:white ;
+      @include animation-play-state(paused);
+    }
     }
     //height:10%;
     //left:auto;
@@ -222,6 +266,11 @@
       width: 10px;
       margin-bottom: -25px !important;
       margin-left:30px;
+      @include animation(bianbai 3s ease infinite);
+      &:active{
+        background-color:white ;
+        @include animation-play-state(paused);
+      }
     }
     //position: absolute;
     //width:10%;

@@ -347,37 +347,37 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
     opacity: 1;
   }
   10% {
-    @include transform(translateZ(10px) rotateZ(-80d)eg);
+    @include transform(translateZ(10px) rotateZ(-80deg));
     border-color: #00ccff;
     opacity: 1;
   }
   20% {
-    @include transform(translateZ(10px) rotateZ(-60d)eg);
+    @include transform(translateZ(10px) rotateZ(-60deg));
     border-color: #03c;
     opacity: 0;
   }
   30% {
-    @include transform(translateZ(10px) rotateZ(-200)deg);
+    @include transform(translateZ(10px) rotateZ(-200deg));
     border-color: #00ccff;
     opacity: 1;
   }
   40% {
-    @include transform(translateZ(10px) rotateZ(-210)deg);
+    @include transform(translateZ(10px) rotateZ(-210deg));
     border-color: #0033cc;
     opacity: 1;
   }
   50% {
-    @include transform(translateZ(10px) rotateZ(-120)deg);
+    @include transform(translateZ(10px) rotateZ(-120deg));
     border-color: #069;
     opacity: 1;
   }
   60% {
-    @include transform(translateZ(10px) rotateZ(-100)deg);
+    @include transform(translateZ(10px) rotateZ(-100deg));
     border-color: #03c;
     opacity: 1;
   }
   70% {
-    @include transform(translateZ(10px) rotateZ(-30d)eg);
+    @include transform(translateZ(10px) rotateZ(-30deg));
     border-color: #03c;
     opacity: 1;
   }
@@ -567,15 +567,15 @@ Stop! You almost hurt me! Oh wait, I can't feel pain
 }
 
 .f432 {
-  @include transform(rotateZ(-45deg) translateY(55)px);
+  @include transform(rotateZ(-45deg) translateY(55px));
 }
 
 .f433 {
-  @include transform(rotateZ(135deg) translateY(55)px);
+  @include transform(rotateZ(135deg) translateY(55px));
 }
 
 .f434 {
-  @include transform(rotateZ(225deg) translateY(55)px);
+  @include transform(rotateZ(225deg) translateY(55px));
 }
 @font-face {
   font-family: mage;

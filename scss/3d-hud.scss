@@ -78,6 +78,30 @@
     background: white;
     *{color:black;}
   }
+  &:active{
+    border:150px dotted;
+  }
+}
+.hud_panel_r1 {
+  @extend .panel;
+  height:30%;
+  width:20%;
+  position:absolute;
+  @include transform(translate3d(40vw, -30vh, -3in) rotatey(-20deg) rotatex(0deg));
+  &:hover{
+    border-image-outset: 2;
+    background: white;
+    @include transition(0.5s ease);
+    @include transform(translate3d(40vw, -30vh, -3in) rotatey(-50deg) rotatex(0deg));
+    *{color:black;}
+  }
+  &:active{
+    transition-delay: 0.4s;
+    border:150px solid;
+  }
+  a{
+    outline:none;
+  }
 }
 .hud_panel_l2 {
   @extend .panel;
@@ -86,10 +110,10 @@
   width:20%;
   @include transform(translate3d(-15vw, -30vh, -3in) rotatey(20deg));
   &:hover{
-    @include transition(0.5s ease);
+    border: 20px;
+    @include transition(1s ease);
     @include transform(translate3d(-15vw, -30vh, -3in) rotatey(20deg) rotatex(-20deg));
   }
-
   #trial {
     left:0;
     width: 100%;
@@ -117,111 +141,6 @@
 
   }
 }
-.hud_panel_l3 {
-  @extend .panel;
-  position: absolute;
-  height: 24%;
-  width:20%;
-  @include transform(translate3d(-40vw, 40vh, -3in) rotatey(20deg));
-  &:hover{
-    border-image-outset: 2;
-    @include transition(0.5s ease);
-    @include transform(translate3d(-40vw, 40vh, -3in) rotatey(50deg));
-    background: white;
-    *{color:black;}
-  }
-}
-.hud_panel_dot{
-  @extend .panel;
-  position: absolute;
-  height:20%;
-  width:20%;
-
-}
-#dot_p1{
-  width:15%;
-  left:0;
-  @include transform(translate3d(0vw, 60vh, -2in) rotatey(-0deg) rotatex(30deg));
-}
-#dot_p2{
-  width:40%;
-  left:0;
-  @include transform(translate3d(0vw, 60vh, -3in) rotatex(10deg));
-}
-
-.hud_panel_about {
-  display: none;
-  @extend .panel;
-  background: black;
-  position: absolute;
-  padding-bottom:1%;
-  width:30%;
-  height: auto;
-  @include transform(translate3d(-30vw, 0vh, -2in) rotatey(20deg));
-  *{
-    img{
-      height:100px;
-      width:100px;
-      background: black;
-    }
-  }
-  &:hover{
-    border-image-outset: 1;
-    background: white;
-    //outline:0;
-    @include transition(0.5s ease);
-    @include transform(translate3d(-20vw, 0vh, -2in) rotatey(20deg));
-
-    *{
-      color:black;
-      }
-
-  }
-  &:focus{
-    border-image-outset: 1;
-    outline:0;
-    @include transition(1s ease);
-    @include transform(translate3d(0vw, 0vh, 0in) rotatey(0deg) rotatex(0deg));
-  }
-}
-.hud_panel_project {
-  display: none;
-  background: black;
-  @extend .panel;
-  position: absolute;
-  padding-bottom:1%;
-  width:30%;
-  @include transform(translate3d(30vw, 0vh, -2in) rotatey(-20deg));
-  &:hover{
-    border-image-outset: 1;
-    //outline:0;
-    @include transition(0.5s ease);
-    @include transform(translate3d(20vw, 0vh, -2in) rotateX(0deg) rotateY(-20deg));
-    background: white;
-    *{color:black;}
-  }
-  &:focus{
-    border-image-outset: 1;
-    outline:0;
-    @include transition(1s ease);
-    @include transform(translate3d(0vw, 0vh, 0in) rotatey(0deg) rotatex(0deg));
-  }
-}
-.hud_panel_r1 {
-  @extend .panel;
-  height:30%;
-  width:20%;
-  position:absolute;
-  @include transform(translate3d(40vw, -30vh, -3in) rotatey(-20deg) rotatex(0deg));
-  &:hover{
-    border-image-outset: 2;
-    background: white;
-    @include transition(0.5s ease);
-    @include transform(translate3d(40vw, -30vh, -3in) rotatey(-50deg) rotatex(0deg));
-    *{color:black;}
-
-  }
-}
 .hud_panel_r2 {
   @extend .panel;
   position: absolute;
@@ -231,10 +150,10 @@
   @include transform(translate3d(15vw, -30vh, -3in) rotatey(-20deg) rotatex(0deg));
   image{position:absolute;top:20%;}
   &:hover{
-    @include transition(0.5s ease);
+    border: 20px;
+    @include transition(1s ease);
     @include transform(translate3d(15vw, -30vh, -3in) rotatey(-20deg) rotatex(-20deg));
     opacity:1;
-
   }
   ul{
     //animation: i1 4s linear infinite;
@@ -245,20 +164,42 @@
     }
   }
 }
+.hud_panel_l3 {
+  @extend .panel;
+  position: absolute;
+  height: 30%;
+  width:20%;
+  @include transform(translate3d(-40vw, 40vh, -3in) rotatey(20deg));
+  &:hover{
+    border-image-outset: 2;
+    @include transition(0.5s ease);
+    @include transform(translate3d(-40vw, 40vh, -3in) rotatey(50deg));
+    background: white;
+    *{color:black;}
+  }
+  &:active{
+    border:150px dotted;
+  }
+}
+
+
 .hud_panel_r3 {
   //background: blue;
   //@include transform(translate3d(40vw, -40vh, -3in)  rotatey(-33deg) rotatex(-10deg);
   @extend .panel;
   position: absolute;
-  height: 24%;
+  height: 30%;
   width:20%;
-  @include transform(translate3d(40vw, 40vh, -3in) rotatey(-20deg) rotatex(0deg));
+  @include transform(translate3d(40vw, 40vh, -3in) rotatey(-20deg));
   &:hover{
     border-image-outset: 2;
     @include transition(0.5s ease);
-    @include transform(translate3d(40vw, 40vh, -3in) rotatey(-50deg) rotatex(0deg));
+    @include transform(translate3d(40vw, 40vh, -3in) rotatey(-50deg));
     background: white;
     *{color:black;}
+  }
+  &:active{
+    border:150px dotted;
   }
 }
 .hud_panel_nav {
@@ -289,7 +230,11 @@
     @include transform( rotateZ(-14deg));
     padding: 1vh;
     margin: 3vh;
-    h2{text-align:center;}
+    h2{
+      line-height: 0;
+      height: 20%;
+      text-align:center;
+    }
     a{text-decoration: none;}
     &:hover{
       background: white;
@@ -326,6 +271,144 @@
     opacity:1;
   }
 }
+.hud_panel_compass{
+  @extend .panel;
+  //box-shadow: 10px 0px 5px -1px #2D8DBD;
+  //border-right: 2px white solid;
+  opacity:1;
+  height:100%;
+  width:20%;
+  position: fixed;
+  @include transition(all 0.5s linear);
+  @include transform-origin(100%,50%);
+  @include transform(translate3d(-74vw, 0vh, -3in) rotatey(100deg));
+  &:hover {
+    opacity:1;
+    @include transition(all 0.5s ease);
+    @include transform( translate3d(-74vw, 0vh, -3in) rotatey(45deg));
+  }
+  .compass {
+    //background-image: url(/resource/images/compass1.svg);
+    mask-image: linear-gradient(left, rgba(0,0,0,0.4), rgba(0,0,0,0));
+    opacity: 1;
+    transform-origin: 50% 50%;
+    height:100%;
+    transform-style: preserve-3d;
+    @include animation( circleZ 20s ease-in-out infinite);
+    @keyframes circleZ {
+      0% {
+        @include transform(rotateZ(0deg))
+      }
+      20% {
+        @include transform(rotateZ(-(random(360)+deg)))
+      }
+      30% {
+        @include transform(rotateZ(random(360)+deg))
+      }
+      60% {
+        @include transform(rotateZ(-(random(360)+deg)))
+      }
+      70% {
+        @include transform(rotateZ(-(random(360)+deg)))
+      }
+      80% {
+        @include transform(rotateZ(random(360)+deg))
+      }
+      100% {
+        @include transform(rotateZ(360deg))
+      }
+    }
+  }
+}
+.view2d_compass{
+  @include transition(1s ease);
+  height:100%;
+  width:15%;
+  margin-left:-5%;
+  border: 0px;
+  @include transform(translate3d(0vw, 0vh, 0in) rotatey(0deg) rotatex(0deg));
+  &:hover {
+    background: rgba(0,0,0,1);
+    @include transition(all 0.5s ease);
+    width:30%;
+    @include transform(translate3d(0vw, 0vh, 0in) rotatey(0deg) rotatex(0deg));
+    opacity:1;
+  }
+}
+.hud_panel_dot{
+  @extend .panel;
+  position: absolute;
+  height:20%;
+  width:20%;
+}
+#dot_p1{
+  width:15%;
+  left:0;
+  @include transform(translate3d(0vw, 60vh, -2in) rotatey(-0deg) rotatex(30deg));
+}
+/*#dot_p2{
+  width:40%;
+  left:0;
+  @include transform(translate3d(0vw, 60vh, -3in) rotatex(10deg));
+}*/
+.hud_panel_about {
+  display: none;
+  @extend .panel;
+  background: black;
+  position: absolute;
+  padding-bottom:1%;
+  width:30%;
+  height: auto;
+  @include transform(translate3d(-30vw, 0vh, -2in) rotatey(20deg));
+  *{
+    img{
+      height:100px;
+      width:100px;
+      background: black;
+    }
+  }
+  &:hover{
+    border-image-outset: 1;
+    background: white;
+    //outline:0;
+    @include transition(0.5s ease);
+    @include transform(translate3d(-20vw, 0vh, -2in) rotatey(20deg));
+
+    *{
+      color:black;
+    }
+
+  }
+  &:focus{
+    border-image-outset: 1;
+    outline:0;
+    @include transition(1s ease);
+    @include transform(translate3d(0vw, 0vh, 0in) rotatey(0deg) rotatex(0deg));
+  }
+}
+.hud_panel_project {
+  display: none;
+  background: black;
+  @extend .panel;
+  position: absolute;
+  padding-bottom:1%;
+  width:30%;
+  @include transform(translate3d(30vw, 0vh, -2in) rotatey(-20deg));
+  &:hover{
+    border-image-outset: 1;
+    //outline:0;
+    @include transition(0.5s ease);
+    @include transform(translate3d(20vw, 0vh, -2in) rotateX(0deg) rotateY(-20deg));
+    background: white;
+    *{color:black;}
+  }
+  &:focus{
+    border-image-outset: 1;
+    outline:0;
+    @include transition(1s ease);
+    @include transform(translate3d(0vw, 0vh, 0in) rotatey(0deg) rotatex(0deg));
+  }
+}
 .hud_panel_ai{
   @extend .panel;
   //background: red;
@@ -337,7 +420,7 @@
   //transform-origin: 50% 50%;
   //position: absolute;
   //@include transition(all 0.5)s linear;
-  @include transform(translate3d(40vw, 10vh, -4in) rotatey(-20deg));
+  @include transform(translate3d(40vw, 5vh, -4in) rotatey(-20deg));
 }
 .hud_panel_svg{
   @extend .panel;
@@ -351,7 +434,7 @@
   width:30%;
   //position: absolute;
   //@include transition: all 0.5s linear;
-  @include transform(translate3d(-40vw, 10vh, -4in) rotatey(20deg));
+  @include transform(translate3d(-40vw, 5vh, -4in) rotatey(20deg));
   .svg_box{
     display: block;
     width:40%;

@@ -13,7 +13,7 @@ var radius_sp=1;
 var fLen = 200;
 $l1 = $(".hud_panel_l1"),$l2 = $(".hud_panel_l2"),$l3 = $(".hud_panel_l3"),
 $r1 = $(".hud_panel_r1"),$r2 = $(".hud_panel_r2"),$r3 = $(".hud_panel_r3"),
-$nav = $(".hud_panel_nav"),
+$nav = $(".hud_panel_nav"),$compass = $(".hud_panel_compass"),
 $home = $(".hud_panel_home"),$about = $(".hud_panel_about"),$project = $(".hud_panel_project"),$resume = $(".hud_panel_resume");
 $leftside = $(".leftside"),$rightside = $(".rightside");
 
@@ -49,11 +49,19 @@ $reset = function(){
     //$(":root").css("perspective","'"+resp+"in'");
 
     //$(":root").animate({"perspective":"12in"},{"duration":1000});
+    $(".logo").delay(000).show();
     $l2.add($r2).delay(500).show();
     $l1.add($r1).add($l3).add($r3).add($l2).add($r2).delay(2000).fadeIn().queue(function(next){
         $(this).addClass("panel_on");
+
+        $(this).delay(4000).queue(function(next){
+            $l1.add($r1).add($l3).add($r3).addClass("biankuang_1");
+            //$r1.add($l3).addClass("biankuang_5");
+            $l2.add($r2).addClass("biankuang_3");
+            next();
+        })
         next();
-        $(".logo").delay(2000).show();
+
     });
     $("#dot_p2 .st1").fadeIn().css("fill","white").queue(function(next){
         $(this).addClass("shanshuo");
@@ -64,23 +72,27 @@ $reset = function(){
         $("#dot_p1").addClass("shanshuo_infinite");
         next();
     });//.addClass("shanshuo");
-
-    $nav.delay(2000).fadeIn();
+    $nav.add($compass).delay(2000).fadeIn();
     $(".hud_panel_ai").delay(000).fadeIn(2000);
     $("#ai").delay(3000).fadeIn(2000);
     $(".hud_panel_svg").delay(3000).fadeIn(2000);
     $(".core_mask").delay(4000).fadeOut(100).queue(function(next){
         $(".syscore").fadeIn();
-        $("#canvasOne").css({"transform":"translateZ(-2in)"});
-        $("#core_slider").delay(1000).fadeIn(00).queue(function(next){
+        $("#canvasOne").css({"transform":"translateZ(-2in)"}).queue(function(next){
+            magnet.play();
+            next();
+        });
+        $("#core_slider").delay(4000).fadeIn(00).queue(function(next){
             $(this).addClass("shanshuo");
+            $(".syscore").addClass("random_move");
             next();
         });
         $("#view_change").delay(1000).fadeIn(2000);
+        $(".baseline1").delay(4000).animate({top:"10%"},{duration:1000});
+        $(".baseline2").delay(4000).animate({bottom:"10%"},{duration:1000});
         next();
     });
-    $(".baseline1").delay(4000).animate({top:"2%"},{duration:1000});
-    $(".baseline2").delay(4000).animate({bottom:"2%"},{duration:1000});
+
 
 };
 
@@ -102,18 +114,20 @@ $("button#home").click(function(){
     //$l1.add($l2).add($l3).add($r1).add($r2).add($r3).fadeIn(1000).addClass("panel_on");
 });
 $("button#about").click(function(){
-    $l1.add($l2).add($l3).hide("slow");
+    $l1.add($l2).add($l3).fadeToggle("fast");
     $leftside.delay(000).animate({left:"40%"},{duration:1400}).queue(function(next){
         $about.slideToggle().addClass("panel_on");
         $leftside.animate({left:"4%"},{duration:1000});
+        scan1.play();
         next();
     });
 });
 $("button#project").click(function(){
-    $r1.add($r2).add($r3).hide("slow");
+    $r1.add($r2).add($r3).fadeToggle("slow");
     $rightside.delay(000).animate({right:"40%"},{duration:1400}).queue(function(next){
         $project.slideToggle().addClass("panel_on");
         $rightside.animate({right:"4%"},{duration:1000});
+        scan1.play();
         next();
     });
    //$(".hud_panel").animate({top:"50%"},{duration:1000});
@@ -525,11 +539,12 @@ $('body').on('mousemove', function(event) {
     roX = -percentY * maxRotate;
 
     $("#view_2D").click(function(){
-        $(".hud_panel_nav").addClass("view2d_nav");
+        $nav.addClass("view2d_nav");
+        $compass.addClass("view2d_compass");
         $(".hud_panel_bottom").addClass("view2d_bottom");
         $leftside.stop().animate({left:"10%"},{duration:1000});
         $rightside.stop().animate({right:"10%"},{duration:1000});
-        $(":root").css("perspective","6in");
+        $(":root").css("perspective","8in");
         //$(":root").animate({perspective:"12in"},"slow");
         view_option=2;
     });
@@ -539,7 +554,8 @@ $('body').on('mousemove', function(event) {
         //$(":root").animate({"perspective":"12in"},2000);
         //$(":root").css("perspective","10in");
         //$(":root").animate({"perspective":"1in"},1000).animate({"perspective":"12in"},1000).stop();
-        $(".hud_panel_nav").removeClass("view2d_nav");
+        $nav.removeClass("view2d_nav");
+        $compass.removeClass("view2d_compass");
         $(".hud_panel_bottom").removeClass("view2d_bottom");
         $leftside.stop().animate({left:"4%"},{duration:1000});
         $rightside.stop().animate({right:"4%"},{duration:1000});
@@ -550,8 +566,8 @@ $('body').on('mousemove', function(event) {
     });
     $("#view_3D").click(function(){
         console.log("3D view");
-
-        $(".hud_panel_nav").removeClass("view2d_nav");
+        $nav.removeClass("view2d_nav");
+        $compass.removeClass("view2d_compass");
         $(".hud_panel_bottom").removeClass("view2d_bottom");
         $leftside.stop().animate({left:"0%"},{duration:1000});
         $rightside.stop().animate({right:"0%"},{duration:1000});
@@ -615,3 +631,22 @@ $.fn.pathReset = function (t) {
         })
     })
 };
+/////////////////////////////////////////////////////////////////
+//audio
+var btn1 = $("#audio_zone audio")[0];
+var beep1 = $("#audio_zone audio")[1];
+var beep2 = $("#audio_zone audio")[2];
+var scan1 = $("#audio_zone audio")[3];
+var scan2 = $("#audio_zone audio")[4];
+var beep3 = $("#audio_zone audio")[5];
+var beepsmooth = $("#audio_zone audio")[6];
+var magnet = $("#audio_zone audio")[7];
+$l1.add($r1).add($l3).add($r3).mouseenter(function() {
+    //scan1.play();
+});
+$("#view_change button").mouseenter(function(){
+    beep3.play();
+});
+$(".hud_panel_nav button").mouseenter(function(){
+    btn1.play();
+});

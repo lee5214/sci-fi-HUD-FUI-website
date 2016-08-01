@@ -31,7 +31,6 @@ svg{
   left: 0 !important;
 }*/
 body {
-
   background-size: cover;
   width: 100vw;
   height: 100vh;
@@ -75,35 +74,28 @@ body {
     //@include transform(perspective(1000px) translateZ(-1000px);
     @include animation( logo_move 4s forwards);
     @keyframes logo_move {
-      from{@include transform( perspective(1000px) translateZ(100px) translateY(200px));}
-      to {@include transform( perspective(1000px) translateZ(-500px) translateY(-100px));  }
+      0%{@include transform( perspective(1000px) translateZ(100px) translateY(200px));}
+      50%{@include transform( perspective(1000px) translateZ(100px) translateY(200px));}
+      100%{@include transform( perspective(1000px) translateZ(-500px) translateY(-300px));  }
       }
     g .logo_eye{
-      @include animation( turn_red 4s 4s forwards);
+      @include animation( turn_red 4s 2s forwards);
       @keyframes turn_red {
-        to {fill:rgba(255,0,0,0.8)}
+        to {fill:red}
       }
     }
-  }
-  .compass {
-    z-index: -10000;
-    opacity: 0.2;
-    transform-origin: 50% 50%;
-    position: fixed;
-    width: 70%;
-    height: auto;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    //@include transform(perspective(1000px) translateZ(-30vw)  ;
-    transform-style: preserve-3d;
-    @include animation( circleZ 60s linear infinite);
-    @keyframes circleZ {
-      100% {
-        @include transform( perspective(1000px) translateZ(0vw) rotateZ(360deg))
+    #logo_font{
+      .logo01{
+        @include animation(logo_c 10s 2s ease infinite);
+        @keyframes logo_c {
+          40%{stroke: red;}
+          60%{stoke:yellow;}
+          80%{stroke: black;}
+          100%{stroke: green;}
+        }
       }
+
+
     }
   }
   .svg_bg_container {
@@ -171,12 +163,34 @@ body {
 
   }
   .biankuang_1 {
-    border: 20px dotted;
-    @include border-image(url(../resource/images/fang1.svg) 5% 5% 5% 5%);
+    transition: 0.5s ease;
+    border: 30px dotted;
+    @include border-image(url(../resource/images/biankuang/biankuang_2.svg) 9%);
+  }
+  .biankuang_5 {
+    transition: 0.5s ease;
+    border: 30px dotted;
+    @include border-image(url(../resource/images/biankuang/biankuang_2.svg) 17% 20% 7% 20%);
   }
   .biankuang_2 {
-    border: 10px solid red;
-    @include background(url(../resource/images/biankuang/b.svg) no-repeat);
+    border: 20px dotted;
+    @include border-image(url(../resource/images/biankuang/biankuang_2.svg) 5% 8% 5% 10%);
+  }
+  .biankuang_3 {
+    transition: 1s ease;
+    border: 30px dotted;
+    @include border-image(url(../resource/images/biankuang/fang1.svg) 5%);
+  }
+  .biankuang_4 {
+    transition: 3s ease;
+    border: 30px ;
+    @include border-image(url(../resource/images/biankuang/fang1.svg) 5% 5% 5% 5%);
+  }
+
+  .biankuang_img {
+    transition: 1s ease;
+    border: 30px dotted;
+    @include border-image(url(../resource/images/biankuang/biankuang_2.svg) 8%);
   }
 
   .panel_bottom_2 {

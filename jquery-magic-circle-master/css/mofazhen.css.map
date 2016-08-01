@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AACE,cAAS;EACP,QAAQ,EAAC,MAAM;EACf,QAAQ,EAAC,QAAQ;EACjB,KAAK,EAAC,IAAI;EACV,MAAM,EAAC,IAAI;EACX,gBAAgB,EAAE,KAAK;EACvB,0BAAW;IACT,QAAQ,EAAC,QAAQ;IAEjB,MAAM,EAAE,OAAO",
-"sources": ["mofazhen.scss"],
-"names": [],
-"file": "mofazhen.css"
-}

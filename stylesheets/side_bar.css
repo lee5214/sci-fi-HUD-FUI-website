@@ -1,0 +1,64 @@
+/*body {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  //overflow: hidden;
+}
+*/
+/* line 11, ../scss/side_bar.scss */
+.leftside, .rightside {
+  position: absolute;
+  top: 2%;
+  opacity: 1;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+  opacity: 1;
+}
+/* line 31, ../scss/side_bar.scss */
+.leftside.on path, .rightside.on path {
+  stroke-dashoffset: 0 !important;
+  -moz-transition: ease 1s;
+  -o-transition: ease 1s;
+  -webkit-transition: ease 1s;
+  transition: ease 1s;
+}
+/* line 40, ../scss/side_bar.scss */
+.leftside.leftside, .rightside.leftside {
+  left: 24%;
+}
+/* line 46, ../scss/side_bar.scss */
+.leftside.rightside, .rightside.rightside {
+  right: 24%;
+}
+/* line 53, ../scss/side_bar.scss */
+.leftside svg, .rightside svg {
+  -moz-transform-origin: 50% 50% 0px 50%;
+  -ms-transform-origin: 50% 50% 0px 50%;
+  -webkit-transform-origin: 50% 50% 0px 50%;
+  transform-origin: 50% 50% 0px 50%;
+  vertical-align: bottom;
+}
+/* line 56, ../scss/side_bar.scss */
+.leftside svg:hover path.st1, .rightside svg:hover path.st1 {
+  stroke: rgba(54, 207, 194, 0.5);
+}
+/* line 59, ../scss/side_bar.scss */
+.leftside svg:hover path.st0, .rightside svg:hover path.st0 {
+  stroke: rgba(54, 207, 194, 0.5);
+}
+/* line 70, ../scss/side_bar.scss */
+.leftside svg .st0, .rightside svg .st0 {
+  stroke: #344045;
+}
+/* line 73, ../scss/side_bar.scss */
+.leftside svg .st1, .rightside svg .st1 {
+  stroke: rgba(196, 50, 58, 0.8);
+}
+/* line 77, ../scss/side_bar.scss */
+.leftside svg .st2, .rightside svg .st2 {
+  stroke: rgba(224, 58, 67, 0.5);
+}
+/* line 80, ../scss/side_bar.scss */
+.leftside svg .st3, .rightside svg .st3 {
+  stroke: rgba(54, 207, 194, 0.5);
+}

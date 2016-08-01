@@ -59,7 +59,7 @@ $anim_duration: 1s;
     &:hover path.st0{
       stroke:rgba(54, 207, 194, .5);
     }
-    @include transform-origin( 50% 50% 0px);
+    @include transform-origin( 50%,50%,0px);
     //transform: stroke(red);
     //position: relative;
     //top:10%;

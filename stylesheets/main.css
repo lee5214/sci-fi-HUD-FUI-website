@@ -1,0 +1,522 @@
+/* .RingCirc{
+     position: relative;
+     overflow: hidden;
+     width:100%;
+     height:40%;
+     top:0px;
+     #MagicRing{
+       position:relative;
+       //top:10vh;
+       margin: 0 auto;
+     }
+   }
+   */
+/*.svg_01{
+  width: 10%;
+  height: 0;
+  position: relative;
+}
+@keyframes svg_01 {
+  
+}
+svg{
+  //position: absolute;
+  top: 0 !important;
+  left: 0 !important;
+}*/
+/* line 33, ../scss/main.scss */
+body {
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  /*****************************************************************************/
+  /*******************************************************************/
+  /*****************************************************************************/
+}
+/* line 38, ../scss/main.scss */
+body #zhongxin {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+}
+/* line 50, ../scss/main.scss */
+body #loading {
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  z-index: 999;
+  background: black;
+}
+/* line 65, ../scss/main.scss */
+body .logo {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 14%;
+  height: auto;
+  -moz-animation: logo_move 4s forwards;
+  -webkit-animation: logo_move 4s forwards;
+  animation: logo_move 4s forwards;
+}
+@keyframes logo_move {
+  0% {
+    -moz-transform: perspective(1000px) translateZ(100px) translateY(200px);
+    -ms-transform: perspective(1000px) translateZ(100px) translateY(200px);
+    -webkit-transform: perspective(1000px) translateZ(100px) translateY(200px);
+    transform: perspective(1000px) translateZ(100px) translateY(200px);
+  }
+  50% {
+    -moz-transform: perspective(1000px) translateZ(100px) translateY(200px);
+    -ms-transform: perspective(1000px) translateZ(100px) translateY(200px);
+    -webkit-transform: perspective(1000px) translateZ(100px) translateY(200px);
+    transform: perspective(1000px) translateZ(100px) translateY(200px);
+  }
+  100% {
+    -moz-transform: perspective(1000px) translateZ(-500px) translateY(-300px);
+    -ms-transform: perspective(1000px) translateZ(-500px) translateY(-300px);
+    -webkit-transform: perspective(1000px) translateZ(-500px) translateY(-300px);
+    transform: perspective(1000px) translateZ(-500px) translateY(-300px);
+  }
+}
+/* line 81, ../scss/main.scss */
+body .logo g .logo_eye {
+  -moz-animation: turn_red 4s 2s forwards;
+  -webkit-animation: turn_red 4s 2s forwards;
+  animation: turn_red 4s 2s forwards;
+}
+@keyframes turn_red {
+  to {
+    fill: red;
+  }
+}
+/* line 88, ../scss/main.scss */
+body .logo #logo_font .logo01 {
+  -moz-animation: logo_c 10s 2s ease infinite;
+  -webkit-animation: logo_c 10s 2s ease infinite;
+  animation: logo_c 10s 2s ease infinite;
+}
+@keyframes logo_c {
+  40% {
+    stroke: red;
+  }
+  60% {
+    stoke: yellow;
+  }
+  80% {
+    stroke: black;
+  }
+  100% {
+    stroke: green;
+  }
+}
+/* line 101, ../scss/main.scss */
+body .svg_bg_container {
+  opacity: 0.1;
+  position: absolute;
+  width: 140vw;
+  height: 140vh;
+  right: -50%;
+  bottom: -20%;
+}
+/* line 109, ../scss/main.scss */
+body .panel_bottom_1 {
+  overflow: visible;
+  position: absolute;
+  bottom: 5%;
+  left: 10%;
+  height: 20%;
+  width: 20%;
+  -moz-transform: perspective(1vw) rotateX(0.5deg) rotateY(1deg) rotateZ(-2deg);
+  -ms-transform: perspective(1vw) rotateX(0.5deg) rotateY(1deg) rotateZ(-2deg);
+  -webkit-transform: perspective(1vw) rotateX(0.5deg) rotateY(1deg) rotateZ(-2deg);
+  transform: perspective(1vw) rotateX(0.5deg) rotateY(1deg) rotateZ(-2deg);
+  animation-fill-mode: forwards;
+}
+/* line 124, ../scss/main.scss */
+body .panel_bottom_1 .play-area {
+  overflow: visible;
+  transform-style: preserve-3d;
+  -moz-transform: perspective(1vw) translateX(14%) translateY(-20%) translateZ(0.1vw) rotateX(0.4deg);
+  -ms-transform: perspective(1vw) translateX(14%) translateY(-20%) translateZ(0.1vw) rotateX(0.4deg);
+  -webkit-transform: perspective(1vw) translateX(14%) translateY(-20%) translateZ(0.1vw) rotateX(0.4deg);
+  transform: perspective(1vw) translateX(14%) translateY(-20%) translateZ(0.1vw) rotateX(0.4deg);
+  perspective-origin: center;
+  height: 140%;
+  width: 120%;
+  margin: -10% 4% 0 -200%;
+  position: relative;
+  left: -40%;
+  -moz-animation: left_bar_move_from_left 3s linear 1s;
+  -webkit-animation: left_bar_move_from_left 3s linear 1s;
+  animation: left_bar_move_from_left 3s linear 1s;
+  animation-fill-mode: forwards;
+  -moz-transition: linear 2s;
+  -o-transition: linear 2s;
+  -webkit-transition: linear 2s;
+  transition: linear 2s;
+}
+/* line 137, ../scss/main.scss */
+body .panel_bottom_1 .play-area:hover * {
+  -moz-transform: rotateX(-1deg) rotateY(-1deg) rotateZ(2.5deg);
+  -ms-transform: rotateX(-1deg) rotateY(-1deg) rotateZ(2.5deg);
+  -webkit-transform: rotateX(-1deg) rotateY(-1deg) rotateZ(2.5deg);
+  transform: rotateX(-1deg) rotateY(-1deg) rotateZ(2.5deg);
+  /*-webkit-@include transform(rotate3D(0, 3, 0, -0.9deg);
+  -moz-@include transform(rotate3D(0, 1, 0, -0.9deg);
+  -o-@include transform(rotate3D(0, 1, 0, -0.9deg);*/
+}
+/* line 149, ../scss/main.scss */
+body .panel_bottom_1 .play-area img {
+  position: relative;
+  opacity: 1;
+  height: 40%;
+  width: 40%;
+  left: 4%;
+  margin: 2%;
+}
+/* line 165, ../scss/main.scss */
+body .biankuang_1 {
+  transition: 0.5s ease;
+  border: 30px dotted;
+  -moz-border-image: url(../resource/images/biankuang/biankuang_2.svg) 9%;
+  -o-border-image: url(../resource/images/biankuang/biankuang_2.svg) 9%;
+  -webkit-border-image: url(../resource/images/biankuang/biankuang_2.svg) 9%;
+  border-image: url(../resource/images/biankuang/biankuang_2.svg) 9%;
+}
+/* line 170, ../scss/main.scss */
+body .biankuang_5 {
+  transition: 0.5s ease;
+  border: 30px dotted;
+  -moz-border-image: url(../resource/images/biankuang/biankuang_2.svg) 17% 20% 7% 20%;
+  -o-border-image: url(../resource/images/biankuang/biankuang_2.svg) 17% 20% 7% 20%;
+  -webkit-border-image: url(../resource/images/biankuang/biankuang_2.svg) 17% 20% 7% 20%;
+  border-image: url(../resource/images/biankuang/biankuang_2.svg) 17% 20% 7% 20%;
+}
+/* line 175, ../scss/main.scss */
+body .biankuang_2 {
+  border: 20px dotted;
+  -moz-border-image: url(../resource/images/biankuang/biankuang_2.svg) 5% 8% 5% 10%;
+  -o-border-image: url(../resource/images/biankuang/biankuang_2.svg) 5% 8% 5% 10%;
+  -webkit-border-image: url(../resource/images/biankuang/biankuang_2.svg) 5% 8% 5% 10%;
+  border-image: url(../resource/images/biankuang/biankuang_2.svg) 5% 8% 5% 10%;
+}
+/* line 179, ../scss/main.scss */
+body .biankuang_3 {
+  transition: 1s ease;
+  border: 30px dotted;
+  -moz-border-image: url(../resource/images/biankuang/fang1.svg) 5%;
+  -o-border-image: url(../resource/images/biankuang/fang1.svg) 5%;
+  -webkit-border-image: url(../resource/images/biankuang/fang1.svg) 5%;
+  border-image: url(../resource/images/biankuang/fang1.svg) 5%;
+}
+/* line 184, ../scss/main.scss */
+body .biankuang_4 {
+  transition: 3s ease;
+  border: 30px;
+  -moz-border-image: url(../resource/images/biankuang/fang1.svg) 5% 5% 5% 5%;
+  -o-border-image: url(../resource/images/biankuang/fang1.svg) 5% 5% 5% 5%;
+  -webkit-border-image: url(../resource/images/biankuang/fang1.svg) 5% 5% 5% 5%;
+  border-image: url(../resource/images/biankuang/fang1.svg) 5% 5% 5% 5%;
+}
+/* line 190, ../scss/main.scss */
+body .biankuang_img {
+  transition: 1s ease;
+  border: 30px dotted;
+  -moz-border-image: url(../resource/images/biankuang/biankuang_2.svg) 8%;
+  -o-border-image: url(../resource/images/biankuang/biankuang_2.svg) 8%;
+  -webkit-border-image: url(../resource/images/biankuang/biankuang_2.svg) 8%;
+  border-image: url(../resource/images/biankuang/biankuang_2.svg) 8%;
+}
+/* line 196, ../scss/main.scss */
+body .panel_bottom_2 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10%;
+  margin: auto;
+  right: 10%;
+  left: auto;
+  height: 200px;
+}
+/* line 197, ../scss/main.scss */
+body .panel_bottom_2 svg {
+  display: none;
+}
+/* line 206, ../scss/main.scss */
+body .panel_bottom_2 svg {
+  -moz-animation: none !important;
+  -webkit-animation: none !important;
+  animation: none !important;
+  width: 140px;
+  right: 10%;
+  left: auto;
+}
+/* line 214, ../scss/main.scss */
+body .dot {
+  z-index: 9999;
+  background-size: 100%;
+}
+/* line 225, ../scss/main.scss */
+body .bg-dot-5 {
+  background-image: url(../resource/images/dot/dot_5.png);
+}
+/* line 228, ../scss/main.scss */
+body .bg-dot-25 {
+  background-image: url(../resource/images/dot/dot_25.png);
+}
+/* line 231, ../scss/main.scss */
+body .bg-dot-50 {
+  background-image: url(../resource/images/dot/dot_50.png);
+}
+@-webkit-keyframes left_bar_move_from_left {
+  0% {
+    left: -200%;
+    top: 0%;
+  }
+  100% {
+    left: 200%;
+    top: 0%;
+  }
+}
+/* line 250, ../scss/main.scss */
+canvas {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background: transparent;
+  fill-style: red;
+}
+
+/* line 259, ../scss/main.scss */
+.hack_img2 {
+  color: red;
+}
+
+/* line 262, ../scss/main.scss */
+.hack_img1 {
+  left: 0%;
+}
+
+/* line 267, ../scss/main.scss */
+.output-console {
+  color: rgba(54, 207, 0, 0.5);
+  overflow: hidden;
+  height: 100%;
+}
+
+/* line 274, ../scss/main.scss */
+.mask {
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+  background-color: black;
+}
+
+/* line 281, ../scss/main.scss */
+.mb1, .mb10, .mb12, .mb20, .mb22 {
+  display: inline-block;
+  z-index: 10;
+  position: fixed;
+  overflow: hidden;
+}
+
+/* line 289, ../scss/main.scss */
+.mb10 {
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  background-color: black;
+  opacity: 1;
+}
+
+/*
+  .mb1fade {
+    z-index: 99;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 1;
+    @include animation(mb1_move_fade 2s linear;
+    -webkit-@include animation(mb1_move_fadeout 2s linear;
+    animation-fill-mode: forwards;
+  }*/
+/*  .mb11 {
+    @extend .mb1;
+    //height: 2px;
+    z-index: 99;
+    width: 2px;
+    height:100%;
+    left:0;
+    bottom: -100%;
+    background-color: $border_mask;
+    -webkit-@include animation(mb1_move_shu 2s linear;
+    animation-fill-mode: forwards;
+    //animation-delay: 3s;
+    //@include transition(all 1.5s .6s ease-in-out;
+    }*/
+/* line 333, ../scss/main.scss */
+.mb12 {
+  height: 2px;
+  width: 100%;
+  left: 0;
+  bottom: 0px;
+  background-color: rgba(223, 245, 255, 0.5);
+  -moz-animation: mb1_move_heng 0.5s linear forwards;
+  -webkit-animation: mb1_move_heng 0.5s linear forwards;
+  animation: mb1_move_heng 0.5s linear forwards;
+  animation-fill-mode: forwards;
+}
+
+/* line 346, ../scss/main.scss */
+.panel_on .mb10 {
+  -moz-animation: mb1_move_quan 0.5s 0.5s ease forwards;
+  -webkit-animation: mb1_move_quan 0.5s 0.5s ease forwards;
+  animation: mb1_move_quan 0.5s 0.5s ease forwards;
+}
+/* line 347, ../scss/main.scss */
+.panel_on .mb20 {
+  -moz-animation: mb1_move_quan_b 0.5s 0.5s ease forwards;
+  -webkit-animation: mb1_move_quan_b 0.5s 0.5s ease forwards;
+  animation: mb1_move_quan_b 0.5s 0.5s ease forwards;
+}
+/* line 348, ../scss/main.scss */
+.panel_on .mb12 {
+  -moz-animation: mb1_move_heng2 0.5s 0.5s ease forwards;
+  -webkit-animation: mb1_move_heng2 0.5s 0.5s ease forwards;
+  animation: mb1_move_heng2 0.5s 0.5s ease forwards;
+}
+/* line 349, ../scss/main.scss */
+.panel_on .mb22 {
+  -moz-animation: mb1_move_heng_b2 0.5s 0.5s ease forwards;
+  -webkit-animation: mb1_move_heng_b2 0.5s 0.5s ease forwards;
+  animation: mb1_move_heng_b2 0.5s 0.5s ease forwards;
+}
+
+/* line 351, ../scss/main.scss */
+.mb20 {
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  background-color: black;
+  opacity: 1;
+}
+
+/* line 363, ../scss/main.scss */
+.mb22 {
+  height: 2px;
+  width: 100%;
+  left: 0;
+  bottom: 0px;
+  background-color: rgba(223, 245, 255, 0.5);
+  -moz-animation: mb1_move_heng_b 0.5s linear forwards;
+  -webkit-animation: mb1_move_heng_b 0.5s linear forwards;
+  animation: mb1_move_heng_b 0.5s linear forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes mb1_move_quan {
+  0% {
+    left: 0%;
+    opacity: 1;
+  }
+  99% {
+    left: 99%;
+    opacity: 1;
+  }
+  100% {
+    left: 1000%;
+    opacity: 0;
+  }
+}
+@keyframes mb1_move_quan_b {
+  0% {
+    left: 0%;
+  }
+  99% {
+    left: -99%;
+  }
+  100% {
+    left: -1000%;
+  }
+}
+/*  @keyframes mb1_move_shu {
+    0% {
+      bottom: -100%
+    }
+    50% {
+      bottom: 0%
+    }
+    100% {
+      bottom: 200%
+    }
+  }*/
+@keyframes mb1_move_heng {
+  0% {
+    left: -100%;
+    opacity: 1;
+  }
+  100% {
+    left: 0%;
+  }
+}
+@keyframes mb1_move_heng2 {
+  0% {
+    left: 0%;
+    opacity: 1;
+  }
+  100% {
+    display: none;
+    left: 100%;
+    opacity: 0;
+  }
+}
+@keyframes mb1_move_heng_b {
+  0% {
+    left: 100%;
+    opacity: 1;
+  }
+  100% {
+    left: 0%;
+  }
+}
+@keyframes mb1_move_heng_b2 {
+  0% {
+    left: 0%;
+    opacity: 1;
+  }
+  100% {
+    display: none;
+    left: -100%;
+    opacity: 0;
+  }
+}
+@keyframes mb1_move_fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+@keyframes mb1_move_fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

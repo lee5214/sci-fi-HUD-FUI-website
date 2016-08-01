@@ -2,22 +2,12 @@
 <html>
 <head>
     <title>lee5214</title>
-    <link rel="shortcut icon" href="resource/images/logo/logo_lee_title.png" type="image/png">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=0, maximum-scale=0.0, minimum-scale=0.0, user-scalable=no">
-    <!-- Bootstrap -->
-    <link href="stylesheets/source/normalize.css" rel="stylesheet" media="screen">
-    <link href="stylesheets/source/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="stylesheets/main.css" rel="stylesheet" media="screen">
-    <link href="stylesheets/side_bar.css" rel="stylesheet">
-    <link href="stylesheets/double_border_box.css" rel="stylesheet">
-    <link href="stylesheets/small_ui.css" rel="stylesheet">
-    <link href="stylesheets/ai.css" rel="stylesheet">
-    <link href="stylesheets/3d-hud.css" rel="stylesheet">
-    <link href="stylesheets/animation_control.css" rel="stylesheet">
-    <link href="stylesheets/svglist.css" rel="stylesheet">
-    <link href="stylesheets/center_core.css" rel="stylesheet">
-    <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" rel="stylesheet">
+    <link rel="shortcut icon" href="resource/images/logo/logo_lee_black2.png" type="image/png">
+    <meta name="viewport"content="width=device-width, initial-scale=0, maximum-scale=0.0, minimum-scale=0.0, user-scalable=no">
+    <link href="stylesheets/source/normalize.css" rel="stylesheet">
+    <link href="stylesheets/source/bootstrap.min.css" rel="stylesheet">
+    <link href="stylesheets/source/jquery-ui.css" rel="stylesheet">
+    <link href="stylesheets/combine.css" rel="stylesheet" media="screen">
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -35,6 +25,16 @@
 <body>
 <div id="loading">
 </div>
+<div id="audio_zone">
+    <audio src="resource/audio/btn1.mp3" />
+    <audio src="resource/audio/beep1.mp3" />
+    <audio src="resource/audio/beep2.mp3" />
+    <audio src="resource/audio/scan1.mp3" />
+    <audio src="resource/audio/scan2.mp3" />
+    <audio src="resource/audio/beep3.mp3" />
+    <audio src="resource/audio/beep-smooth.mp3" />
+    <audio src="resource/audio/magnet-power.mp3" />
+</div>
 <!--<div id="zhongxin"></div>-->
 <!--<video src="resource/ccc.MP4" autoplay loop width="100%" ></video>-->
 <!--<div style="position: fixed; z-index: -99; width: 100%; height: 100%">
@@ -50,28 +50,33 @@
 <!--<div class="RingCirc"><div id="MagicRing"></div></div>-->
 
 <div class="bg_ht"></div>
-<!--<img class="compass"src="resource/images/compass2.svg" />-->
+
 <div class="hud_container">
     <!--<div id="zhongxin2"></div>
     <div id="zhongxin3"></div>-->
     <div class="center_core">
         <div class="core_mask"></div>
         <div id="center_frame">
+            <div class="center_left">
+                <div class="glow syscore"><h2>System Core</h2></div>
+                <div class="baseline1">
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="baseline2">
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="random_dot"></div>
+            </div>
             <div id="core_slider">
                 <div class="slider" id="slider-range"></div>
                 <div class="slider" id="slider-zoom"></div>
                 <div class="slider" id="slider-travel"></div>
             </div>
             <div class="core_mask"></div>
-            <div class="glow syscore"><h2>System Core</h2></div>
-            <div class="baseline1">
-                <span></span>
-                <span></span>
-            </div>
-            <div class="baseline2">
-                <span></span>
-                <span></span>
-            </div>
+
+
         </div>
         <div id="canvas_core">
             <canvas id="canvasOne" width="1000" height="600"></canvas>
@@ -112,16 +117,19 @@
 		c-1.984-0.807-3.969-1.639-6.245-2.561c-0.133-1.406-0.345-2.85-0.319-4.271c0-4.564-1.242-8.721-3.995-12.455
 		C47.942,126.462,47.36,125.298,46.646,124.263z"/>
 	<g>
-		<path stroke="#000000" stroke-miterlimit="10" d="M201.804,188.672c-12.252,1.018-13.048,1.06-17.941,13.087
+        <path class="logo_eye"stroke="#000000" stroke-miterlimit="10" d="M175.631,178.84c0.716,0.082,1.402,0.371,1.959,0.159
+			c7.859-3.069,15.692-6.033,24.293-6.641c4.499-0.292,7.252-2.965,8.177-7.809c1.033-5.45,2.806-10.729,4.58-17.24
+			c-6.854,5.821-12.836,10.836-19.98,14.277C186.693,165.411,180.076,170.849,175.631,178.84z"/>
+		<path class="logo_eye"stroke="#000000" stroke-miterlimit="10" d="M92.233,150c1.853,6.71,3.625,12.001,4.658,17.452
+			c0.979,5.174,4.075,7.649,8.813,7.954c7.938,0.501,15.189,3.281,22.467,6.033c0.953,0.358,1.958,0.436,3.732,0.807
+			c-4.103-5.558-7.357-10.639-12.834-13.747C109.99,163.299,100.728,158.336,92.233,150z"/>
+        <path stroke="#000000" stroke-miterlimit="10" d="M201.804,188.672c-12.252,1.018-13.048,1.06-17.941,13.087
 			c1.428-0.264,2.857-0.146,3.81-0.768c4.366-2.846,8.574-5.861,12.729-8.944C201.089,191.543,201.168,190.259,201.804,188.672z"/>
 		<path stroke="#000000" stroke-miterlimit="10" d="M188.255,118.669c1.666,1.747,3.307,3.467,4.922,5.214
 			c1.692,1.852,3.281,3.771,4.922,5.663c0.424-0.199,0.793-0.411,1.217-0.622c0-2.739,0-5.505,0-8.111
 			C193.731,114.991,193.731,114.991,188.255,118.669z"/>
 		<path stroke="#000000" stroke-miterlimit="10" d="M174.185,149.47c1.323,1.377,2.62,2.766,3.838,4.063
 			c3.439-1.072,5.901-2.949,8.309-5.332c-0.819-1.694-1.587-3.188-2.566-5.161C179.479,144.23,176.487,146.07,174.185,149.47z"/>
-		<path class="logo_eye"stroke="#000000" stroke-miterlimit="10" d="M175.631,178.84c0.716,0.082,1.402,0.371,1.959,0.159
-			c7.859-3.069,15.692-6.033,24.293-6.641c4.499-0.292,7.252-2.965,8.177-7.809c1.033-5.45,2.806-10.729,4.58-17.24
-			c-6.854,5.821-12.836,10.836-19.98,14.277C186.693,165.411,180.076,170.849,175.631,178.84z"/>
 		<path stroke="#000000" stroke-miterlimit="10" d="M128.326,204.283c-2.752-8.085-7.541-13.549-17.942-12.345
 			c0.556,1.401,0.662,2.672,1.349,3.189c3.97,2.976,8.099,5.715,12.121,8.625C125.415,204.866,126.923,205.275,128.326,204.283z"/>
 		<path stroke="#000000" stroke-miterlimit="10" d="M106.587,132.661c0.396,0.079,0.819,0.172,1.19,0.252
@@ -129,26 +137,24 @@
 			/>
 		<path stroke="#000000" stroke-miterlimit="10" d="M124.301,144.465c-0.926,1.681-1.747,3.295-2.911,5.438
 			c3.229,2.013,5.716,3.534,8.31,5.161c1.561-1.721,2.805-3.096,4.102-4.524C131.288,147.337,128.456,145.232,124.301,144.465z"/>
-		<path class="logo_eye"stroke="#000000" stroke-miterlimit="10" d="M92.233,150c1.853,6.71,3.625,12.001,4.658,17.452
-			c0.979,5.174,4.075,7.649,8.813,7.954c7.938,0.501,15.189,3.281,22.467,6.033c0.953,0.358,1.958,0.436,3.732,0.807
-			c-4.103-5.558-7.357-10.639-12.834-13.747C109.99,163.299,100.728,158.336,92.233,150z"/>
+
 	</g>
 	<g>
 		<path fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M118.612,104.781"/>
 		<path d="M118.612,104.781"/>
 	</g>
-	<g>
-		<path fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M150,101.501"/>
-		<polyline fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" points="153.804,72.362 149.095,72.383
+	<g id="logo_font">
+		<path class="logo01" fill="none" stroke="green" stroke-width="2" stroke-miterlimit="10" d="M150,101.501"/>
+		<polyline class="logo01" fill="none" stroke="green" stroke-width="2" stroke-miterlimit="10" points="153.804,72.362 149.095,72.383
 			141.063,85.804 149.22,99.153 153.928,99.131 		"/>
-		<path fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M163.201,76.707h-11.163l-5.583,9.488l5.583,9.489
+		<path class="logo01" fill="none" stroke="green" stroke-width="2" stroke-miterlimit="10" d="M163.201,76.707h-11.163l-5.583,9.488l5.583,9.489
 			h11.163l5.581-9.489L163.201,76.707z M159.859,90.004h-4.481l-2.239-3.809l2.239-3.808h4.481l2.241,3.808L159.859,90.004z"/>
-
-			<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="153.075" y1="69.57" x2="135.994" y2="98.038"/>
-		<polygon stroke="#000000" stroke-miterlimit="10" points="128.849,101.134 153.873,58.74 152.579,58.74 125.75,104.658
+        <polygon class="logo02" fill="green" stroke-miterlimit="10" points="128.849,101.134 153.873,58.74 152.579,58.74 125.75,104.658
 			179.714,104.781 177.62,101.134 		"/>
-		<line stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="159.108" y1="73.517" x2="169.992" y2="92.175"/>
-	</g>
+    </g>
+		<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="153.075" y1="69.57" x2="135.994" y2="98.038"/>
+        <line stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="159.108" y1="73.517" x2="169.992" y2="92.175"/>
+
 </g>
 </svg>
     </div>
@@ -160,19 +166,22 @@
     </div>
     <div class="double_border_box b3">
     </div>
-    <div class="hud_panel hud_panel_l1 biankuang_1">
+    <div class="hud_panel hud_panel_l1 ">
         <span class="mb20"></span>
         <span class="mb22"></span>
-        <h1 class="glow">Hi, Captain</h1>
-        <ul class="glow">
-            <li>This is Cong Li 's personal website</li>
-            <li>A sample of my Sci-Fi HUD design</li>
-            <li>Active navigation by moving cursor to right side</li>
-            <li>Feel free to fork >> github @ lee5214</li>
-            <!--<div class="output-console"></div>-->
-        </ul>
+        <div class="glow ">
+            <h1 >Hi, Captain</h1>
+            <ul>
+                <li>This is Cong Li 's personal website</li>
+                <li>A sample of my Sci-Fi HUD design</li>
+                <li>Active navigation by moving cursor to right side</li>
+                <li>Feel free to fork >> github @ lee5214</li>
+                <!--<div class="output-console"></div>-->
+            </ul>
+        </div>
+
     </div>
-    <div class="hud_panel hud_panel_l2">
+    <div class="hud_panel hud_panel_l2 ">
         <span class="mb10"></span>
         <!--<span class="mb12"></span>-->
         <div id="trial">
@@ -187,7 +196,7 @@
             </svg>
         </div>
     </div>
-    <div class="hud_panel hud_panel_l3 biankuang_1">
+    <div class="hud_panel hud_panel_l3 ">
         <span class="mb20"></span>
         <span class="mb22"></span>
         <h2 class="glow ">Console Log</h2>
@@ -347,10 +356,38 @@
             <circle class="st0" cx="209.5" cy="1.5" r="1.5" style="transition-delay: 0.380916s;"></circle>
         </svg>
     </div>-->
+    <div class="hud_panel hud_panel_r1  ">
+        <span class="mb10"></span>
+        <span class="mb12"></span>
+        <h2 class="glow ">Connection Info</h2>
+        <ul class="glow">
+            <li>github: <a href="https://github.com/lee5214">https://github.com/lee5214</a></li>
+            <li>linkedin: <a href="https://linkedin.com/in/lee5214">https://www.linkedin.com/in/lee5214</a></li>
+            <li>Email: <a href="mailto:admin@lee5214.com" target="_top">admin@lee5214.com</a></li>
+            <li>location: San Francisco CA 94132</li>
+        </ul>
+    </div>
+    <div class="hud_panel hud_panel_r2 ">
+        <span class="mb20"></span>
+        <!--<span class="mb22"></span>-->
+        <li></li>
+        <image src="resource/images/World map1.svg" width="100%"></image>
+        <li></li>
+        <ul class="glow">
+        </ul>
+
+    </div>
+    <div class="hud_panel hud_panel_r3  ">
+        <span class="mb10"></span>
+        <span class="mb12"></span>
+        <h2 class="glow">Visitor Log</h2>
+        <ul class="glow" id="visitor_log">
+        </ul>
+    </div>
     <div tabindex="0" class="hud_panel hud_panel_about biankuang_1">
         <span class="mb22"></span>
         <span class="mb20"></span>
-        <h2 class="glow ">About <img class="biankuang_1"src="resource/images/logo/logo_lee.png"></h2>
+        <h2 class="glow ">About <img class="biankuang_img"src="resource/images/logo/logo_lee.png"></h2>
 
         <div class="glow " >
 
@@ -390,43 +427,18 @@
 
         </div>
     </div>
-    <div class="hud_panel hud_panel_r1  biankuang_1">
-        <span class="mb10"></span>
-        <span class="mb12"></span>
-        <h2 class="glow ">Connection Info</h2>
-        <ul class="glow">
-            <li>github: <a href="https://github.com/lee5214">https://github.com/lee5214</a></li>
-            <li>linkedin: <a href="https://github.com/lee5214">https://www.linkedin.com/in/lee5214</a></li>
-            <li>Email: <a href="mailto:admin@lee5214.com" target="_top">admin@lee5214.com</a></li>
-            <li>location: San Francisco CA 94132</li>
-        </ul>
-    </div>
-    <div class="hud_panel hud_panel_r2 ">
-        <span class="mb20"></span>
-        <!--<span class="mb22"></span>-->
-        <li></li>
-        <image src="resource/images/World map1.svg" width="100%"></image>
-        <li></li>
-        <ul class="glow">
-        </ul>
-
-    </div>
-    <div class="hud_panel hud_panel_r3  biankuang_1">
-        <span class="mb10"></span>
-        <span class="mb12"></span>
-        <h2 class="glow">Visitor Log</h2>
-        <ul class="glow" id="visitor_log">
-        </ul>
-    </div>
     <div class="hud_panel hud_panel_nav ">
         <!--<span class="mb20"></span>
         <span class="mb22"></span>-->
         <h2 class="glow ">Navigation</h2>
-        <button class="btn biankuang_1 glow" id="home"><h2>Home</h2></button>
-        <button class="btn biankuang_1 glow" id="about"><h2>About</h2></button>
-        <button class="btn biankuang_1 glow" id="project"><h2>Project</h2></button>
-        <button class="btn biankuang_1 glow" id="resume"><a href="resource/resume.pdf" download><h2>Resume</h2></a>
+        <button class="btn biankuang_2 glow" id="home"><h2>Home</h2></button>
+        <button class="btn biankuang_2 glow" id="about"><h2>About</h2></button>
+        <button class="btn biankuang_2 glow" id="project"><h2>Project</h2></button>
+        <button class="btn biankuang_2 glow" id="resume"><a href="resource/resume.pdf" download><h2>Resume</h2></a>
         </button>
+    </div>
+    <div class="hud_panel hud_panel_compass ">
+        <img class="compass"src="resource/images/compass1.svg" />
     </div>
     <div class="hud_panel hud_panel_ai">
         <div id="ai">
@@ -4127,27 +4139,10 @@
 
 
 </div>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<!--<script type="text/javascript">
-    $(document).ready(function() {
-        $('#MagicRing').magicring({font : "resource/font/MagicRing.ttf" , spacing : 300, _3dX : 1, _3dY: 0, _3dZ:0, _3dDeg:0 });
-        //$('#MagicRing2').magicring({font : "resource/font/MagicRing.ttf" , spacing : 300, _3dX : -1, _3dY: 1, _3dZ: 0, _3dDeg: 60 });
-    });
-</script>
-<!--side bar dependency-->
-<!--<script src="js/greensock_plugin.js"></script>-->
+<script src="js/dependency/jquery2.1.3.min.js"></script>
+<script src="js/dependency/jquery-u1.11.2.min.js"></script>
+<script src="js/dependency/bootstrap.min.js"></script>
 <script src="js/lee_animation.js"></script>
 <script src="js/visitor_info.js"></script>
-<!--<script src="js/mouse_3d.js"></script>-->
-<!--<script src="js/three.min.js"></script>-->
-<!--<script src="bgshan.js"></script>-->
-<!--<script src="js/generator_hack.js"></script>-->
-<!--<script>
-    (function(){
-        $('.hud_container div').append( "<div class='mask'></div>");
-    })();
-</script>-->
 </body>
 </html>
