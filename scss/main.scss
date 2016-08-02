@@ -97,6 +97,9 @@ body {
 
 
     }
+    &:hover{
+      @include transform(perspective(1000px) rotateX(40deg));
+    }
   }
   .svg_bg_container {
     opacity: 0.1;
@@ -167,14 +170,9 @@ body {
     border: 30px dotted;
     @include border-image(url(../resource/images/biankuang/biankuang_2.svg) 9%);
   }
-  .biankuang_5 {
-    transition: 0.5s ease;
+  .biankuang_nav {
     border: 30px dotted;
-    @include border-image(url(../resource/images/biankuang/biankuang_2.svg) 17% 20% 7% 20%);
-  }
-  .biankuang_2 {
-    border: 20px dotted;
-    @include border-image(url(../resource/images/biankuang/biankuang_2.svg) 5% 8% 5% 10%);
+    @include border-image(url(../resource/images/biankuang/biankuang_2.svg) 3%);
   }
   .biankuang_3 {
     transition: 1s ease;
@@ -186,11 +184,15 @@ body {
     border: 30px ;
     @include border-image(url(../resource/images/biankuang/fang1.svg) 5% 5% 5% 5%);
   }
-
+  .biankuang_5 {
+    transition: 0.5s ease;
+    border: 30px dotted;
+    @include border-image(url(../resource/images/biankuang/biankuang_2.svg) 17% 20% 7% 20%);
+  }
   .biankuang_img {
     transition: 1s ease;
     border: 30px dotted;
-    @include border-image(url(../resource/images/biankuang/biankuang_2.svg) 8%);
+    @include border-image(url(../resource/images/biankuang/fang1.svg) 5%);
   }
 
   .panel_bottom_2 {

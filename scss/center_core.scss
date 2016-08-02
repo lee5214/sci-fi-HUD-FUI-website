@@ -146,15 +146,15 @@
         @include animation(rand 4s ease infinite);
         @keyframes rand {
           0%{top:50%; left: 50%;}
-          10%{top:percentage(random(100)/100); left: percentage(random(100)/100);}
-          20%{top:percentage(random(100)/100); left: percentage(random(100)/100);}
-          30%{top:percentage(random(100)/100); left: percentage(random(100)/100);}
-          40%{top:percentage(random(100)/100); left: percentage(random(100)/100);}
-          50%{top:percentage(random(100)/100); left: percentage(random(100)/100);}
-          60%{top:percentage(random(100)/100); left: percentage(random(100)/100);}
-          70%{top:percentage(random(100)/100); left: percentage(random(100)/100);}
-          80%{top:percentage(random(100)/100); left: percentage(random(100)/100);}
-          90%{top:percentage(random(100)/100); left: percentage(random(100)/100);}
+          10%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
+          20%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
+          30%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
+          40%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
+          50%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
+          60%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
+          70%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
+          80%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
+          90%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
           100%{top:50%; left: 50%;}
         }
       }

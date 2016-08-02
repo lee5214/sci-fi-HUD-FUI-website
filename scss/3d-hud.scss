@@ -45,7 +45,7 @@
      //background: red;
      width:100%;
      height:40%;
-     @include transform(translate3d(0vw, -60vh, -2in) rotatex(-60deg));
+     @include transform(translate3d(0vw, -70vh, -5in) rotatex(-60deg));
    }
   .hud_panel_bottom{
     @extend .panel;
@@ -64,12 +64,24 @@
     margin-bottom:0;
   }
 }
+@keyframes topdown_top {
+  0%{margin-top:15%;}
+  50%{margin-top:18%;}
+  100%{margin-top:15%;}
+}
+@keyframes topdown_down {
+  0%{margin-bottom:15%;}
+  50%{margin-bottom:18%;}
+  100%{margin-bottom:15%;}
+}
 .hud_panel_l1{
   @extend .panel;
-  position: absolute;
   height:30%;
   width:20%;
   @include transform(translate3d(-40vw, -30vh, -3in) rotatey(20deg));
+  @include animation(topdown_top 10s ease-in-out infinite);
+
+
   &:hover{
     //border-image-width: 14%;
     border-image-outset: 2;
@@ -86,13 +98,14 @@
   @extend .panel;
   height:30%;
   width:20%;
-  position:absolute;
-  @include transform(translate3d(40vw, -30vh, -3in) rotatey(-20deg) rotatex(0deg));
+  @include transform(translate3d(40vw, -30vh, -3in) rotatey(-20deg));
+  @include animation(topdown_top 10s ease-in-out infinite);
   &:hover{
+    @include animation-play-state(paused);
     border-image-outset: 2;
     background: white;
     @include transition(0.5s ease);
-    @include transform(translate3d(40vw, -30vh, -3in) rotatey(-50deg) rotatex(0deg));
+    @include transform(translate3d(40vw, -30vh, -3in) rotatey(-50deg));
     *{color:black;}
   }
   &:active{
@@ -105,7 +118,6 @@
 }
 .hud_panel_l2 {
   @extend .panel;
-  position: absolute;
   height:27%;
   width:20%;
   @include transform(translate3d(-15vw, -30vh, -3in) rotatey(20deg));
@@ -143,7 +155,6 @@
 }
 .hud_panel_r2 {
   @extend .panel;
-  position: absolute;
   opacity:1;
   height:27%;
   width:20%;
@@ -166,10 +177,15 @@
 }
 .hud_panel_l3 {
   @extend .panel;
-  position: absolute;
   height: 30%;
   width:20%;
   @include transform(translate3d(-40vw, 40vh, -3in) rotatey(20deg));
+  @include animation(topdown_down 10s ease-in-out infinite);
+  @keyframes topdown_l3 {
+    0%{@include transform(translate3d(-40vw, 40vh, -3in) rotatey(20deg));}
+    50%{@include transform(translate3d(-40vw, 35vh, -3in) rotatey(20deg));}
+    100%{@include transform(translate3d(-40vw, 40vh, -3in) rotatey(20deg));}
+  }
   &:hover{
     border-image-outset: 2;
     @include transition(0.5s ease);
@@ -181,16 +197,19 @@
     border:150px dotted;
   }
 }
-
-
 .hud_panel_r3 {
   //background: blue;
   //@include transform(translate3d(40vw, -40vh, -3in)  rotatey(-33deg) rotatex(-10deg);
   @extend .panel;
-  position: absolute;
   height: 30%;
   width:20%;
   @include transform(translate3d(40vw, 40vh, -3in) rotatey(-20deg));
+  @include animation(topdown_down 10s ease-in-out infinite);
+  @keyframes topdown_r3 {
+    0%{@include transform(translate3d(40vw, 40vh, -3in) rotatey(-20deg));}
+    50%{@include transform(translate3d(40vw, 35vh, -3in) rotatey(-20deg));}
+    100%{@include transform(translate3d(40vw, 40vh, -3in) rotatey(-20deg));}
+  }
   &:hover{
     border-image-outset: 2;
     @include transition(0.5s ease);
@@ -294,7 +313,7 @@
     transform-origin: 50% 50%;
     height:100%;
     transform-style: preserve-3d;
-    @include animation( circleZ 20s ease-in-out infinite);
+    @include animation( circleZ 10s ease-in-out infinite);
     @keyframes circleZ {
       0% {
         @include transform(rotateZ(0deg))
