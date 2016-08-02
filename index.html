@@ -26,13 +26,13 @@
 <div id="loading">
 </div>
 <div id="audio_zone">
-    <audio src="resource/audio/btn1.mp3" />
-    <audio src="resource/audio/beep1.mp3" />
+    <audio id="a" src="resource/audio/btn1.mp3" />
+    <audio src="resource/audio/beep-bird.mp3" />
     <audio src="resource/audio/beep2.mp3" />
     <audio src="resource/audio/scan1.mp3" />
-    <audio src="resource/audio/scan2.mp3" />
+    <audio src="resource/audio/scan-energy.mp3" />
     <audio src="resource/audio/beep3.mp3" />
-    <audio src="resource/audio/beep-smooth.mp3" />
+    <audio src="resource/audio/techmusic.mp3" />
     <audio src="resource/audio/magnet-power.mp3" />
 </div>
 <!--<div id="zhongxin"></div>-->
@@ -89,6 +89,7 @@
         </div>
     </div>
     <div class="logo">
+        <div class="random_dot"></div>
         <svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="100%" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
 <g>
@@ -149,7 +150,7 @@
 			141.063,85.804 149.22,99.153 153.928,99.131 		"/>
 		<path class="logo01" fill="none" stroke="green" stroke-width="2" stroke-miterlimit="10" d="M163.201,76.707h-11.163l-5.583,9.488l5.583,9.489
 			h11.163l5.581-9.489L163.201,76.707z M159.859,90.004h-4.481l-2.239-3.809l2.239-3.808h4.481l2.241,3.808L159.859,90.004z"/>
-        <polygon class="logo02" fill="green" stroke-miterlimit="10" points="128.849,101.134 153.873,58.74 152.579,58.74 125.75,104.658
+        <polygon class="logo02" fill="black" stroke-miterlimit="10" points="128.849,101.134 153.873,58.74 152.579,58.74 125.75,104.658
 			179.714,104.781 177.62,101.134 		"/>
     </g>
 		<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="153.075" y1="69.57" x2="135.994" y2="98.038"/>
@@ -159,13 +160,15 @@
 </svg>
     </div>
     <div class="double_border_box b1">
+        <div class="random_dot"></div>
         <!--<canvas class='hack_img1'></canvas>-->
     </div>
     <div class="double_border_box b2">
-        <canvas class='hack_img2'></canvas>
+        <div class="random_dot"></div>
     </div>
-    <div class="double_border_box b3">
-    </div>
+    <!--<div class="double_border_box b3">
+        <div class="random_dot"></div>
+    </div>-->
     <div class="hud_panel hud_panel_l1 ">
         <span class="mb20"></span>
         <span class="mb22"></span>
@@ -184,7 +187,7 @@
     <div class="hud_panel hud_panel_l2 ">
         <span class="mb10"></span>
         <!--<span class="mb12"></span>-->
-        <div id="trial">
+        <!--<div id="trial">
             <svg version="1.2" height="400" width="600" xmlns="http://www.w3.org/2000/svg"
                  viewport="0 0 60 60" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <path stroke="rgba(15,0,0,0.1)" fill="none" stroke-width="1" stroke-linejoin="round"
@@ -194,7 +197,8 @@
                       d="
             M0,90L250,90Q257,60 262,87T267,95 270,88 273,92t6,35 7,-60T290,127 297,107s2,-11 10,-10 1,1 8,-10T319,95c6,4 8,-6 10,-17s2,10 9,11h210"/>
             </svg>
-        </div>
+        </div>-->
+        <canvas id="c"></canvas>
     </div>
     <div class="hud_panel hud_panel_l3 ">
         <span class="mb20"></span>
@@ -370,9 +374,7 @@
     <div class="hud_panel hud_panel_r2 ">
         <span class="mb20"></span>
         <!--<span class="mb22"></span>-->
-        <li></li>
         <image src="resource/images/World map1.svg" width="100%"></image>
-        <li></li>
         <ul class="glow">
         </ul>
 
@@ -420,9 +422,11 @@
         <span class="mb10"></span>
         <h2 class="glow ">Project</h2>
         <div class="glow " >
+            <h2>still working on mutiple projects' implementation, please wait for update.</h2>
             <div class="project_list"><a href="http://www.oasislawgroup.com" target="_blank">Website: Oasis Law Group</a></div>
             <div class="project_list"><a href="http://runfrombugs.lee5214.com" target="_blank">Canvas Game: Hide From Bugs</a></div>
-            <div class="project_list"><a href="http://personalcollection.lee5214.com" target="_blank">Angular App: Personal Collection</a></div>
+            <div class="project_list"><a href="" target="_blank">Angular App: Personal Collection</a></div>
+            <div class="project_list"><a href="" target="_blank">Ajax App: Pet Go</a></div>
             <!--<div class="project_list"><a href="" target="_blank">App: Local News</a></div>-->
 
         </div>

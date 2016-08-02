@@ -135,29 +135,6 @@
         @extend .line;
 
       }
-      .random_dot{
-        position: relative;
-        z-index:10;
-        height:6px;
-        width:6px;
-        opacity:0.8;
-        background: white;
-        @include border-radius(50%);
-        @include animation(rand 4s ease infinite);
-        @keyframes rand {
-          0%{top:50%; left: 50%;}
-          10%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
-          20%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
-          30%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
-          40%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
-          50%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
-          60%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
-          70%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
-          80%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
-          90%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
-          100%{top:50%; left: 50%;}
-        }
-      }
     }
   }
   #view_change{
@@ -210,29 +187,33 @@
   position: absolute;
   //top:110%;
   .ui-state-default{
+    border:none;
     outline:0;
-    background:none;
+    background:white;
   }
-  @keyframes bianbai {
+  /*@keyframes bianbai {
     0%{background-color:transparent;}
     20%{background-color:white;}
     70%{background-color:white;}
     100%{background-color:transparent;}
-  }
+  }*/
   #slider-travel{//top
     height: 1px;
     width:200px;
     left:0;right:0;margin:auto;
     top:2%;
     .ui-slider-handle {
-      height: 10px;
+      height: 14px;
       width: 50px;
       margin-left: -25px !important;
       margin-top:-30px;
-      @include animation(bianbai 3s ease infinite);
+      //@include animation(bianbai 3s ease infinite);
+      &:hover{
+        background:rgba(3, 222, 255,0.7);
+      }
       &:active{
-        background-color:white ;
-        @include animation-play-state(paused);
+        background-color:rgba(3, 222, 255,1);
+        //@include animation-play-state(paused);
       }
     }
   }
@@ -242,14 +223,17 @@
     left:0;right:0;margin:auto;
     bottom:2%;
     .ui-slider-handle {
-      height: 10px;
+      height: 14px;
       width: 50px;
       margin-left: -25px !important;
       margin-top:30px;
-      @include animation(bianbai 3s ease infinite);
+      //@include animation(bianbai 3s ease infinite);
+      &:hover{
+        background:rgba(3, 222, 255,0.7);
+      }
       &:active{
-      background-color:white ;
-      @include animation-play-state(paused);
+      background-color:rgba(3, 222, 255,1);
+      //@include animation-play-state(paused);
     }
     }
     //height:10%;
@@ -263,13 +247,17 @@
     .ui-slider-handle {
       //background-color:red;
       height: 50px;
-      width: 10px;
+      width: 14px;
       margin-bottom: -25px !important;
       margin-left:30px;
-      @include animation(bianbai 3s ease infinite);
+      //@include animation(bianbai 3s ease infinite);
+
+      &:hover{
+        background:rgba(3, 222, 255,0.7);
+      }
       &:active{
-        background-color:white ;
-        @include animation-play-state(paused);
+        background-color:rgba(3, 222, 255,1);
+        //@include animation-play-state(paused);
       }
     }
     //position: absolute;
@@ -285,3 +273,28 @@
   }
 }
 
+
+////////////////////////
+.random_dot{
+  position: relative;
+  z-index:10;
+  height:6px;
+  width:6px;
+  opacity:0.8;
+  background: white;
+  @include border-radius(50%);
+  @include animation(rand 4s ease infinite);
+  @keyframes rand {
+    0%{top:50%; left: 50%;}
+    10%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
+    20%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
+    30%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
+    40%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
+    50%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
+    60%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
+    70%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
+    80%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
+    90%{top:percentage(random(80)/100); left: percentage(random(80)/100);}
+    100%{top:50%; left: 50%;}
+  }
+}

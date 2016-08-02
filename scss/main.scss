@@ -174,9 +174,9 @@ body {
     border: 30px dotted;
     @include border-image(url(../resource/images/biankuang/biankuang_2.svg) 3%);
   }
-  .biankuang_3 {
-    transition: 1s ease;
-    border: 30px dotted;
+  .biankuang_mid {
+    transition: 0.5s ease;
+    border: 10px dotted;
     @include border-image(url(../resource/images/biankuang/fang1.svg) 5%);
   }
   .biankuang_4 {
@@ -249,61 +249,61 @@ body {
     }
   }
 
-  canvas {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    background: transparent;
-    fill-style: red;
-  }
-  .hack_img2 {
-    color: red;
-  }
-  .hack_img1 {
+canvas {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background: transparent;
+  fill-style: red;
+}
+.hack_img2 {
+  color: red;
+}
+.hack_img1 {
 
-    left: 0%;
-  }
+  left: 0%;
+}
 
-  .output-console {
-    //position:fixed;
-    color: $lv;
-    overflow: hidden;
-    height: 100%;
-  }
+.output-console {
+  //position:fixed;
+  color: $lv;
+  overflow: hidden;
+  height: 100%;
+}
 
-  .mask {
-    height: 100%;
-    width: 100%;
-    z-index: 9999;
-    background-color: black;
-  }
+.mask {
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+  background-color: black;
+}
 
-  .mb1 {
-    display: inline-block;
-    z-index: 10;
-    position: fixed;
-    overflow: hidden;
-  }
+.mb1 {
+  display: inline-block;
+  z-index: 10;
+  position: fixed;
+  overflow: hidden;
+}
 
-  //fade
-  .mb10 {//black mask
-    @extend .mb1;
-    //height: 2px;
-    //display:block;
-    width: 100%;
-    height: 100%;
-    left: 0px;
-    top: 0px;
-    background-color: black;
-    opacity: 1;
-    //@include animation(mb1_move_quan 0.5s linear forwards;
-    //animation-delay: 1s;
-    //-webkit-@include animation(mb1_move_quan 2s linear, mb1_move_fade 2s linear 2s;
-    //animation-delay: 3s;
-    //@include transition(all 1.5s .6s ease-in-out;
-  }
+//fade
+.mb10 {//black mask
+  @extend .mb1;
+  //height: 2px;
+  //display:block;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  background-color: black;
+  opacity: 1;
+  //@include animation(mb1_move_quan 0.5s linear forwards;
+  //animation-delay: 1s;
+  //-webkit-@include animation(mb1_move_quan 2s linear, mb1_move_fade 2s linear 2s;
+  //animation-delay: 3s;
+  //@include transition(all 1.5s .6s ease-in-out;
+}
 /*
   .mb1fade {
     z-index: 99;
