@@ -46,8 +46,10 @@ $reset = function(){
     $(".hud_panel").hide();
     $("#ai").hide();
     $(".logo").hide();
-    $("#core_slider").hide();
+    $("#core_slider").hide().removeClass("shanshuo");
     $("#view_change").hide();
+    $("#canvasOne").css({"transform":"translateZ(-100in)"});
+    $l1.add($r1).add($l3).add($r3).removeClass("biankuang_1");
     //$(":root").css("perspective","'"+resp+"in'");
 
     //$(":root").animate({"perspective":"12in"},{"duration":1000});
@@ -65,6 +67,9 @@ $reset = function(){
         next();
 
     });
+    $l1.add($r1).add($l3).add($r3).mouseenter(function(){
+        scan_eng.play();
+    })
     $("#dot_p2 .st1").fadeIn().css("fill","white").queue(function(next){
         $(this).addClass("shanshuo");
         next();
@@ -86,6 +91,7 @@ $reset = function(){
         });
         $("#core_slider").delay(4000).fadeIn(00).queue(function(next){
             $(this).addClass("shanshuo");
+            beep3.play();
             $(".syscore").addClass("random_move");
             next();
         });
@@ -573,7 +579,7 @@ $('body').on('mousemove', function(event) {
         $(".hud_panel_bottom").removeClass("view2d_bottom");
         $leftside.stop().animate({left:"0%"},{duration:1000});
         $rightside.stop().animate({right:"0%"},{duration:1000});
-        $(":root").css("perspective","16in");
+        $(":root").css("perspective","12in");
         view_option=3;
     });
 
