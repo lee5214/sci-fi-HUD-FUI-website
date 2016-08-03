@@ -26,6 +26,7 @@ feel free to send me an email.
 ```javascript
   var admin = {
     name: "Cong",
+    location: "San Francisco",
     site: "http://lee5214.com"
   }
 ```
