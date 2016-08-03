@@ -7,19 +7,18 @@ For fun and practice mostly....
 
 Love HUD/FUI in sci-fi movies/games, but I've never seen one website designed this way (people develp for moives by using after effect), so I decided to make one to see if it works.
 
-##Features?
+##Tech
 3D canvas svg webgl
 
-##Question?
+##Question
 feel free to send me an email.
-
 * email: admin@lee5214.com
 
 
 ##Thanks
-
-* [jquery](http://jquery.com)
 * [pinterest](http://pinterest.com)
+* [codepen](http://codepen.io)
+* [jquery](http://jquery.com)
 
 ##About Me
 
