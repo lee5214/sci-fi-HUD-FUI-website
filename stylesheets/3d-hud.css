@@ -993,6 +993,8 @@ scale
 
 /* line 389, ../scss/3d-hud.scss */
 .hud_panel_project {
+  overflow: scroll;
+  scrollbar: none;
   display: none;
   background: black;
   position: absolute;

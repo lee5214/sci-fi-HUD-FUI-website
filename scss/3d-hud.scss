@@ -5,6 +5,9 @@
   @include perspective(12in);
   overflow: hidden;
 }
+::-webkit-scrollbar {
+  display: none !important;
+}
 .panel {
   //writing-mode: vertical-lr;
   //box-shadow: 1px 1px 5px #888888;
@@ -377,6 +380,7 @@
 }*/
 .hud_panel_about {
   display: none;
+  overflow: scroll;
   @extend .panel;
   background: black;
   position: absolute;
@@ -412,6 +416,7 @@
 }
 .hud_panel_project {
   display: none;
+  overflow: scroll;
   background: black;
   @extend .panel;
   position: absolute;
@@ -432,6 +437,18 @@
     @include transition(1s ease);
     @include transform(translate3d(0vw, 0vh, 0in) rotatey(0deg) rotatex(0deg));
   }
+  a{
+    text-align:center;
+    img{
+      width:400px;
+      height:300px;
+      display: block;
+      margin-left:auto;
+      margin-right:auto;
+      @include transform(rotateX(60deg) rotateZ(-20deg));
+    }
+  }
+
 }
 .hud_panel_ai{
   @extend .panel;
