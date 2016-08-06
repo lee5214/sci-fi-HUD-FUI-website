@@ -20,7 +20,7 @@
   margin: auto;
   overflow: hidden;
   perspective-origin: center;
-  h2 {
+  h2,h3 {
     color: white;
     text-align: center;
   }
@@ -439,14 +439,18 @@
   }
   a{
     text-align:center;
-    img{
-      width:400px;
-      height:300px;
+    h2{
       display: block;
-      margin-left:auto;
-      margin-right:auto;
-      @include transform(rotateX(60deg) rotateZ(-20deg));
+      background: rgba(54, 207, 194, 1);
     }
+  }
+  * img{
+    width:400px;
+    height:300px;
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+    @include transform(rotateX(60deg) rotateZ(-20deg));
   }
 
 }
